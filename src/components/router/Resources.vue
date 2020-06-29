@@ -21,8 +21,7 @@
                 </div>
                 <div class="son flex">
                     <p><i class="iconfont icon-bitian"></i> 公司类型:</p>
-                    <el-radio v-model="radio1" label="1" border @change="handleTypeChange(1)">空壳公司</el-radio>
-                    <el-radio v-model="radio1" label="2" border @change="handleTypeChange(2)">实体公司</el-radio>
+                    <el-radio v-for="item2 in company_type_list" v-model="company_type" :label="item2.attr_item_id" border >{{item2.attr_item_name}}</el-radio>
                 </div>
                 <div class="son flex">
                     <p><i class="iconfont icon-bitian"></i> 公司名称:</p>
@@ -32,13 +31,21 @@
                     <p><i class="iconfont icon-bitian"></i> 是否隐藏公司名称:</p>
                     <div class="sonone">
                         <div>
-                            <el-radio v-model="is_hide" label=false border>隐藏</el-radio>
-                            <el-radio v-model="is_hide" label=true border>不隐藏</el-radio>
+                            <el-radio v-model="hide" label="1" @change="onHandleHide(1)" border>隐藏</el-radio>
+                            <el-radio v-model="hide" label="2" @change="onHandleHide(2)" border>不隐藏</el-radio>
                         </div>
-                        <p class="gsname"><span>公司名称显示状态： </span>{{gsname}}</p>
-						<div>
-						    <el-input-number v-show="is_hide" type="number" v-model="radio2" label="1" border>5445</el-input-number>
-						    <el-input-number v-show="is_hide" type="number" v-model="radio2" label="2" border>45454</el-input-number>
+                        <p class="gsname" v-show="is_hide"><span>公司名称显示状态： </span>{{subname}}</p>
+						<div v-show="!is_disable">
+							<div>
+							    <el-input-number v-show="is_hide" :min="0" :max="100" type="number" v-model="start_hide" label="1" border @change="onHandleShowPosition(1)"></el-input-number>
+							    <el-input-number v-show="is_hide" :min="0" :max="100" type="number" v-model="end_hide" label="2" border @change="onHandleShowPosition(2)"></el-input-number>
+							</div>
+						</div>
+						<div v-show="is_disable">
+							<div>
+							    <el-input-number disabled="disabled" v-show="is_hide" type="number" v-model="start_hide" label="1" border @change="onHandleShowPosition(1)"></el-input-number>
+							    <el-input-number disabled="disabled" v-show="is_hide" type="number" v-model="end_hide" label="2" border @change="onHandleShowPosition(2)"></el-input-number>
+							</div>
 						</div>
                     </div>
                 </div>
@@ -95,60 +102,36 @@
                 <div class="son">
                     <div class="sons">
                         <p><i class="iconfont icon-bitian"></i> 是否有资质:</p>
-                        <el-radio v-model="radio3" label="1" @change="changeassets(0,true)" border>有</el-radio>
-                        <el-radio v-model="radio3" label="2" @change="changeassets(0,false)" border>无</el-radio>
-                    </div>
-                    <div class="chilren" v-show="assets[0]">
-                        <el-checkbox-group v-model="checkboxGroup1">
-                        <el-checkbox-button v-for="city in cities1" :label="city" :key="city">{{city}}</el-checkbox-button>
-                        </el-checkbox-group>
-                        <textarea class="input" placeholder="完整的呈现资质信息对公司的价值很重要，由于资质分类不全导致你选择其它资质时，务必在此做详细描述。"></textarea>
+                        <el-radio v-model="is_have_intelligence" label="1"  border>有</el-radio>
+                        <el-radio v-model="is_have_intelligence" label="0"  border>无</el-radio>
                     </div>
                 </div>
                 <div class="son">
                     <div class="sons">
                         <p><i class="iconfont icon-bitian"></i> 是否有商标:</p>
-                        <el-radio v-model="radio4" label="1" @change="changeassets(1,true)" border>有</el-radio>
-                        <el-radio v-model="radio4" label="2" @change="changeassets(1,false)" border>无</el-radio>
-                    </div>
-                    <div class="chilren" v-show="assets[1]">
-                        <el-checkbox-group v-model="checkboxGroup2">
-                        <el-checkbox-button v-for="city in cities2" :label="city" :key="city">{{city}}</el-checkbox-button>
-                        </el-checkbox-group>
-                        <textarea class="input" placeholder="请具体描述公司商标详情"></textarea>
+                        <el-radio v-model="is_have_trademark" label="1" border>有</el-radio>
+                        <el-radio v-model="is_have_trademark" label="0" border>无</el-radio>
                     </div>
                 </div>
                 <div class="son">
                     <div class="sons">
                         <p><i class="iconfont icon-bitian"></i> 是否有网络资产:</p>
-                        <el-radio v-model="radio5" label="1" @change="changeassets(2,true)" border>有</el-radio>
-                        <el-radio v-model="radio5" label="2" @change="changeassets(2,false)" border>无</el-radio>
-                    </div>
-                    <div class="chilren" v-show="assets[2]">
-                        <el-checkbox-group v-model="checkboxGroup3">
-                        <el-checkbox-button v-for="city in cities3" :label="city" :key="city">{{city}}</el-checkbox-button>
-                        </el-checkbox-group>
-                        <textarea class="input" placeholder="为了更准确的呈现贵司网络资产价值，请务必在此做详细描述。"></textarea>
+                        <el-radio v-model="is_have_network_assets" label="1"  border>有</el-radio>
+                        <el-radio v-model="is_have_network_assets" label="0"  border>无</el-radio>
                     </div>
                 </div>
                 <div class="son">
                     <div class="sons">
                         <p><i class="iconfont icon-bitian"></i> 是否有车牌指标:</p>
-                        <el-radio v-model="radio6" label="1" @change="changeassets(3,true)" border>有</el-radio>
-                        <el-radio v-model="radio6" label="2" @change="changeassets(3,false)" border>无</el-radio>
-                    </div>
-                    <div class="chilren" v-show="assets[3]">
-                        <textarea class="input xxx" placeholder="请具体描述公司车牌指标详情。"></textarea>
+                        <el-radio v-model="is_have_vehicle_license" label="1" border>有</el-radio>
+                        <el-radio v-model="is_have_vehicle_license" label="0" border>无</el-radio>
                     </div>
                 </div>
                 <div class="son">
                     <div class="sons">
                         <p><i class="iconfont icon-bitian"></i> 是否有专利/著作权:</p>
-                        <el-radio v-model="radio7" label="1" @change="changeassets(4,true)" border>有</el-radio>
-                        <el-radio v-model="radio7" label="2" @change="changeassets(4,false)" border>无</el-radio>
-                    </div>
-                    <div class="chilren" v-show="assets[4]">
-                        <textarea class="input xxx" placeholder="请具体描述公司专利/著作权。"></textarea>
+                        <el-radio v-model="is_have_copyright" label="1" border>有</el-radio>
+                        <el-radio v-model="is_have_copyright" label="2" border>无</el-radio>
                     </div>
                 </div>
             </div>
@@ -167,25 +150,22 @@
             <div class="tax">
                 <div class="son flex">
                     <p><i class="iconfont icon-bitian"></i> 是否报到/开业:</p>
-                    <el-radio v-model="radio8" label="1" border>有</el-radio>
-                    <el-radio v-model="radio8" label="2" border>无</el-radio>
+                    <el-radio v-model="is_open" label="1" border>有</el-radio>
+                    <el-radio v-model="is_open" label="0" border>无</el-radio>
                 </div>
                 <div class="son flex">
                     <p><i class="iconfont icon-bitian"></i> 纳税类型:</p>
-                    <el-radio v-model="radio9" label="1" border>小规模</el-radio>
-                    <el-radio v-model="radio9" label="2" border>一般纳税人</el-radio>
-                    <el-radio v-model="radio9" label="3" border>出口纳税人</el-radio>
-                    <el-radio v-model="radio9" label="4" border>未核税</el-radio>
+                    <el-radio v-for="item in tax_lists" v-model="tax_type" :label="item.attr_item_id" border>{{item.attr_item_name}}</el-radio>
                 </div>
                 <div class="son flex">
                     <p><i class="iconfont icon-bitian"></i> 报税情况:</p>
-                    <el-radio v-model="radio10" label="1" border>正常</el-radio>
-                    <el-radio v-model="radio10" label="2" border>非正常</el-radio>
+                    <el-radio v-model="tax_status" label="1" border>正常</el-radio>
+                    <el-radio v-model="tax_status" label="0" border>不正常</el-radio>
                 </div>
                 <div class="son flex">
                     <p><i class="iconfont icon-bitian"></i> 是否申领过发票:</p>
-                    <el-radio v-model="radio11" label="1" border>是</el-radio>
-                    <el-radio v-model="radio11" label="2" border>否</el-radio>
+                    <el-radio v-model="is_get_bill" label="1" border>是</el-radio>
+                    <el-radio v-model="is_get_bill" label="0" border>否</el-radio>
                 </div>
             </div>
             <!-- 税务详情 end -->
@@ -203,8 +183,8 @@
             <div class="bank">
                 <div class="son flex">
                     <p><i class="iconfont icon-bitian"></i> 银行账户:</p>
-                    <el-radio v-model="radio12" label="1" border>已开基本户</el-radio>
-                    <el-radio v-model="radio12" label="2" border>未开基本户</el-radio>
+                    <el-radio v-model="bank_account_open" label="1" border>已开基本户</el-radio>
+                    <el-radio v-model="bank_account_open" label="0" border>未开基本户</el-radio>
                 </div>
             </div>
             <!-- 银行详情 end -->
@@ -222,14 +202,21 @@
             <div class="zhuanr">
                 <div class="son">
                     <div class="one sons">
-                        <p>转让价格:</p>
-                        <el-radio v-model="radio13" label="1" border>免费转</el-radio>
-                        <el-radio v-model="radio13" label="2" border>面议</el-radio>
-                        <el-radio v-model="radio13" label="3" border>一口价</el-radio>
+                        <p>转让方式:</p>
+                        <el-radio v-model="payment" label="1" border @change="changePrice(2)">免费转</el-radio>
+                        <el-radio v-model="payment" label="2" border @change="changePrice(2)">面议</el-radio>
+                        <el-radio v-model="payment" label="3" border @change="changePrice(1)">一口价</el-radio>
                     </div>
+					<div v-show="priceFlag" class="two sons">
+						<p>转让价格:</p>
+					    <input class="input lang ziben" type="number" v-model="price" placeholder="请输入注册资本/单位万">
+					    <div class="wan">
+					        <span>万元</span>
+					    </div>
+					</div>
                     <div class="two sons">
                         <p>其他信息:</p>
-                        <textarea class="input lang" placeholder="未尽信息或公司资产，可在此做详细描述。"></textarea>
+						<Tinymce ref="editor"  v-model="desc_content" :height="500" />
                     </div>
                 </div>
             </div>
@@ -248,11 +235,11 @@
             <div class="contact">
                 <div class="son flex">
                     <p><i class="iconfont icon-bitian"></i> 联系电话:</p>
-                    <input class="input lang" type="text">
+                    <input v-model="contact_num" class="input lang" type="text">
                 </div>
                 <div class="son flex">
                     <p><i class="iconfont icon-bitian"></i> 联系人:</p>
-                    <input class="input lang" type="text">
+                    <input v-model="contact_user_name" class="input lang" type="text">
                 </div>
             </div>
             <!-- 联系详情 end -->
@@ -271,7 +258,7 @@
 
 
         <!-- 确认 start -->
-        <div class="button">提交</div>
+        <div class="button" @click="submite">提交</div>
         <!-- 确认 end -->
     </div>
 </template>
@@ -280,71 +267,97 @@
     //引入全国城市列表
     import { regionDataPlus, CodeToText } from "element-china-area-data";
 	import axios from '../../api/axios'
+	import Cookies from "js-cookie"
+	import Tinymce from '../content/Tinymce'
     export default {
-        data(){
-            return{
+		components: { Tinymce },
+		data() {
+			return {
                 options: regionDataPlus,
                 selectedOptions: [],
 				location:'',
-				companyType:'',
 				caption:'',
 				fundDate:'',
 				manageArea:'',
-				is_hide:false,
-                assets:[false,false,false,false,false],
+				hide:'',
+				is_hide:true,
+				start_hide:'0',
+				end_hide:'1',
+				is_disable:false,
+				subname:'',
+				gsname:'',
+				is_have_intelligence:'',
+				is_have_trademark:'',
+				is_have_network_assets:'',
+				is_have_vehicle_license:'',
+				is_have_copyright:'',
+				is_open:'',
+				tax_type:'',
+				tax_status:'',
+				is_get_bill:'',
+				bank_account_open:'',
+                tax_lists:[],
                 trade_list: [],
 				trade:'',
-                list1:[
-                    {
-                    value: '选项1',
-                    label: '人民币'
-                    },
-                    {
-                    value: '选项2',
-                    label: '美元'
-                    },
-                    {
-                    value: '选项3',
-                    label: '港币'
-                    },
-                ],
-                value3: '',
-                value: '选项1',
-                value1: '选项1',
-                gsname:"",
-                checked: true,
-                checkAll: false,
-                checkedCities: [],
-                isIndeterminate: true,
-                cities1: ['上海', '北京', '广州', '深圳'],
-                cities2: ['四川', '北京', '广州', '深圳'],
-                cities3: ['合肥', '北京', '广州', '深圳'],
-                checkboxGroup1: [],
-                checkboxGroup2: [],
-                checkboxGroup3: [],
-                radio1:"",
-                radio2:"1",
-                radio3:"2",
-                radio4:"2",
-                radio5:"2",
-                radio6:"2",
-                radio7:"2",
-                radio8:"1",
-                radio9:"1",
-                radio10:"1",
-                radio11:"2",
-                radio12:"2",
-                radio13:"2",
-            }
-        },
+				payment:'',
+				desc_content:'',
+				contact_num:'',
+				contact_user_name:'',
+				company_type:'',
+				company_type_list:[],
+				checked:true,
+				priceFlag:false,
+				price:0,
+					}
+				},
 		created() {
 			this.fecthTradeList()
+			this.fecthTaxList()
+			this.fecthCompanyTypeList()
+			this.isDisable(this.gsname)
+		},
+		watch: {
+		  gsname(val) {
+			if(this.gsname==''){
+				this.is_disable = true;
+			}else{
+				this.is_disable = false;
+				this.subname = this.strChange(this.start_hide,this.end_hide,this.gsname)//gsname.replace(this.start_hide,this.end_hide,'***')
+			}
+		  },
+		  
 		},
         methods:{
+			onHandleHide(v){
+				if(v==1){
+					this.is_hide = true
+				}else{
+					this.is_hide = false
+				}
+			},
+			strChange(s,e,g){
+				return g.substr(0, s) + '***' + g.substr(e,g.length);
+			},
+			isDisable(v){
+				if(v==''){
+					this.is_disable = true;
+				}else{
+					this.is_disable = false;
+				}
+			},
+			onHandleShowPosition(v){
+					this.subname = this.strChange(this.start_hide,this.end_hide,this.gsname)
+			},
             handleChange(value) {
 				this.location = value
-				console.log(this.location)
             },
+			changePrice(v){
+				if(v==1){
+					this.priceFlag = true
+				}else{
+					this.priceFlag = false
+				}
+			},
 			async fecthTradeList(){
 				let result = await axios("index/user/getCompanyTrade")
 				if(result.code == 200){
@@ -357,24 +370,229 @@
 					})
 				}
 			},
+			async fecthTaxList(){
+				let result = await axios("index/user/getCompanyTaxType")
+				if(result.code == 200){
+					this.tax_lists = result.data
+				}else{
+					this.$message({
+						type:'error',
+						massage:'网络请求错误！',
+						duration:5000
+					})
+				}
+			},
+			async fecthCompanyTypeList(){
+				let result = await axios("index/user/getCompanyType")
+				if(result.code == 200){
+					this.company_type_list = result.data
+				}else{
+					this.$message({
+						type:'error',
+						massage:'网络请求错误！',
+						duration:5000
+					})
+				}
+			},
 			handleTypeChange(v){
 				this.companyType = v
-				console.log(this.companyType)
 			},
             handleCheckAllChange(val) {
                 this.checkedCities = val ? cityOptions : [];
                 this.isIndeterminate = false;
             },
-            // handleCheckedCitiesChange(value) {
-            //     let checkedCount = value.length;
-            //     this.checkAll = checkedCount === this.cities.length;
-            //     this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length;
-            // },
-            //显示 隐藏 资产信息里面的更多选项
-            changeassets:function(index,bool){
-                this.assets.splice(index,1,bool)
-                console.log(this.assets)
-            }
+            async submite(){
+				if(this.location==''){
+					this.$message({
+						type:'error',
+						message:'请选择注册地区！',
+						duration:5000
+					})
+					return
+				}
+				if(this.company_type==''){
+					this.$message({
+						type:'error',
+						message:'请选择公司类型！',
+						duration:5000
+					})
+					return
+				}
+				if(this.gsname==''){
+					this.$message({
+						type:'error',
+						message:'请填写公司名称！',
+						duration:5000
+					})
+					return
+				}
+				if(this.trade==''){
+					this.$message({
+						type:'error',
+						message:'请选择所属行业！',
+						duration:5000
+					})
+					return
+				}
+				if(this.caption==''){
+					this.$message({
+						type:'error',
+						message:'请填写注册资金！',
+						duration:5000
+					})
+					return
+				}
+				if(this.fundDate==''){
+					this.$message({
+						type:'error',
+						message:'请填写注册日期！',
+						duration:5000
+					})
+					return
+				}
+				if(this.manageArea==''){
+					this.$message({
+						type:'error',
+						message:'请填写经营范围！',
+						duration:5000
+					})
+					return
+				}
+				if(this.is_have_intelligence==''){
+					this.$message({
+						type:'error',
+						message:'请选择是否有资质！',
+						duration:5000
+					})
+					return
+				}
+				if(this.is_have_trademark==''){
+					this.$message({
+						type:'error',
+						message:'请选择是否有商标！',
+						duration:5000
+					})
+					return
+				}
+				if(this.is_have_network_assets==''){
+					this.$message({
+						type:'error',
+						message:'请选择是否有网络资产！',
+						duration:5000
+					})
+					return
+				}
+				if(this.is_have_vehicle_license==''){
+					this.$message({
+						type:'error',
+						message:'请选择是否有车牌指标！',
+						duration:5000
+					})
+					return
+				}
+				if(this.is_have_copyright==''){
+					this.$message({
+						type:'error',
+						message:'请选择是否有专利/著作权！',
+						duration:5000
+					})
+					return
+				}
+				if(this.is_open==''){
+					this.$message({
+						type:'error',
+						message:'请选择是否开业！',
+						duration:5000
+					})
+					return
+				}
+				if(this.tax_type==''){
+					this.$message({
+						type:'error',
+						message:'请选择纳税类型！',
+						duration:5000
+					})
+					return
+				}
+				if(this.tax_status==''){
+					this.$message({
+						type:'error',
+						message:'请选择纳税状态！',
+						duration:5000
+					})
+					return
+				}
+				if(this.is_get_bill==''){
+					this.$message({
+						type:'error',
+						message:'请选择是否申领过发票！',
+						duration:5000
+					})
+					return
+				}
+				if(this.bank_account_open==''){
+					this.$message({
+						type:'error',
+						message:'请选择是否开立银行基本账户！',
+						duration:5000
+					})
+					return
+				}
+				if(this.payment==''){
+					this.$message({
+						type:'error',
+						message:'请选择支付方式！',
+						duration:5000
+					})
+					return
+				}
+				if(this.desc_content==''){
+					this.$message({
+						type:'error',
+						message:'请填写描述！',
+						duration:5000
+					})
+					return
+				}
+				if(this.contact_num==''){
+					this.$message({
+						type:'error',
+						message:'请填写联系人手机！',
+						duration:5000
+					})
+					return
+				}
+				if(this.contact_user_name==''){
+					this.$message({
+						type:'error',
+						message:'请填写联系人名称！',
+						duration:5000
+					})
+					return
+				}
+				let user_id = Cookies.get('user_id')
+				let data = {"service_province_code":this.location[0],"service_city_code":this.location[1],"company_type":this.company_type,"gsname":this.gsname,"subname":this.subname,"trade":this.trade,"caption":this.caption,
+				"fundDate":this.fundDate,"manageArea":this.manageArea,"is_have_intelligence":this.is_have_intelligence,"is_have_trademark":this.is_have_trademark,
+				"is_have_network_assets":this.is_have_network_assets,"is_have_vehicle_license":this.is_have_vehicle_license,"is_have_copyright":this.is_have_copyright,
+				"is_open":this.is_open,"tax_type":this.tax_type,"tax_status":this.tax_status,"is_get_bill":this.is_get_bill,"bank_account_open":this.bank_account_open,
+				"payment":this.payment,"desc_content":this.desc_content,"contact_num":this.contact_num,"contact_user_name":this.contact_user_name,"price":this.price,"postman_id":user_id}
+				await axios("index/user/posttCompany",data,'post').then((response)=>{
+					if(response.code == 200){
+						this.$message({
+							type:'success',
+							message:'提交成功！待审核..',
+							duration:5000
+						})
+					}else{
+						this.$message({
+							type:'error',
+							message:'提交失败！请不要重复提交',
+							duration:5000
+						})
+					}
+				})
+				
+			}
         }
     }
 </script>
