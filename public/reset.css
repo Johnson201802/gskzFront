@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    cursor: progress;
+}
+a{
+    color:#000;
+    text-decoration: none;
+}
+input:focus,textarea:focus{
+    outline:1px solid #409EFF; 
+}
+input,textarea{
+    text-indent: 20px !important;
+}
+ul,li{
+    list-style: none;
+}
