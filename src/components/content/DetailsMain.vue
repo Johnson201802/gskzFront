@@ -265,7 +265,7 @@
                                 <span>更多信息</span>
                             </div>
                             <div class="itm">
-                                <span>其他信息：</span><p>{{companyinformation.desc_content}}</p>
+                               <div v-html="companyinformation.desc_content"></div>
                             </div>
                         </div>
                         <div class="tishi">
@@ -307,7 +307,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="rbotto"></div>
                 </div>
             </div>
             <div class="query">
@@ -702,11 +701,10 @@ export default {
                 justify-content: space-between;
                 .left{
                     width:888px;
-                    border-right:2px solid #1858BC;
                     .leftOne{
                         position: relative;
                         background-color: #fff;
-                        padding:30px 0 40px 20px;
+                        padding:30px 20px 40px 20px;
                         .renzhen{
                             position: absolute;
                             top: 0px;
@@ -1289,11 +1287,11 @@ export default {
                 width:1200px;
                 margin:auto;
                 margin-top:14px;
-                background-color: #fff;
+                background-color: #F2F2F2;
                 display: flex;
                 .left{
+					background-color: #fff;
                     width:888px;
-                    border-right: 2px solid #1858BC;
                     .ltop{
                         display: flex;
                         justify-content: space-between;
@@ -1331,12 +1329,12 @@ export default {
                             min-height: 100px;
                             box-sizing: border-box;
                             padding-left: 20px;
+                            padding-right: 20px;
                             padding-top:10px;
                             border-bottom: 1px solid #ddd;
                             .itm{
                                 display: flex;
                                 box-sizing: border-box;
-                                padding-left: 30px;
                                 span{
                                     width:100px;
                                     display: block;
@@ -1370,7 +1368,10 @@ export default {
                 .right{
                     position: relative;
                     width:260px;
+					height:1000px;
+                    margin-left:15px;
                     padding:0 20px;
+					background-color: #fff;
                     .rtop{
                         line-height: 54px;
                         border-bottom: 1px solid #ddd;
@@ -1436,14 +1437,6 @@ export default {
                                 }
                             }
                         }
-                    }
-                    .rbotto{
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        width:310px;
-                        height:41px;
-                        background-color: #E8E8E8;
                     }
                 }
             }

@@ -216,7 +216,7 @@
 					</div>
                     <div class="two sons">
                         <p>其他信息:</p>
-						<Tinymce ref="editor"  v-model="desc_content" :height="500" />
+						<Tinymce ref="editor"  v-model="desc_content" :height="500" :width="886"/>
                     </div>
                 </div>
             </div>
@@ -307,7 +307,7 @@
 				company_type_list:[],
 				checked:true,
 				priceFlag:false,
-				price:0,
+				price:'',
 					}
 				},
 		created() {
@@ -621,7 +621,7 @@
             }
         }
         .information,.assets,.tax,.bank,.zhuanr,.contact{
-            width:900px;
+            width:1200px;
             margin:50px auto 0;
             .el-checkbox-group{
                 .el-checkbox-button{
