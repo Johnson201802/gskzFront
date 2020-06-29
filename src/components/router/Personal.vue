@@ -243,7 +243,7 @@ export default {
         display: flex;
         .left{
             flex: 1;
-            border-right:2px solid skyblue;
+            border-right:1px solid #dcdfe6;
             .information{
                 display: flex;
                 background-color: #fff;

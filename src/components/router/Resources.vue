@@ -21,8 +21,8 @@
                 </div>
                 <div class="son flex">
                     <p><i class="iconfont icon-bitian"></i> 公司类型:</p>
-                    <el-radio v-model="radio1" label="1" border>空壳公司</el-radio>
-                    <el-radio v-model="radio1" label="2" border>实体公司</el-radio>
+                    <el-radio v-model="radio1" label="1" border @change="handleTypeChange(1)">空壳公司</el-radio>
+                    <el-radio v-model="radio1" label="2" border @change="handleTypeChange(2)">实体公司</el-radio>
                 </div>
                 <div class="son flex">
                     <p><i class="iconfont icon-bitian"></i> 公司名称:</p>
@@ -32,49 +32,45 @@
                     <p><i class="iconfont icon-bitian"></i> 是否隐藏公司名称:</p>
                     <div class="sonone">
                         <div>
-                            <el-radio v-model="radio2" label="1" border>隐藏</el-radio>
-                            <el-radio v-model="radio2" label="2" border>不隐藏</el-radio>
+                            <el-radio v-model="is_hide" label=false border>隐藏</el-radio>
+                            <el-radio v-model="is_hide" label=true border>不隐藏</el-radio>
                         </div>
                         <p class="gsname"><span>公司名称显示状态： </span>{{gsname}}</p>
+						<div>
+						    <el-input-number v-show="is_hide" type="number" v-model="radio2" label="1" border>5445</el-input-number>
+						    <el-input-number v-show="is_hide" type="number" v-model="radio2" label="2" border>45454</el-input-number>
+						</div>
                     </div>
                 </div>
                 <div class="son flex">
                     <p><i class="iconfont icon-bitian"></i> 所属行业:</p>
-                    <el-select v-model="value" placeholder="请选择">
+                    <el-select v-model="trade" placeholder="请选择">
                         <el-option
-                        v-for="item in list"
-                        :key="item.value"
-                        :label="item.label"
-                        :value="item.value">
+                        v-for="item in trade_list"
+                        :key="item.attr_item_id"
+                        :label="item.attr_item_name"
+                        :value="item.attr_item_id">
                         </el-option>
                     </el-select>
                 </div>
                 <div class="son flex">
                     <p><i class="iconfont icon-bitian"></i> 注册资本:</p>
-                    <input class="input lang ziben" type="text" placeholder="请输入注册资本">
+                    <input class="input lang ziben" type="text" v-model="caption" placeholder="请输入注册资本/单位万">
                     <div class="wan">
-                        <span>万</span>
-                        <el-select v-model="value1" placeholder="请选择">
-                            <el-option
-                            v-for="item in list1"
-                            :key="item.value"
-                            :label="item.label"
-                            :value="item.value">
-                            </el-option>
-                        </el-select>
+                        <span>万元</span>
                     </div>
                 </div>
                 <div class="son flex">
                     <p><i class="iconfont icon-bitian"></i> 成立日期:</p>
                     <el-date-picker
-                    v-model="value3"
+                    v-model="fundDate"
                     type="datetime"
                     placeholder="选择日期时间">
                     </el-date-picker>
                 </div>
                 <div class="son flex">
                     <p><i class="iconfont icon-bitian"></i> 经营范围:</p>
-                    <textarea class="input lang" placeholder="完整的经营范围更利于快速卖出，请与执照上的经营范围保持统一。"></textarea>
+                    <textarea class="input lang" v-model="manageArea" placeholder="完整的经营范围更利于快速卖出，请与执照上的经营范围保持统一。"></textarea>
                 </div>
             </div>
             <!--填写信息 start -->
@@ -90,12 +86,12 @@
             </div>
              <!-- 资产详情 start -->
             <div class="assets">
-                <div class="son flex">
+                <!-- <div class="son flex">
                     <p>热门标签:</p>
                     <el-checkbox-group v-model="checkedCities" @change="handleCheckedCitiesChange">
                     <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
                     </el-checkbox-group>
-                </div>
+                </div> -->
                 <div class="son">
                     <div class="sons">
                         <p><i class="iconfont icon-bitian"></i> 是否有资质:</p>
@@ -283,83 +279,21 @@
 <script>
     //引入全国城市列表
     import { regionDataPlus, CodeToText } from "element-china-area-data";
+	import axios from '../../api/axios'
     export default {
         data(){
             return{
                 options: regionDataPlus,
                 selectedOptions: [],
+				location:'',
+				companyType:'',
+				caption:'',
+				fundDate:'',
+				manageArea:'',
+				is_hide:false,
                 assets:[false,false,false,false,false],
-                list: [{
-                    value: '选项1',
-                    label: '行业不限'
-                    },{
-                    value: '选项2',
-                    label: '金融投资'
-                    }, {
-                    value: '选项3',
-                    label: '商贸贸易'
-                    }, {
-                    value: '选项4',
-                    label: '广告传媒'
-                    }, {
-                    value: '选项5',
-                    label: '教育培训'
-                    },{
-                    value: '选项6',
-                    label: '物业地产'
-                    },{
-                    value: '选项7',
-                    label: '经纪中介'
-                    },{
-                    value: '选项8',
-                    label: '建筑装饰'
-                    },{
-                    value: '选项9',
-                    label: '家具建材'
-                    },{
-                    value: '选项10',
-                    label: '通讯网络'
-                    },{
-                    value: '选项11',
-                    label: '实业生产'
-                    },{
-                    value: '选项12',
-                    label: '珠宝服饰'
-                    },{
-                    value: '选项13',
-                    label: '科技信息'
-                    },{
-                    value: '选项14',
-                    label: '印刷包装'
-                    },{
-                    value: '选项15',
-                    label: '餐饮美容'
-                    },{
-                    value: '选项16',
-                    label: '咨询服务'
-                    },{
-                    value: '选项17',
-                    label: '食品农业'
-                    },{
-                    value: '选项18',
-                    label: '会务展览'
-                    },{
-                    value: '选项19',
-                    label: '物流供应链'
-                    },{
-                    value: '选项20',
-                    label: '车牌资质'
-                    },{
-                    value: '选项21',
-                    label: '商标资质'
-                    },{
-                    value: '选项22',
-                    label: '特殊资质'
-                    },{
-                    value: '选项23',
-                    label: '其他行业'
-                    }
-                ],
+                trade_list: [],
+				trade:'',
                 list1:[
                     {
                     value: '选项1',
@@ -403,23 +337,39 @@
                 radio13:"2",
             }
         },
+		created() {
+			this.fecthTradeList()
+		},
         methods:{
-            handleChange() {
-                var loc = "";
-                for (let i = 0; i < this.selectedOptions.length; i++) {
-                    loc += CodeToText[this.selectedOptions[i]];
-                }
-                alert(loc);
+            handleChange(value) {
+				this.location = value
+				console.log(this.location)
             },
+			async fecthTradeList(){
+				let result = await axios("index/user/getCompanyTrade")
+				if(result.code == 200){
+					this.trade_list = result.data
+				}else{
+					this.$message({
+						type:'error',
+						massage:'网络请求错误！',
+						duration:5000
+					})
+				}
+			},
+			handleTypeChange(v){
+				this.companyType = v
+				console.log(this.companyType)
+			},
             handleCheckAllChange(val) {
                 this.checkedCities = val ? cityOptions : [];
                 this.isIndeterminate = false;
             },
-            handleCheckedCitiesChange(value) {
-                let checkedCount = value.length;
-                this.checkAll = checkedCount === this.cities.length;
-                this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length;
-            },
+            // handleCheckedCitiesChange(value) {
+            //     let checkedCount = value.length;
+            //     this.checkAll = checkedCount === this.cities.length;
+            //     this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length;
+            // },
             //显示 隐藏 资产信息里面的更多选项
             changeassets:function(index,bool){
                 this.assets.splice(index,1,bool)
@@ -510,7 +460,7 @@
                     }
                 }
                 .wan{
-                    width:120px;
+                    width:60px;
                     background-color: #F5F7FA;
                     border-radius: 0 4px 4px 0;
                     padding-left:20px;
