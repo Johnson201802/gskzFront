@@ -1,7 +1,7 @@
 <template>
     <div class="Navigation">
         <h1>
-            <img src="../../assets/images/logo.jpg" alt="">
+            <img src="../../assets/images/Logo.png" alt="">
         </h1>
         <el-row class="tac">
             <el-col :span="12">

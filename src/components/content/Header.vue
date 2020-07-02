@@ -6,7 +6,7 @@
             <div class="headerTop">
                 <div class="topOne">
                     <div class="headerTopLeft">
-                        <p>您好，{{username}} </p>
+                        <p>Hi~，{{username}} </p>
                         <router-link v-if="!$store.state.islogin" to="/Login" exact>【用户登录】</router-link>
                         <router-link v-if="!$store.state.islogin" to="/Egistered" exact>【用户注册】</router-link>
                         <router-link v-if="!$store.state.islogin" to="/" exact>【经纪人认证】</router-link>
@@ -32,10 +32,10 @@
                                 <li><p v-if="$store.state.islogin" @click="out()">退出登录</p></li>
                             </ul>
                         </div>
-                        <router-link to="/" exact>关于公司快转网</router-link>
+                        <router-link to="/" exact>手机端</router-link>
                         <router-link to="/" exact>帮助中心</router-link>
                         <router-link to="/User" exact>联系客服</router-link>
-                        <router-link to="/User" exact>返回首页</router-link>
+                        <!-- <router-link to="/User" exact>返回首页</router-link> -->
                     </div>
                 </div>
             </div>
@@ -45,17 +45,14 @@
             <div class="headerLogo">
                 <!-- logo start -->
                 <div class="logo">
-                    <h1>
                         <img src="../../assets/images/Logo.png" alt="">
-                    </h1>
                 </div>
                 <!-- logo end -->
 
                 <!-- search start -->
                 <div class="search">
                     <div class="company">
-                        <p>公司</p>
-                        <i class="iconfont icon-arrowBottom" ></i>
+						<div style="text-align: center;width: inherit;">公司&nbsp;&nbsp;<i class="iconfont icon-arrowBottom" ></i></div>
                         <ul>
                             <li v-for="(item,index) in logoList" :key="index">{{item}}</li>
                         </ul>
@@ -88,8 +85,7 @@
 
                 <!-- my start -->
                 <div class="my">
-                    <i class="iconfont icon-yonghu"></i>
-                    <p>我的快转店铺</p>
+                    <div style="width: inherit;">我要发布&nbsp;&nbsp;<i class="iconfont icon-arrowBottom"></i></div>
                     <div class="Releaserecord">
                             <div class="one">
                                 <p>发布记录</p>
@@ -180,7 +176,7 @@ import Cookies from 'js-cookie'
             //查看用户是否登录
             isLogin:function(){
                 let user_name = Cookies.get('user_name')
-                this.username = user_name == undefined? "欢迎光临公司快转网!" : user_name + ", 欢迎光临公司快转网!"
+                this.username = user_name == undefined? "欢迎来到公司快转网!" : user_name + ", 欢迎来到公司快转网!"
             },
             //退出登录
             out:function(){
@@ -197,26 +193,33 @@ import Cookies from 'js-cookie'
         font-size: 14px !important;
         .header{
             .headerTop{
-                background-color: #364144;
+                background-color: #f6f6f6;
                 .topOne{
                     display:flex;
                     justify-content: space-between;
                     width:1200px;
                     height:36px;
                     margin:0 auto;
-                    background-color: #364144;
+                    background-color: #f6f6f6;
                     .headerTopLeft{
                         display:flex;
-                        p,a{
+                        p{
                             line-height: 36px;
-                            color:#CECECE;
+                            color:#888;
                         }
+						a{
+						    line-height: 36px;
+						    color:#F3A54D;
+						}
+						a:hover{
+						    text-decoration: none;
+						}
                     }
                     .headerTopRight{
                         display:flex;
                         div,span,a{
                             line-height: 36px;
-                            color:#CECECE;
+                            color:#888;
                         }
                         .one,.two{
                             position: relative;
@@ -244,11 +247,13 @@ import Cookies from 'js-cookie'
                                 left: 0;
                                 width:100px;
                                 background: #fff;
-                                border:1px solid #000;
+                                border:1px solid #eee;
+								border-radius: 5px;
+								padding: 2px;
                                 li{
                                     line-height: 36px;
                                     text-align: center;
-                                    color:#000;
+                                    color:#888;
                                     &:hover{
                                         background-color: #eee;
                                         color:chocolate;
@@ -261,36 +266,41 @@ import Cookies from 'js-cookie'
                             text-align: center;
                             // border-right:1px solid #626262;
                         }
+						a:hover{
+						    text-decoration: none;
+						}
                     }
                 }
             }
             .headerLogo{
                 width:1200px;
-                margin:50px auto;
+                margin:20px auto;
                 display: flex;
                 justify-content: space-between;
                 .logo{
                     h1{
                         img{
-                            width:260px;
+                            width:239px;
+							height: 91px;
                         }
                     }
                 }
                 .search{
                     display: flex;
                     width:600px;
-                    height:32px;
+                    height:43px;
                     margin:auto;
                     .company{
                         position: relative;
                         cursor: pointer;
                         width:100px;
                         display: flex;
-                        line-height: 30px;
+                        line-height: 40px;
                         margin: auto;
-                        justify-content: space-around;
-                        border:2px solid #EA2417;
-                        border-right: 1px solid #A2A2A2;
+                        text-align: center;
+						align-items: center;
+                        border:1px solid #F3A54D;
+                        border-right: 1px solid #F3A54D;
                         &:hover ul{
                             display: block;
                         }
@@ -308,7 +318,7 @@ import Cookies from 'js-cookie'
                                 line-height: 36px;
                                 font-size: 14px;
                                 &:hover{
-                                    color:#EA2417;
+                                    color:#F3A54D;
                                 }
                             }
                         }
@@ -317,9 +327,9 @@ import Cookies from 'js-cookie'
                         position: relative;
                         cursor: pointer;
                         width:400px;
-                        height: 30px;
+                        height: 43px;
                         margin:auto;
-                        border:2px solid #EA2417;
+                        border:1px solid #F3A54D;
                         border-right: none;
                         border-left: none;
                         &:hover .Recentsearch{
@@ -330,7 +340,7 @@ import Cookies from 'js-cookie'
                             border:none;
                             outline: none;
                             text-indent: 2rem;
-                            line-height: 30px;
+                            line-height: 40px;
                         }
                         .Recentsearch{
                             cursor: pointer;
@@ -357,7 +367,7 @@ import Cookies from 'js-cookie'
                                         margin-right: 16px;
                                         margin-top:10px;
                                         &:hover{
-                                            color:#EA2417;
+                                            color:#F3A54D;
                                         }
                                     }
                                 }
@@ -373,7 +383,7 @@ import Cookies from 'js-cookie'
                                         line-height: 30px;
                                         border-radius: 15px;
                                         text-align: center;
-                                        color:#EA2417;
+                                        color:#F3A54D;
                                     }
                                 }
                                 ul{
@@ -390,11 +400,11 @@ import Cookies from 'js-cookie'
                     }
                     .submlit{
                         width:100px;
-                        line-height:34px;
-                        height:34px;
+                        line-height:45px;
+                        height:43px;
                         text-align: center;
                         color:#fff;
-                        background-color: #EA2417;
+                        background-color: #F3A54D;
                         i{
                             font-size: 20px;
                         }
@@ -405,24 +415,25 @@ import Cookies from 'js-cookie'
                     display: flex;
                     width:200px;
                     margin:auto;
-                    height: 36px;
-                    border:1px solid #EA2417;
-                    color:#EA2417;
+                    height: 43px;
+                    border:1px solid #F3A54D;
+                    color:#fff;
+					text-align: center;
+					background-color: #F3A54D;
                     &:hover .Releaserecord{
                         display: flex;
                     }
                     i,p{
-                        line-height: 34px;
+                        line-height: 43px;
                     }
                     i{
-                        margin-left: 14px;
-                        font-size: 30px;
+                        font-size: 15px;
                     }
                     .Releaserecord{
                         cursor: pointer;
                         display: none;
                         position: absolute;
-                        z-index: 999;
+                        z-index: 9999999;
                         top:38px;
                         right: 0px;
                         width:580px;
@@ -454,7 +465,7 @@ import Cookies from 'js-cookie'
                                     margin-top:10px;
                                     line-height: 34px;
                                     &:hover{
-                                        color:#EA2417;
+                                        color:#F3A54D;
                                     }
                                 }
                             }
@@ -470,9 +481,9 @@ import Cookies from 'js-cookie'
             }
             .alltop{
                 font-size: 18px;
-                font-weight: 600;
+                font-weight: 500;
                 position: absolute;
-                top: 232px;
+                top: 187px;
                 left: 0;
                 right: 0;
                 margin:auto;
@@ -480,13 +491,14 @@ import Cookies from 'js-cookie'
                 height:40px;
                 background-color: #fff;
                 display: flex;
+				// border-bottom: 2px solid #F3A54D;
                 .bg{
                     width:230px;
                     height:40px;
                     display: flex;
                     justify-content: space-around;
                     color:#fff;
-                    background-image: url("https://www.yizhuanweb.com/assets/img/newImg/leftTop.png");
+                    background-color: #F3A54D;
                     p,i{
                         line-height: 40px;
                         font-weight: 600;
@@ -511,14 +523,15 @@ import Cookies from 'js-cookie'
                     line-height: 40px;
                     &:hover{
                         a{
-                            color:#EB2D25;
+							text-decoration: none;
+                            color:#F3A54D;
                         }
                     }
                     a{
                         color:#666;
                     }
                     .color{
-                        color:#EB2D25;
+                        color:#F3A54D;
                     }
                     img{
                         position: absolute;
@@ -540,7 +553,7 @@ import Cookies from 'js-cookie'
                         }
                     }
                     &:hover{
-                        color:#EA2417;
+                        color:#F3A54D;
                         cursor: pointer;
                     }
                 }

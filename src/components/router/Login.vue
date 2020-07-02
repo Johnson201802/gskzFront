@@ -23,7 +23,7 @@
                     <div class="one">
                         <h1>
                             <router-link to="/">
-                                <img src="../../assets/images/logo.jpg" alt="">
+                                <img src="../../assets/images/Logo.png" alt="">
                             </router-link>
                         </h1>
                         <p>一站式公司交易平台</p>

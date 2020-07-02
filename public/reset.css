@@ -1,10 +1,14 @@
 *{
     margin: 0;
     padding: 0;
-    cursor: progress;
+	text-decoration: none;
 }
 a{
     color:#000;
+	cursor: pointer;
+    text-decoration: none;
+}
+a:hover{
     text-decoration: none;
 }
 input:focus,textarea:focus{

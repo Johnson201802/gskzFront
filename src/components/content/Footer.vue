@@ -1,7 +1,7 @@
 <template>
     <div class="Footer">
         <!-- 优势 start -->
-        <div class="advantage">
+        <!-- <div class="advantage">
             <div class="grson">
                 <div class="son">
                     <img src="../../assets/images/money.png" alt="">
@@ -32,15 +32,15 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- 优势 end -->
 
         <!-- 服务 start -->
         <div class="service">
             <div class="serviceSon">
-                <h1 class="logo">
-                    <img src="../../assets/images/footerLogo.png" alt="">
-                </h1>
+                <!-- <div class="logo">
+                    <img src="../../assets/images/logo2.png" alt="">
+                </div> -->
                 <div class="options">
                     <div class="title">
                         <p>服务</p>
@@ -75,12 +75,12 @@
                     </div>
                 </div>
                 <div class="phone">
-                    <div class="ewm">
+                    <div class="ewm" style="text-align: center;">
                         <img src="https://www.yizhuanweb.com/uploads/20200401/161ab13b7e2e03ae575bf160a77f1251.jpg" alt="">
                         <p>手机访问更便捷</p>
                     </div>
-                    <p class="hotLine">客户服务热线 :</p>
-                    <p class="number">176-2150-2150</p>
+                    <p class="hotLine" style="text-align: center;">客户服务热线</p>
+                    <p class="number" style="text-align: center;">176-2150-2150</p>
                 </div>
             </div>
         </div>
@@ -92,11 +92,6 @@
             <div class="list" ref="navlist">
                 <p v-for="(item,index) in linkList" :key="index">{{item}}</p>
             </div>
-            <div class="more" v-if="ismore" @click="heightAll()">
-                <p v-if="istop">查看更多</p>
-                <i class="iconfont" :class="{'icon-shuangxiajiantou-' : istop , 'icon-shuangshangjiantou-' : !istop}"></i>
-                <p v-if="!istop">点击收起</p>
-            </div>
         </div>
         <!-- 友情链接 end -->
 
@@ -104,23 +99,11 @@
         <div class="record">
             <div class="recordSon">
                 <div class="one">
+					<a href="https://www.baidu.com" target="_blank" style="padding-right: 10px;">Copyright © 2016-2020 公司快转网</a>
                     <img src="../../assets/images/guohui.png" alt="">
-                    <p>沪ICP备26515025456号-1</p>
-                </div>
-                <div class="one">
-                    <img src="../../assets/images/guohui.png" alt="">
-                    <p>国家企业信用信息公示系统</p>
-                </div>
-                <div class="one">
-                    <img src="../../assets/images/jigou.png" alt="">
-                    <p>国家知识产权局备案代理机构</p>
-                </div>
-                <div class="one">
-                    <img src="../../assets/images/jigou.png" alt="">
-                    <p>常年法律顾问</p>
+                    <a href="https://www.baidu.com" target="_blank">沪ICP备26515025456号-1</a>
                 </div>
             </div>
-            <p class="address">地址：上海宝山区友谊西路101号 客服邮箱： qianlonggufen@163.com 或致电：176-2150-2150</p>
         </div>
         <!-- 备案信息 end -->
     </div>
@@ -140,43 +123,25 @@ export default {
         this.init()
     },
     mounted(){
-        this.height()
+		
     },
     methods:{
         //初始化页面数据
         init:function(){
-            for(let i = 1; i < 50; i++){
-                this.linkList.push('上海注册公司')
+            for(let i = 1; i < 20; i++){
+                this.linkList.push('上海注册公好的')
             }
         },
 
-        //获取友情链接高度
-        height:function(){
-            //拿到元素高度
-            let number =  parseInt(window.getComputedStyle(this.$refs.navlist).height)
-            if(number > 50){
-                this.$refs.navlist.style.height = '50px'
-                this.ismore = true
-            }
-        },
-
-        //改变友情链接高度
-        heightAll:function(){
-            this.isShowMore = !this.isShowMore
-            this.istop = !this.istop
-            this.$refs.navlist.style.height = this.isShowMore? 'auto' : '50px'
-        }
     }
 }
 </script>
 
 <style lang="less">
     .Footer{
-        margin-top:50px;
-        padding-bottom: 20px;
-        background:#1F1F1F url("../../assets/images/footerbg.png") no-repeat;
-        background-position-y: 50px;
-        background-position-x: -60px;
+		min-width: 1200px;
+        padding-top:50px;
+        background-color:#2e3238;
         font-size: 14px;
         user-select: none;
         .advantage{
@@ -220,14 +185,16 @@ export default {
                 display: flex;
                 justify-content: space-between;
                 .logo{
+					display: flex;
+					align-items: center;
+					justify-content: space-around;
                     img{
-                        width:280px;
-                        height:120px;
+						width: 60%;
+                        // width:239px;
                     }
                 }
                 .options{
-                    margin-left:50px;
-                    width:650px;
+                    width:82%;
                     .title{
                         display: flex;
                         justify-content: space-between;
@@ -236,7 +203,7 @@ export default {
                         font-size: 16px;
                         p{
                             flex:1;
-                            text-align: center;
+                            text-align: left;
                         }
                     }
                     .list{
@@ -247,16 +214,19 @@ export default {
                             flex:1;
                             text-align: center;
                             p{
+								cursor: pointer;
                                 color:#a9a6a6;
                                 margin-bottom: 10px;
+								text-align: left;
                                 &:hover{
-                                    color:#EA2417;
+                                    color:#F3A54D;
                                 }
                             }
                         }
                     }
                 }
                 .phone{
+					width:18%;
                     flex:1;
                     border-left:1px dashed #363636;
                     box-sizing: border-box;
@@ -288,7 +258,6 @@ export default {
             .yqlink{
                 color:#fefefe;
                 padding-bottom: 10px;
-                text-indent: 20px;
                 border-bottom:1px solid #3C3C3C;
             }
             .list{
@@ -298,9 +267,10 @@ export default {
                     display: inline-block;
                     margin-right:10px;
                     margin-bottom:6px;
-                    color:#525252;
+                    color:#a9a6a6;
+					cursor: pointer;
                     &:hover{
-                        color:red;
+                        color:#F3A54D;
                     }
                 }
             }
@@ -327,31 +297,28 @@ export default {
         }
         .record{
             margin-top:20px;
-            border-top:1px solid #3C3C3C;
+			background-color: #272a30;
+			
             .recordSon{
                 width:1200px;
-                margin:auto;
+                padding:20px;
+                margin:0 auto;
                 margin-top:20px;
-                display: flex;
+				display: flex;
+				justify-content: space-around;
+                // display: flex;
                 .one{
-                    display: flex;
                     margin-left:20px;
+					display: flex;
+					align-items: center;
                     img{
-                        margin-right:4px;
+                        margin-right:0px;
                     }
-                    p{
-                        color:#999;
+                    a{
+                        color:#fff;
                         font-size: 12px;
                     }
                 }
-            }
-            .address{
-                width:1200px;
-                margin:auto;
-                margin-top:10px;
-                text-indent: 20px;
-                font-size: 12px;
-                color:#515151;
             }
         }
     }
