@@ -5,7 +5,7 @@
             <div class="topSon">
                 <div class="topSonOne">
                     <div class="topleft">
-                        <p>Hi,  您好,  欢迎来到公司快转网公司转让平台!</p>
+                        <p>Hi~,  您好,  欢迎来到公司快转网, 综合企业服务信息分类平台</p>
                         <p class="p">登录</p>
                         <router-link to="/Egistered" tag="p">免费注册</router-link>
                     </div>
@@ -29,7 +29,7 @@
                         <p>一站式公司交易平台</p>
                     </div>
                     <div class="two">
-                        <router-link to="/"><i class="iconfont icon-shouye1"></i>返回公司快转网首页</router-link>
+                        <router-link to="/"><i class="iconfont icon-shouye1"></i>返回首页</router-link>
                     </div>
                 </div>
             </div>
@@ -384,7 +384,7 @@ export default {
                             line-height:10px;
                             border-left:1px solid #ccc;
                             border-right:1px solid #ccc;
-                            margin:auto 10px;
+                            margin:10px 10px;
                             color:red;
                         }
                     }
@@ -459,7 +459,7 @@ export default {
         .loginMain{
             position: relative;
             height:600px;
-            background: url(../../assets/images/loginbg.jpg) center top no-repeat;;
+            background: url(../../assets/images/gg.png) center top no-repeat;;
             .loginnow{
                 position: absolute;
                 top: 0;
