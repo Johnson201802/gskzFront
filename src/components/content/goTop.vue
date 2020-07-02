@@ -70,7 +70,7 @@ export default {
             transition: .3s;
             color: #000;
             &:hover{
-                background-color: red;
+                background-color: #f3a54d;
                 color:#fff;
             }    
         }

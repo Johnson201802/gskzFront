@@ -70,7 +70,7 @@
 		<div class="tradingmarket">
 			<div class="top">
 				<div>
-					<p>公司转让交易市场</p>
+					<p>公司转让</p>
 					<span>海量公司转让信息，快速匹配交易</span>
 				</div>
 				<router-link to="/Transfer" tag="p">查看更多 <i class="iconfont icon-rightarrow"></i></router-link>
@@ -84,13 +84,13 @@
 						</div>
 						<div class="ul">
 							<ul class="i5TwoLabel">
-								<li data-color="#e3605f" class="on" style="color:#e3605f" data-i="11">代理类 <i class="icon icon-angle-right"></i></li>
-								<li data-color="#e3605f" data-i="5">工程类 <i class="icon icon-angle-right"></i></li>
-								<li data-color="#e3605f" data-i="6">设计类 <i class="icon icon-angle-right"></i></li>
-								<li data-color="#e3605f" data-i="7">企划类 <i class="icon icon-angle-right"></i></li>
-								<li data-color="#e3605f" data-i="8">管理类 <i class="icon icon-angle-right"></i></li>
-								<li data-color="#e3605f" data-i="9">服务类 <i class="icon icon-angle-right"></i></li>
-								<li data-color="#e3605f" data-i="10">物流类 <i class="icon icon-angle-right"></i></li>
+								<li data-color="#e3605f" @mouseover="changeItemCompany(1)" :class="is_open_company==1?'on':''" >代理类 <i class="iconfont icon-youjiantou"></i></li>
+								<li data-color="#e3605f" @mouseover="changeItemCompany(2)" :class="is_open_company==2?'on':''" >工程类 <i class="iconfont icon-youjiantou"></i></li>
+								<li data-color="#e3605f" @mouseover="changeItemCompany(3)" :class="is_open_company==3?'on':''" >设计类 <i class="iconfont icon-youjiantou"></i></li>
+								<li data-color="#e3605f" @mouseover="changeItemCompany(4)" :class="is_open_company==4?'on':''" >企划类 <i class="iconfont icon-youjiantou"></i></li>
+								<li data-color="#e3605f" @mouseover="changeItemCompany(5)" :class="is_open_company==5?'on':''" >管理类 <i class="iconfont icon-youjiantou"></i></li>
+								<li data-color="#e3605f" @mouseover="changeItemCompany(6)" :class="is_open_company==6?'on':''" >服务类 <i class="iconfont icon-youjiantou"></i></li>
+								<li data-color="#e3605f" @mouseover="changeItemCompany(7)" :class="is_open_company==7?'on':''" >物流类 <i class="iconfont icon-youjiantou"></i></li>
 							</ul>
 						</div>
 					</div>
@@ -276,7 +276,7 @@
 		<div class="tradingmarket">
 			<div class="top">
 				<div>
-					<p>天猫店铺转让市场</p>
+					<p>天猫店铺转让</p>
 					<span>为您臻选优质的天猫店铺!</span>
 				</div>
 				<router-link to="/Transfer" tag="p">查看更多 <i class="iconfont icon-rightarrow"></i></router-link>
@@ -290,13 +290,13 @@
 						</div>
 						<div class="ul">
 							<ul class="i5TwoLabel">
-								<li data-color="#e3605f" class="on" style="color:rgb(98, 152, 226)" data-i="11">代理类 <i class="icon icon-angle-right"></i></li>
-								<li data-color="#e3605f" data-i="5">工程类 <i class="icon icon-angle-right"></i></li>
-								<li data-color="#e3605f" data-i="6">设计类 <i class="icon icon-angle-right"></i></li>
-								<li data-color="#e3605f" data-i="7">企划类 <i class="icon icon-angle-right"></i></li>
-								<li data-color="#e3605f" data-i="8">管理类 <i class="icon icon-angle-right"></i></li>
-								<li data-color="#e3605f" data-i="9">服务类 <i class="icon icon-angle-right"></i></li>
-								<li data-color="#e3605f" data-i="10">物流类 <i class="icon icon-angle-right"></i></li>
+								<li data-color="#e3605f" @mouseover="changeItem(1)" :class="is_open==1?'on':''">代理类 <i class="iconfont icon-youjiantou"></i></li>
+								<li data-color="#e3605f" @mouseover="changeItem(2)" :class="is_open==2?'on':''">工程类 <i class="iconfont icon-youjiantou"></i></li>
+								<li data-color="#e3605f" @mouseover="changeItem(3)" :class="is_open==3?'on':''">设计类 <i class="iconfont icon-youjiantou"></i></li>
+								<li data-color="#e3605f" @mouseover="changeItem(4)" :class="is_open==4?'on':''">企划类 <i class="iconfont icon-youjiantou"></i></li>
+								<li data-color="#e3605f" @mouseover="changeItem(5)" :class="is_open==5?'on':''">管理类 <i class="iconfont icon-youjiantou"></i></li>
+								<li data-color="#e3605f" @mouseover="changeItem(6)" :class="is_open==6?'on':''">服务类 <i class="iconfont icon-youjiantou"></i></li>
+								<li data-color="#e3605f" @mouseover="changeItem(7)" :class="is_open==7?'on':''">物流类 <i class="iconfont icon-youjiantou"></i></li>
 							</ul>
 						</div>
 					</div>
@@ -490,10 +490,10 @@
 		<!-- looking market end -->
 
 		<!-- Commodity market start -->
-		<div class="Commoditymarket">
+		<div class="Commoditymarket_spectial">
 			<div class="top">
 				<div>
-					<p>商标转让交易市场</p>
+					<p>商标转让</p>
 					<span>每日不定时更细特价商标!</span>
 				</div>
 				<p>查看更多 <i class="iconfont icon-rightarrow"></i></p>
@@ -502,59 +502,61 @@
 				<div class="one">
 					<div class="left-card">
 						<div class="menu-box2 fl" data-id="company-first">
-							<a href="/company.html?order_id=1" target="_blank" class="menu-titlerow">精品推荐<i></i></a>
-							<span id="">百里挑一 优质公司 助您前行</span>
+							<a href="/company.html?order_id=1" target="_blank" class="menu-titlerow">商标分类<i></i></a>
+							<span id="">各行各业商标 等您来选</span>
 							<div>
-								<a href="/company.html?industry_id=2" target="_blank">商贸贸易</a>
-								<a href="/company.html?industry_id=13" target="_blank">科技信息</a>
+								<a href="/company.html?industry_id=2" target="_blank">金融物管</a>
+								<a href="/company.html?industry_id=13" target="_blank">通讯服务</a>
 								<a href="/company.html?industry_id=15" target="_blank">餐饮美容</a>
-								<a href="/company.html?industry_id=21" target="_blank">商标资质</a>
+								<a href="/company.html?industry_id=21" target="_blank">方便食品</a>
+								<a href="/company.html?industry_id=21" target="_blank">医疗园艺</a>
+								<a href="/company.html?industry_id=21" target="_blank">运输贮藏</a>
+								<a href="/company.html?industry_id=21" target="_blank">社会服务</a>
+								<a href="/company.html?industry_id=21" target="_blank">啤酒饮料</a>
 							</div>
 						</div>
 					</div>
 					<div class="left-card">
 						<div class="menu-box2 fl" data-id="company-second">
-							<a href="/company.html?order_id=2" target="_blank" class="menu-titlerow">最新发布<i></i></a>
-							<span id="">最新热门公司 等您来选</span>
+							<a href="/company.html?order_id=2" target="_blank" class="menu-titlerow">组合类型<i></i></a>
+							<span id="">商标组合元素</span>
 							<div>
-								<a href="/company.html?taxnat_id=1" target="_blank">小规模</a>
-								<a href="/company.html?taxnat_id=2" target="_blank">一般纳税人</a>
-								<a href="/company.html?taxnat_id=5" target="_blank">出口纳税人</a>
-								<a href="/company.html?taxnat_id=6" target="_blank">未核税</a>
-								<a href="/company.html?hot_company_id=5" target="_blank">资质类公司</a>
-								<a href="/company.html?hot_company_id=4" target="_blank">商标类公司</a>
-								<a href="/company.html?hot_company_id=3" target="_blank">网络资产</a>
-								<a href="/company.html?hot_company_id=2" target="_blank">专利/著作权</a>
-								<a href="/company.html?hot_company_id=1" target="_blank">车牌类公司</a>
+								<a href="/company.html?taxnat_id=1" target="_blank">中文</a>
+								<a href="/company.html?taxnat_id=2" target="_blank">英文</a>
+								<a href="/company.html?taxnat_id=5" target="_blank">中文+英文</a>
+								<a href="/company.html?taxnat_id=6" target="_blank">图形</a>
+								<a href="/company.html?hot_company_id=5" target="_blank">英文+图形</a>
+								<a href="/company.html?hot_company_id=4" target="_blank">中文+拼音</a>
+								<a href="/company.html?hot_company_id=3" target="_blank">中文+英文+图形</a>
 							</div>
 						</div>
 					</div>
 					<div class="left-card">
 						<div class="menu-box2 fl menu-active" data-id="company-third">
-							<a href="/company.html?order_id=3" target="_blank" class="menu-titlerow">特价专区<i></i></a>
-							<span id="">不买贵的，只买对的</span>
+							<a href="/company.html?order_id=3" target="_blank" class="menu-titlerow">字符长度<i></i></a>
+							<span id="">按字的个数分</span>
 							<div>
-								<a href="/company.html?label_id=21" target="_blank">公募基金</a>
-								<a href="/company.html?label_id=8" target="_blank">高新技术</a>
-								<a href="/company.html?label_id=7" target="_blank">双软认证</a>
-								<a href="/company.html?label_id=6" target="_blank">免费转</a>
-								<a href="/company.html?label_id=5" target="_blank">买过社保</a>
-								<a href="/company.html?label_id=4" target="_blank">银行流水大</a>
-								<a href="/company.html?label_id=3" target="_blank">政府国企</a>
-								<a href="/company.html?label_id=2" target="_blank">外资背景</a>
-								<a href="/company.html?label_id=1" target="_blank">国家局名称</a>
+								<a href="/company.html?label_id=8" target="_blank">1-2字 </a>
+								<a href="/company.html?label_id=7" target="_blank">3个字 </a>
+								<a href="/company.html?label_id=6" target="_blank">4个字 </a>
+								<a href="/company.html?label_id=5" target="_blank">5个字 </a>
+								<a href="/company.html?label_id=4" target="_blank">5字以上 </a>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="xuan">
-					<div class="xuanone" v-for="(item,index) in jpyxListone" :key="index">
-						<div><img src="../../assets/images/bd.png" alt=""></div>
-						<p class="xuantitle">{{item.title}}</p>
-						<p class="xuanshiyong">适用项目:{{item.shiyong}}</p>
-						<p class="xuanprice"><span>￥:</span> {{item.price}}</p>
-					</div>
-				</div>
+				<swiper :options="swiperOption_brand" style="width: 100%;">
+					<swiper-slide  v-for="(item,index) in carouselArr" :key="index">
+						<div class="xuan">
+							<div class="xuanone" v-for="(item,index) in jpyxListone" :key="index">
+								<div><img src="../../assets/images/bd.png" alt=""></div>
+								<p class="xuantitle" style="font-size: 20px;font-weight: 600;">112-百度</p>
+								<p class="xuanprice"><span>售价:</span>￥{{item.price}}</p>
+								<p class="xuanshiyong" style="color:#888;">适用项目:{{item.shiyong}}</p>
+							</div>
+						</div>
+					</swiper-slide>
+				</swiper>
 			</div>
 		</div>
 		<!-- Commodity market end -->
@@ -574,62 +576,57 @@
 				<p>查看更多 <i class="iconfont icon-rightarrow"></i></p>
 			</div>
 			<div class="list" style="padding-bottom: 40px;">
-				<div class="one" :style="{'background': 'url('+imgSrc+') no-repeat center center'}">
-					<div class="left-card">
+				<div class="one" :style="{'background': 'url('+imgSrc+') no-repeat center center'}" style="height: 600px;">
+					<div class="left-card" style="height: 200px;margin-top: 60px;">
 						<div class="menu-box2 fl" data-id="company-first">
-							<a href="/company.html?order_id=1" target="_blank" class="menu-titlerow">精品推荐<i></i></a>
+							<a href="http://www.baidu.com" target="_blank" class="menu-titlerow">办公园区租赁<i></i></a>
 							<span id="">全国优质场地园区供您选择</span>
 							<div>
-								<a href="/company.html?industry_id=2" target="_blank">商贸贸易</a>
-								<a href="/company.html?industry_id=13" target="_blank">科技信息</a>
-								<a href="/company.html?industry_id=15" target="_blank">餐饮美容</a>
-								<a href="/company.html?industry_id=21" target="_blank">商标资质</a>
+								<a href="/company.html?industry_id=2" target="_blank">上海</a>
+								<a href="/company.html?industry_id=13" target="_blank">北京</a>
+								<a href="/company.html?industry_id=15" target="_blank">深圳</a>
+								<a href="/company.html?industry_id=21" target="_blank">广州</a>
+								<a href="/company.html?industry_id=21" target="_blank">东莞</a>
+								<a href="/company.html?industry_id=21" target="_blank">天津</a>
+								<a href="/company.html?industry_id=21" target="_blank">武汉</a>
+								<a href="/company.html?industry_id=21" target="_blank">长沙</a>
+								<a href="/company.html?industry_id=21" target="_blank">南宁</a>
+								<a style="color: #fff;" href="http://www.baidu.com" target="_blank">更多</a>
 							</div>
 						</div>
 					</div>
-					<div class="left-card">
+					<div class="left-card" style="height: 200px;margin-top: 60px;">
 						<div class="menu-box2 fl" data-id="company-second">
-							<a href="/company.html?order_id=2" target="_blank" class="menu-titlerow">最新发布<i></i></a>
-							<span id="">最新热门公司 等您来选</span>
+							<a href="http://www.baidu.com" target="_blank" class="menu-titlerow">生产厂房租赁<i></i></a>
+							<span id="">全国厂房等您来选</span>
 							<div>
-								<a href="/company.html?taxnat_id=1" target="_blank">小规模</a>
-								<a href="/company.html?taxnat_id=2" target="_blank">一般纳税人</a>
-								<a href="/company.html?taxnat_id=5" target="_blank">出口纳税人</a>
-								<a href="/company.html?taxnat_id=6" target="_blank">未核税</a>
-								<a href="/company.html?hot_company_id=5" target="_blank">资质类公司</a>
-								<a href="/company.html?hot_company_id=4" target="_blank">商标类公司</a>
-								<a href="/company.html?hot_company_id=3" target="_blank">网络资产</a>
-								<a href="/company.html?hot_company_id=2" target="_blank">专利/著作权</a>
-								<a href="/company.html?hot_company_id=1" target="_blank">车牌类公司</a>
-							</div>
-						</div>
-					</div>
-					<div class="left-card">
-						<div class="menu-box2 fl menu-active" data-id="company-third">
-							<a href="/company.html?order_id=3" target="_blank" class="menu-titlerow">特价专区<i></i></a>
-							<span id="">不买贵的，只买对的</span>
-							<div>
-								<a href="/company.html?label_id=21" target="_blank">公募基金</a>
-								<a href="/company.html?label_id=8" target="_blank">高新技术</a>
-								<a href="/company.html?label_id=7" target="_blank">双软认证</a>
-								<a href="/company.html?label_id=6" target="_blank">免费转</a>
-								<a href="/company.html?label_id=5" target="_blank">买过社保</a>
-								<a href="/company.html?label_id=4" target="_blank">银行流水大</a>
-								<a href="/company.html?label_id=3" target="_blank">政府国企</a>
-								<a href="/company.html?label_id=2" target="_blank">外资背景</a>
-								<a href="/company.html?label_id=1" target="_blank">国家局名称</a>
+								<a href="/company.html?taxnat_id=1" target="_blank">0-100平</a>
+								<a href="/company.html?taxnat_id=2" target="_blank">100-200平</a>
+								<a href="/company.html?taxnat_id=5" target="_blank">200-300平</a>
+								<a href="/company.html?taxnat_id=6" target="_blank">300-400平</a>
+								<a href="/company.html?hot_company_id=5" target="_blank">400-500平</a>
+								<a href="/company.html?hot_company_id=4" target="_blank">500-600平</a>
+								<a href="/company.html?hot_company_id=3" target="_blank">600-700平</a>
+								<a href="/company.html?hot_company_id=2" target="_blank">700-800平</a>
+								<a href="/company.html?hot_company_id=1" target="_blank">800-900平</a>
+								<a href="/company.html?hot_company_id=1" target="_blank">900-1000平</a>
+								<a href="/company.html?hot_company_id=1" target="_blank">更多</a>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="xuan">
-					<div class="xuanone" v-for="(item,index) in jpyxListone" :key="index">
-						<div><img src="../../assets/images/bd.png" alt=""></div>
-						<p class="xuantitle">{{item.title}}</p>
-						<p class="xuanshiyong">适用项目:{{item.shiyong}}</p>
-						<p class="xuanprice"><span>￥:</span> {{item.price}}</p>
-					</div>
-				</div>
+				<swiper :options="swiperOption_place" style="width: 100%;">
+					<swiper-slide  v-for="(item,index) in carouselArr" :key="index">
+						<div class="xuan">
+							<div class="xuanone" v-for="(item,index) in jpyxListone2" :key="index" style="margin-top: 0;padding-top: 0;">
+								<div><img src="../../assets/images/yq.png" style="border-radius: 5px;margin:0;width: 204px;height: 150px;" alt=""></div>
+								<p class="xuantitle" style="font-size: 20px;font-weight: 600;">嘉加德必易园</p>
+								<p class="xuanprice"><span>租金:</span>￥2.0~2.0元/m²/天</p>
+								<p class="xuanshiyong" style="color:#888">地址:环城路2390号 11号线主线嘉定北985米</p>
+							</div>
+						</div>
+					</swiper-slide>
+				</swiper>
 			</div>
 		</div>
 
@@ -638,9 +635,10 @@
 			<div style="width:1200px;border-radius: 5px;">
 					<div class="center">
 					            <div class="title">
-					                <img class="img-rounded" src="https://cdn.caiyun.com/image/banner7.jpg" alt="img">
+					                <img class="img-rounded" src="../../assets/images/news.png" style="width: 90%;height:90%" alt="img">
 					            </div>
 					            <swiper class="ul" :options="swiperOption_news">
+									<swiper-slide >
 					                <ul style="width: 1268px; margin-left: 0px;">
 					                        <li>
 					                            <a target="_blank" href="/news/indetails/n201811281340.html">
@@ -675,40 +673,8 @@
 					                                </div>
 					                            </a>
 					                        </li>
-											<li>
-					                            <a target="_blank" href="/news/indetails/n201811281343.html">
-					                                <div class="tit">
-					                                    <img src="https://cdn.caiyun.com/upload/www/img/info/2018/11/28/1737119170.png" alt="上市公司资产重组流程">
-					                                </div>
-					                                <div class="data">
-					                                    <div class="dtit">上市公司资产重组流程</div>
-					                                    <div class="ddes">关于上市公司资产的重组，你又了解多少呢，以下是小编搜集并整理的上市公司资产重组有关内容，供大家参考，希望对大家能有所帮助!...</div>
-					                                </div>
-					                            </a>
-					                        </li>
-											<li>
-					                            <a target="_blank" href="/news/indetails/n201811271334.html">
-					                                <div class="tit">
-					                                    <img src="https://cdn.caiyun.com/upload/www/img/info/2018/11/27/1746071447.png" alt="有限公司股权转让意向书">
-					                                </div>
-					                                <div class="data">
-					                                    <div class="dtit">有限公司股权转让意向书</div>
-					                                    <div class="ddes">有限公司股权转让意向书...</div>
-					                                </div>
-					                            </a>
-					                        </li>
-											<li>
-					                            <a target="_blank" href="/news/indetails/n201811281339.html">
-					                                <div class="tit">
-					                                    <img src="https://cdn.caiyun.com/upload/www/img/info/2018/11/28/1745249956.png" alt="两网公司及退市公司股票转让风险揭示书">
-					                                </div>
-					                                <div class="data">
-					                                    <div class="dtit">两网公司及退市公司股票转让风险揭示书</div>
-					                                    <div class="ddes">​　　全国中小企业股份转让系统两网公司及退市公司股票转让暂行办法主要有什么内容?该暂行办法一共四十一条，是两网公司和退市公司的股票如何进行转让，股票转让的具体程序等。下面，财运网小编带您来看一下。...</div>
-					                                </div>
-					                            </a>
-					                        </li>
 										</ul>
+									</swiper-slide >
 					            </swiper>
 					            <div class="more">
 					                <a href="/news/industry" rel="nofollow">更多 <i class="icon-angle-right"></i> </a>
@@ -730,6 +696,8 @@
 		},
 		data() {
 			return {
+				is_open:1,
+				is_open_company:1,
 				imgSrc: require('../../assets/images/bl3.png'),
 				listData: [{
 						'title': '无缝滚动第一行无缝滚动第一行56435765',
@@ -783,10 +751,46 @@
 					effect: "slide",
 					//自动轮播
 					autoplay: {
-						delay: 5000,
+						delay: 20000,
 						//当用户滑动图片后继续自动轮播
 						disableOnInteraction: false,
 					},
+					//开启循环模式
+					loop: true
+				},
+				swiperOption_place :{
+					//显示分页
+					pagination: {
+						el: '.swiper-pagination-place',
+						clickable: true,
+					},
+					effect: "slide",
+					//自动轮播
+					autoplay: {
+						delay: 5000,
+						//当用户滑动图片后继续自动轮播
+						disableOnInteraction: false,
+						
+					},
+					//开启循环模式
+					loop: true,
+					speed:2000
+				},
+				swiperOption_brand :{
+					//显示分页
+					// pagination: {
+					// 	el: '.swiper-pagination-place',
+					// 	clickable: true,
+					// },
+					effect: "slide",
+					//自动轮播
+					autoplay: {
+						delay: 6000,
+						//当用户滑动图片后继续自动轮播
+						disableOnInteraction: false,
+						
+					},
+					speed:2000,
 					//开启循环模式
 					loop: true
 				},
@@ -827,55 +831,104 @@
 				companyList: [],
 				jpyxListone: [{
 						url: "../../assets/images/pg_logo.png",
-						title: "11类 - 图形",
+						title: "嘉加德必易园",
 						shiyong: "玻璃钢冷却塔 冷却设备和装置 气体净化装置 焚化炉 供水设备 污水处理设备 水过滤器 水净化装置 水软化器 水消毒器",
 						price: "6000.00"
 					},
 					{
 						url: "../../assets/images/pg_logo.png",
-						title: "11类 - 图形",
+						title: "嘉加德必易园",
 						shiyong: "玻璃钢冷却塔 冷却设备和装置 气体净化装置 焚化炉 供水设备 污水处理设备 水过滤器 水净化装置 水软化器 水消毒器",
 						price: "6000.00"
 					},
 					{
 						url: "../../assets/images/pg_logo.png",
-						title: "11类 - 图形",
+						title: "嘉加德必易园",
 						shiyong: "玻璃钢冷却塔 冷却设备和装置 气体净化装置 焚化炉 供水设备 污水处理设备 水过滤器 水净化装置 水软化器 水消毒器",
 						price: "6000.00"
 					},
 					{
 						url: "http://tmpic.tmkoo.com/c6529ac311016a89",
-						title: "11类 - 图形",
+						title: "嘉加德必易园",
 						shiyong: "玻璃钢冷却塔 冷却设备和装置 气体净化装置 焚化炉 供水设备 污水处理设备 水过滤器 水净化装置 水软化器 水消毒器",
 						price: "6000.00"
 					},
 					{
 						url: "http://tmpic.tmkoo.com/c6529ac311016a89",
-						title: "11类 - 图形",
+						title: "嘉加德必易园",
 						shiyong: "玻璃钢冷却塔 冷却设备和装置 气体净化装置 焚化炉 供水设备 污水处理设备 水过滤器 水净化装置 水软化器 水消毒器",
 						price: "6000.00"
 					},
 					{
 						url: "http://tmpic.tmkoo.com/c6529ac311016a89",
-						title: "11类 - 图形",
+						title: "嘉加德必易园",
 						shiyong: "玻璃钢冷却塔 冷却设备和装置 气体净化装置 焚化炉 供水设备 污水处理设备 水过滤器 水净化装置 水软化器 水消毒器",
 						price: "6000.00"
 					},
 					{
 						url: "http://tmpic.tmkoo.com/c6529ac311016a89",
-						title: "11类 - 图形",
+						title: "嘉加德必易园",
 						shiyong: "玻璃钢冷却塔 冷却设备和装置 气体净化装置 焚化炉 供水设备 污水处理设备 水过滤器 水净化装置 水软化器 水消毒器",
 						price: "6000.00"
 					},
 					{
 						url: "http://tmpic.tmkoo.com/c6529ac311016a89",
+						title: "嘉加德必易园",
+						shiyong: "玻璃钢冷却塔 冷却设备和装置 气体净化装置 焚化炉 供水设备 污水处理设备 水过滤器 水净化装置 水软化器 水消毒器",
+						price: "6000.00"
+					},
+				],
+				jpyxListone2: [{
+						url: "../../assets/images/yq.png",
+						title: "嘉加德必易园",
+						shiyong: "玻璃钢冷却塔 冷却设备和装置 气体净化装置 焚化炉 供水设备 污水处理设备 水过滤器 水净化装置 水软化器 水消毒器",
+						price: "6000.00"
+					},
+					{
+						url: "../../assets/images/yq.png",
+						title: "11类 - 图形",
+						shiyong: "玻璃钢冷却塔 冷却设备和装置 气体净化装置 焚化炉 供水设备 污水处理设备 水过滤器 水净化装置 水软化器 水消毒器",
+						price: "6000.00"
+					},
+					{
+						url: "../../assets/images/yq",
+						title: "11类 - 图形",
+						shiyong: "玻璃钢冷却塔 冷却设备和装置 气体净化装置 焚化炉 供水设备 污水处理设备 水过滤器 水净化装置 水软化器 水消毒器",
+						price: "6000.00"
+					},
+					{
+						url: "../../assets/images/yq",
+						title: "11类 - 图形",
+						shiyong: "玻璃钢冷却塔 冷却设备和装置 气体净化装置 焚化炉 供水设备 污水处理设备 水过滤器 水净化装置 水软化器 水消毒器",
+						price: "6000.00"
+					},
+					{
+						url: "../../assets/images/yq",
+						title: "11类 - 图形",
+						shiyong: "玻璃钢冷却塔 冷却设备和装置 气体净化装置 焚化炉 供水设备 污水处理设备 水过滤器 水净化装置 水软化器 水消毒器",
+						price: "6000.00"
+					},
+					{
+						url: "../../assets/images/yq",
+						title: "11类 - 图形",
+						shiyong: "玻璃钢冷却塔 冷却设备和装置 气体净化装置 焚化炉 供水设备 污水处理设备 水过滤器 水净化装置 水软化器 水消毒器",
+						price: "6000.00"
+					},
+					{
+						url: "../../assets/images/yq",
+						title: "11类 - 图形",
+						shiyong: "玻璃钢冷却塔 冷却设备和装置 气体净化装置 焚化炉 供水设备 污水处理设备 水过滤器 水净化装置 水软化器 水消毒器",
+						price: "6000.00"
+					},
+					{
+						url: "../../assets/images/yq",
 						title: "11类 - 图形",
 						shiyong: "玻璃钢冷却塔 冷却设备和装置 气体净化装置 焚化炉 供水设备 污水处理设备 水过滤器 水净化装置 水软化器 水消毒器",
 						price: "6000.00"
 					},
 				],
 				zxfbListone: [{
-						url: "http://tmpic.tmkoo.com/c6529ac311016a89",
+						url: "../../assets/images/yq",
 						title: "11类 - 图形",
 						shiyong: "玻璃钢冷却塔 冷却设备和装置 气体净化装置 焚化炉 供水设备 污水处理设备 水过滤器 水净化装置 水软化器 水消毒器",
 						price: "6000.00"
@@ -1226,6 +1279,14 @@
 				this.getSwiper()
 				//请求公司交易市场数据
 				this.getCompany()
+			},
+			//改变展开项-公司
+			changeItemCompany(val){
+				this.is_open_company = val;
+			},
+			//改变展开项-天猫
+			changeItem(val){
+				this.is_open = val;
 			},
 			//请求轮播资源
 			getSwiper: async function() {
@@ -2441,7 +2502,6 @@
 							margin-right: 10px;
 							height: 12px;
 							line-height: 12px;
-
 							a {
 								text-decoration: none;
 								color: #fff;
@@ -2516,6 +2576,247 @@
 					}
 				}
 			}
+		}
+		.Commoditymarket_spectial{
+			margin-top: 30px;
+						padding-top: 20px;
+						min-width: 1200px;
+						.top {
+							width: 1200px;
+							margin: auto;
+							display: flex;
+							justify-content: space-between;
+							div {
+								display: flex;
+								p {
+									font-size: 30px;
+									color: #000;
+								}
+								span {
+									display: block;
+									margin-top: 18px;
+									margin-left: 20px;
+									;
+									font-size: 14px;
+								}
+							}
+							p {
+								color: #F3A54D;
+								i {
+									color: #F3A54D;
+								}
+							}
+						}
+						.center{
+								background: #fff;
+								width: 1199px;
+								border-right: 1px solid #f7f8fc;
+								height: 90px;
+								margin:0px auto;
+								overflow: hidden;
+								position:relative;
+								border-radius: 5px;
+						}
+						.title {
+						    float: left;
+						    width: 236px;
+						    height: 90px;
+							img {
+							    width: 236px;
+							    height: 90px;
+							}
+						}
+						.ul {
+						    float: left;
+						    width: 962px;
+						    height: auto;
+						    padding-top: 10px;
+						    overflow: hidden;
+							ul{
+								padding:0px;
+								list-style: none;
+								overflow: hidden;
+								height: 70px;
+								li{
+									float:left;
+									overflow: hidden;
+									width:306px;
+									height:70px;
+									line-height:20px;
+									font-size:12px;
+									color:#666;
+									padding-right:13px;
+									a{
+										width:295px;
+										height:70px;
+										text-decoration: none;
+										display: block;
+										overflow: hidden;
+										.tit{
+											float:left;
+											overflow: hidden;
+											width:100px;
+											height:70px;
+											img{
+												width:100px;
+												height:70px;
+											}
+										}
+									}
+									.data{
+										float:left;
+										overflow: hidden;
+										width:190px;
+										margin-left:5px;
+										.dtit{
+											font-size: 14px;
+											color:#333;
+											overflow: hidden;
+											text-overflow:ellipsis;
+											white-space: nowrap;
+										}
+										.ddes{
+											margin-top:5px;
+											font-size: 12px;
+											line-height:20px;
+											color:#999;
+											height: 40px;
+											overflow: hidden;
+										}
+									}
+								}
+							}
+						}
+						.more{
+							position:absolute;
+							width:50px;
+							height: 90px;
+							top:0;
+							right:0;
+							background: #fff;
+							display: flex;
+							align-items: center;
+							a{
+								color:#888;
+								&:hover{
+									color: #F3A54D;
+								}
+							}
+						}
+						.list {
+							position: relative;
+							width: 1200px;
+							margin: auto;
+							margin-top: 30px;
+							display: flex;
+							.one {
+								border-radius: 5px;
+								background-image: url(../../assets/images/sb.png);
+								background-repeat: no-repeat;
+								.left-card {
+									display: block;
+									width: 290px;
+									height: 200px;
+									
+									.menu-box2 {
+										width: 290px;
+										height: 200px;
+										padding: 0 25px 25px;
+										.menu-titlerow {
+											margin: 0;
+											color: #fff;
+											font-size: 24px;
+											font-weight: bold;
+											display: block;
+											height: 62px;
+											line-height: 100px;
+										}
+										span {
+											color: rgba(233, 233, 233, .6);
+											font-size: 14px;
+											line-height: 40px;
+											display: inline-block;
+										}
+										div a {
+											position: relative;
+											display: inline-block;
+											width: 41%;
+											height: 10px;
+											margin: 8px 0;
+											color: rgba(255, 255, 255, .8);
+											font-size: 13px;
+											line-height: 8px;
+											text-align: center;
+										}
+									}
+								}
+							}
+							.xuan {
+								position: absolute;
+								top: 0;
+								left: 0;
+							
+								.xuanone {
+									cursor: pointer;
+									width: 212px;
+									display: inline-block;
+									box-sizing: border-box;
+									padding: 12px 4px;
+									margin:5px 5px 5px 10px;
+									height: 291px;
+									border: 1px solid #fff;
+									// border-left: none;
+									// border-bottom: none;
+									background-color: #fff;
+									box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+									transition: 0.3s;
+									border-radius: 5px;
+									text-align: center;
+									&:hover{
+										border: 1px solid #9176F8;
+										box-shadow: 0 15px 15px 0 rgba(145,118,248,0.2);
+										transition: 0.3s;
+									}
+									div{
+										cursor: pointer;
+										height:150px;
+										width: 204px;
+										display: flex;
+										align-items: center;
+										img {
+											max-width: 190px;
+											max-height: 150px;
+											margin: auto;
+										}
+									}
+								
+									p {
+										cursor: pointer;
+										text-align: center;
+										margin-top: 20px;
+									}
+									.xuanshiyong {
+										cursor: pointer;
+										font-size: 12px;
+										margin-top: 10px;
+										color: red;
+										overflow: hidden;
+										text-overflow: ellipsis;
+										white-space: nowrap;
+									}
+									.xuanprice {
+										cursor: pointer;
+										font-weight: 600;
+										color: red;
+										span {
+											cursor: pointer;
+											font-weight: normal;
+											font-size: 12px;
+										}
+									}
+								}
+							}
+						}
 		}
 
 		.Commoditymarket {
@@ -2642,6 +2943,7 @@
 				background: #fff;
 				display: flex;
 				align-items: center;
+				z-index: 99999;
 				a{
 					color:#888;
 					&:hover{
@@ -2679,6 +2981,10 @@
 								display: block;
 								height: 62px;
 								line-height: 100px;
+								&:hover{
+									text-decoration: none;
+									opacity: 0.8;
+								}
 							}
 
 							span {
@@ -2706,19 +3012,16 @@
 				.xuan {
 					position: absolute;
 					top: 0;
-					left: 292px;
-				
+					left: 0px;
 					.xuanone {
 						cursor: pointer;
 						width: 212px;
 						display: inline-block;
 						box-sizing: border-box;
 						padding: 12px 4px;
-						margin:5px 5px 5px 10px;
+						margin:5px 5px 10px 10px;
 						height: 291px;
 						border: 1px solid #fff;
-						// border-left: none;
-						// border-bottom: none;
 						background-color: #fff;
 						box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 						transition: 0.3s;
@@ -2728,17 +3031,27 @@
 							border: 1px solid #9176F8;
 							box-shadow: 0 15px 15px 0 rgba(145,118,248,0.2);
 							transition: 0.3s;
+							div {
+								img {
+									transition: all 0.6s;
+									transform: scale(1.4);
+								}
+							}
 						}
 						div{
 							cursor: pointer;
 							height:150px;
 							width: 204px;
+							margin-top: 4px;
 							display: flex;
 							align-items: center;
+							border-radius: 5px;
+							overflow: hidden;
 							img {
-								max-width: 190px;
-								max-height: 150px;
-								margin: auto;
+								transition: all 0.6s;
+								&:hover{
+											transform: scale(1.4);
+										}
 							}
 						}
 					

@@ -101,7 +101,8 @@
                 <div class="one">
 					<a href="https://www.baidu.com" target="_blank" style="padding-right: 10px;">Copyright © 2016-2020 公司快转网</a>
                     <img src="../../assets/images/guohui.png" alt="">
-                    <a href="https://www.baidu.com" target="_blank">沪ICP备26515025456号-1</a>
+                    <a href="https://www.baidu.com" target="_blank" style="padding-right: 10px;">沪ICP备26515025456号-1</a>
+					<a href="http://www.magiczh.com/" target="_blank">&nbsp;&nbsp;&nbsp;技术支持：上海迈暨科技</a>
                 </div>
             </div>
         </div>
@@ -311,6 +312,7 @@ export default {
                     margin-left:20px;
 					display: flex;
 					align-items: center;
+					color:#fff;
                     img{
                         margin-right:0px;
                     }
