@@ -14,7 +14,7 @@
                         <router-link to="/" class="p" exact>帮助中心</router-link>
                         <router-link to="/" class="p" exact>关注我们</router-link>
                         <router-link to="/" class="p" exact>在线客服</router-link>
-                        <p>免费咨询热线 : <span>176-2150-2150</span></p>
+                        <a class="p" style="border-right: none;" href="javascript:void(0);">免费咨询热线 : 176-2150-2150</a>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                         <p>一站式公司交易平台</p>
                     </div>
                     <div class="two">
-                        <router-link to="/"><i class="iconfont icon-shouye1"></i>返回公司快转网首页</router-link>
+                        <router-link to="/"><i class="iconfont icon-shouye1"></i>返回首页</router-link>
                     </div>
                 </div>
             </div>
@@ -52,10 +52,10 @@
                         <el-slider class="block" :disabled=isdisabled v-model="value" @input="sliceing" @change="slicechange"></el-slider>
                     </div>
                     <div class="inof">
-                        <input type="text" v-model="VerificationCode" placeholder="请输入验证码">
-                        <p @click="getCode">{{code}}</p>
+                        <input style="border-right: none;" type="text" v-model="VerificationCode" placeholder="请输入验证码">
+                        <input style="width: 36%;border: 1px solid #eee;" type="button" @click="getCode" :value="code"/>
                     </div>
-                    <button @click="egistered">注册</button>
+                    <button style="margin: 0;" @click="egistered">注册</button>
                     <div class="rlogin">
                         <el-checkbox v-model="checked"></el-checkbox>
                         <p>我已阅读并同意公司快转网</p>
@@ -71,7 +71,7 @@
 
         <!-- egisteredFooter start -->
         <div class="egisteredFooter">
-            <p>钱龙集团有限公司 · 公司转让买卖平台 版权所有 沪ICP备26515025456号-1  服务热线：<strong>176-2150-2150</strong></p>
+            <p>公司快转网 · 公司转让买卖平台 版权所有 沪ICP备26515025456号-1  服务热线：<strong>176-2150-2150</strong></p>
         </div>
         <!-- egisteredFooter end -->
 
@@ -83,7 +83,7 @@
                     <i class="iconfont icon-chahao" @click="isagreement = false"></i>
                 </div>
                 <div style="padding:20px 10px 10px 10px;font-size: 16px;font-weight:600;text-align: center;">公司快转网用户注册协议及法律说明</div>
-                <div style="padding:10px;">本协议是您与公司快转网（简称;本站，网址：web.gongsibangmai.com）所有者之间就公司快转网网站服务等相关事宜所订立的契约，请您仔细阅读本注册协议，您点击;同意并注册按钮后，本协议即构成对双方有约束力的法律文件。</div>
+                <div style="padding:10px;">本协议是您与公司快转网（简称;本站，网址：web.qimingxiaoer.com）所有者之间就公司快转网网站服务等相关事宜所订立的契约，请您仔细阅读本注册协议，您点击;同意并注册按钮后，本协议即构成对双方有约束力的法律文件。</div>
                 <div style="padding:10px;font-size: 14px;font-weight:600;">第1条 本站服务条款的确认和接纳</div>
                 <div style="padding:10px;">1.1本站的各项电子服务的所有权和运作权归公司快转网所有。用户同意所有注册协议条款并完成注册程序，才能成为本站的正式用户。用户确认：本协议条款是处理双方权利义务的契约，始终有效，法律另有强制性规定或双方另有特别约定的，依其规定。</div>
                 <div style="padding:10px;">1.2用户点击同意本协议的，即视为用户确认自己具有享受本站服务、下单等相应的权利能力和行为能力，能够独立承担法律责任。</div>
@@ -172,10 +172,6 @@ export default {
     },
     created(){
     },
-    // beforeDestroy(){
-    //     Cookies.remove('phone');
-    //     Cookies.remove('yzm');
-    // },
     methods:{
         //切换登陆方式
         cisphone:function(){
@@ -360,6 +356,7 @@ export default {
     .egistered{
         font-size: 14px;
         .egisteredTop{
+			min-width: 1200px;
             .topSon{
                 height:40px;
                 background-color: #F9F9F9;
@@ -375,11 +372,9 @@ export default {
                         color:gray;
                         .p{
                             padding:0 10px;
-                            line-height:10px;
-                            border-left:1px solid #ccc;
-                            border-right:1px solid #ccc;
-                            margin:auto 10px;
-                            color:red;
+                            line-height:40px;
+                            margin:0 10px;
+                            color:#F3A54D;
                         }
                     }
                     .topright{
@@ -389,9 +384,8 @@ export default {
                         a,p{
                             margin-left:10px;
                             color:gray;
-                            span{
-                                color:red;
-                                font-weight: bold;
+                            &:hover{
+                            	text-decoration: none;
                             }
                         }
                         .p{
@@ -407,7 +401,8 @@ export default {
             }
             .topSonTwo{
                 background-color: #fff;
-                height:80px;
+                height:91px;
+				margin: 30px auto;
                 .topSonTwos{
                     width:1200px;
                     height:80px;
@@ -417,16 +412,14 @@ export default {
                     .one{
                         display: flex;
                         h1{
-                            margin-top:18px;
-                            margin-right:30px;
+                            margin-top:0;
                             img{
                                 margin:auto 0;
-                                width:150px;
-                                height:48px;
+                                max-height:91px;
                             }
                         }
                         p{
-                            margin: 29px 0 0 56px;
+                            margin: 29px 0 0 0px;
                             float: left;
                             color: #cacaca;
                             font-size: 13px;
@@ -440,8 +433,11 @@ export default {
                             line-height: 22px;
                             margin-right: 15px;
                             color: #6f6d6e;
+							&:hover{
+								text-decoration: none;
+							}
                             i{
-                                color:red;
+                                color:#F3A54D;
                                 margin-right: 6px;
                                 font-size: 22px;
                             }
@@ -451,24 +447,25 @@ export default {
             }
         }
         .egisteredMain{
+			min-width: 1200px;
             position: relative;
             height:600px;
-            background: url(../../assets/images/loginbg.jpg) center top no-repeat;
+            background: url(../../assets/images/gg.png) center top no-repeat;
             .loginnow{
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                width:400px;
-                height:560px;
-                margin:auto;
-                right:160px;
+                position: relative;
+                top: 15px;
+                left: 390px;
+                width: 400px;
+                height: 571px;
+                margin: auto;
+                right: 160px;
                 background-color: #fff;
                 border-radius: 10px;
                 .nowTop{
-                    background: #5d5b5c;
+                    background: #fff;
                     font-style: normal;
-                    color: #fff;
-                    font-size: 18px;
+                    color: #5d5b5c;
+                    font-size: 20px;
                     line-height: 70px;
                     border-radius: 8px 8px 0 0;
                     height: 70px;
@@ -495,7 +492,6 @@ export default {
                         height:40px;
                         p{
                             line-height: 40px;
-                            border-radius: 6px;
                             background-color: #F0F0F0;
                             font-size: 12px;
                             text-align: center;
@@ -535,29 +531,28 @@ export default {
                             width:50px;
                             text-align: center;
                             height:40px;
-                            background-color: red;
-                            border-radius: 0 6px 6px 0;
+                            background-color: #f3a54d;
+                            border-radius: 0px;
                             background: url(../../assets/images/hua.png) no-repeat center center;
                             background-size: 100% 100%;
                         }
                     }
                     .inof{
-                        border:1px solid #eee;
                         display: flex;
                         margin-top:20px;
-                        height:40px;
                         input{
-                            border:none;
+                            border:1px solid #eee;
                             width:64%;
                         }
                         p{
                             display: block;
+							margin: 0;
                             width:36%;
                             text-align: center;
                             line-height: 40px;
                             font-size: 12px;
                             background-color: #F0F0F0;
-                            color:red;
+                            color:#f3a54d;
                         }
                     }
                     button{
@@ -566,7 +561,7 @@ export default {
                         margin-top: 30px;
                         height: 40px;
                         border-radius: 5px;
-                        background: #fe3636;
+                        background: #F3A54D;
                         color: #fff;
                         width: 100%;
                         font-size: 16px;
@@ -583,7 +578,8 @@ export default {
                             font-size: 12px;
                         }
                         span{
-                            color:red;
+							cursor: pointer;
+                            color:#f3a54d;
                         }
                     }
                 }
@@ -605,6 +601,16 @@ export default {
             left: 0;
             top: 0;
             background-color: rgba(0, 0, 0, .3);
+			@media screen and (max-width: 600px) {
+			    .father {
+			        width: 90%;
+			    }
+			}
+			@media screen and (min-width: 600px) {
+			    .father {
+			        width:750px;
+			    }
+			}
             .father{
                 position: absolute;
                 top: 0;
@@ -612,12 +618,14 @@ export default {
                 left: 0;
                 right: 0;
                 margin: auto;
-                width:750px;
                 height:550px;
                 background-color: #fff;
-                border:4px solid rgba(0, 0, 0, .5);
                 overflow: auto;
+				border-radius: 5px;
                 .xieyi{
+					position: fixed;
+					border:none;
+					width: inherit;
                     display: flex;
                     justify-content: space-between;
                     box-sizing: border-box;
@@ -625,8 +633,20 @@ export default {
                     height:46px;
                     line-height: 46px;
                     background-color: #F8F8F8;
+					border-radius: 5px;
+					p{
+						width: 90%;
+						border-radius: 5px;
+						text-align: center;
+						font-size: 18px;
+						font-weight: 600;
+					}
                     i{
+						cursor: pointer;
                         font-size: 30px;
+						&:hover{
+							color:#f3a54d;
+						}
                     }
                 }
             }
