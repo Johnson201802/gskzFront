@@ -7,14 +7,14 @@
                     <div class="topleft">
                         <p>Hi~,  您好,  欢迎来到公司快转网, 综合企业服务信息分类平台</p>
                         <p class="p">登录</p>
-                        <router-link to="/Egistered" tag="p">免费注册</router-link>
+                        <router-link to="/Egistered" tag="p" style="color:#F3A54D">免费注册</router-link>
                     </div>
                     <div class="topright">
                         <router-link to="/" class="p" exact>平台首页</router-link>
                         <router-link to="/" class="p" exact>帮助中心</router-link>
                         <router-link to="/" class="p" exact>关注我们</router-link>
                         <router-link to="/" class="p" exact>在线客服</router-link>
-                        <p>免费咨询热线 : <span>176-2150-2150</span></p>
+                        <a class="p" style="border-right: none;" href="javascript:void(0);">免费咨询热线 : 176-2150-2150</a>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                         <p>一站式公司交易平台</p>
                     </div>
                     <div class="two">
-                        <router-link to="/"><i class="iconfont icon-shouye1"></i>返回首页</router-link>
+                        <router-link to="/" style="text-decoration: none;"><i class="iconfont icon-shouye1"></i>返回首页</router-link>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@
 
         <!-- loginFooter start -->
         <div class="loginFooter">
-            <p>钱龙集团有限公司 · 公司转让买卖平台 版权所有 沪ICP备26515025456号-1  服务热线：<strong>176-2150-2150</strong></p>
+            <p>公司快转网 · 公司转让买卖平台 版权所有 沪ICP备26515025456号-1  服务热线：<strong>176-2150-2150</strong></p>
         </div>
         <!-- loginFooter end -->
 
@@ -366,6 +366,8 @@ export default {
     .login{
         font-size: 14px;
         .loginTop{
+			min-width: 1200px;
+			margin-bottom: 30px;
             .topSon{
                 height:40px;
                 background-color: #F9F9F9;
@@ -381,11 +383,9 @@ export default {
                         color:gray;
                         .p{
                             padding:0 10px;
-                            line-height:10px;
-                            border-left:1px solid #ccc;
-                            border-right:1px solid #ccc;
-                            margin:10px 10px;
-                            color:red;
+                            line-height:40px;
+                            margin:0 10px;
+                            color:gray;
                         }
                     }
                     .topright{
@@ -395,10 +395,9 @@ export default {
                         a,p{
                             margin-left:10px;
                             color:gray;
-                            span{
-                                color:red;
-                                font-weight: bold;
-                            }
+                            &:hover{
+								text-decoration: none;
+							}
                         }
                         .p{
                             padding:0 10px;
@@ -413,26 +412,24 @@ export default {
             }
             .topSonTwo{
                 background-color: #fff;
-                height:80px;
+                height:91px;
                 .topSonTwos{
                     width:1200px;
-                    height:80px;
-                    margin:auto;
+                    height:91px;
+                    margin:30px auto auto auto;
                     display: flex;
                     justify-content: space-between;
                     .one{
                         display: flex;
                         h1{
-                            margin-top:18px;
-                            margin-right:30px;
+                            margin-top:0;
                             img{
                                 margin:auto 0;
-                                width:150px;
-                                height:48px;
+                                max-width:239px;
                             }
                         }
                         p{
-                            margin: 29px 0 0 56px;
+                            margin: 35px 0 0 0px;
                             float: left;
                             color: #cacaca;
                             font-size: 13px;
@@ -447,7 +444,7 @@ export default {
                             margin-right: 15px;
                             color: #6f6d6e;
                             i{
-                                color:red;
+                                color:rgb(243, 165, 77);
                                 margin-right: 6px;
                                 font-size: 22px;
                             }
@@ -459,26 +456,25 @@ export default {
         .loginMain{
             position: relative;
             height:600px;
-            background: url(../../assets/images/gg.png) center top no-repeat;;
+			min-width: 1200px;
+            background: url(../../assets/images/gg.png) center top no-repeat;
             .loginnow{
                 position: absolute;
                 top: 0;
                 bottom: 0;
-                width:400px;
-                height:422px;
-                margin:auto;
-                right:160px;
+                width: 400px;
+                height: 422px;
+                margin: auto;
+                right: 365px;
                 background-color: #fff;
                 border-radius: 10px;
                 .nowTop{
-                    background: #5d5b5c;
-                    font-style: normal;
-                    color: #fff;
-                    font-size: 18px;
-                    line-height: 70px;
-                    border-radius: 8px 8px 0 0;
-                    height: 70px;
-                    text-align: center;
+                        background: #fff;
+                        line-height: 70px;
+                        border-radius: 8px 8px 0 0;
+                        height: 70px;
+                        text-align: center;
+						font-size: 20px;
                 }
                 .loginxx{
                     height:260px;
@@ -509,7 +505,7 @@ export default {
                         overflow: hidden;
                         height:40px;
                         input{
-                            width:56%;
+                            width:80%;
                             padding-top:4px;
                             overflow: hidden;
                         }
@@ -537,16 +533,18 @@ export default {
                         .auto{
                             p{
                                 margin-left:6px;
+								cursor: pointer;
                             }
                             .hred:hover{
-                                color:red
+                                color:#f3a54d
                             }
                         }
                         .mianfei{
                             p{
                                 margin-left: 6px;
+								cursor: pointer;
                                 &:hover{
-                                    color:red
+                                    color:#f3a54d
                                 }
                             }
                         }
@@ -557,7 +555,7 @@ export default {
                         margin-top: 22px;
                         height: 40px;
                         border-radius: 5px;
-                        background: #fe3636;
+                        background:rgb(243, 165, 77);
                         color: #fff;
                         width: 100%;
                         margin: 12px 0 27px;
@@ -586,7 +584,7 @@ export default {
         .loginFooter{
             p{
                 width:1200px;
-                line-height: 100px;
+                line-height: 106px;
                 margin:auto;
                 text-align: center;
             }
@@ -599,31 +597,54 @@ export default {
             width:100%;
             height:100%;
             background-color: rgba(0, 0, 0, 0.3);
+			    /* 
+			      turn : 定义的动画名称
+			      1s : 动画时间
+			      linear : 动画以何种运行轨迹完成一个周期
+			      infinite :规定动画应该无限次播放
+			     */
+			    @keyframes turn{
+			      0%{-webkit-transform:rotate(0deg);}
+			      25%{-webkit-transform:rotate(90deg);}
+			      50%{-webkit-transform:rotate(180deg);}
+			      75%{-webkit-transform:rotate(270deg);}
+			      100%{-webkit-transform:rotate(360deg);}
+			    }
             .son{
                 position: absolute;
-                top:0;
+                top: 0;
                 left: 0;
                 right: 0;
                 bottom: 0;
                 margin: auto;
-                width:450px;
-                height:355px;
+                width: 450px;
+                height: 461px;
+                border-radius: 5px;
                 opacity: 0;
                 background-color: #fff;
                 .resetTop{
+					border-radius: 5px 5px 0 0;
                     position: relative;
-                    background-color: #5D5B5C;
+                    background-color: #fff;
+					padding:30px 0 0 0;
                     p{
-                        color:#fff;
+                        color:#5D5B5C;
                         font-size: 20px;
                         line-height:40px;
                         text-align: center;
                     }
                     i{
                         position: absolute;
-                        top: 4px;
-                        right: 8px;
+                        top: 8px;
+                        right: 17px;
                         font-size: 30px;
+						&:hover{
+							color:rgb(243, 165, 77);
+							cursor: pointer;
+							animation:turn 0.3s linear infinite;
+							-webkit-animation:turn 0.5s linear infinite; /* Safari 和 Chrome */
+							animation-iteration-count:1;
+						}
                     }
                 }
                 .resetmain{
@@ -634,29 +655,32 @@ export default {
                         margin-top:20px;
                         border:1px solid #eee;
                         p{
+							min-height: 60px;
                             width:14%;
                             text-indent: 10px;
                             font-size: 12px;
                             color: #282828;
-                            line-height: 50px;
+                            line-height: 62px;
+							margin:0;
                         }
                         input{
                             width:54%;
-                            line-height: 50px;
+                            line-height: 62px;
                             border:none;
                             outline: none;
                             overflow: hidden;
                         }
                         span{
                             display: block;
-                            margin-top:14px;
-                            width:110px;
-                            background-color: #FE3636;
+                            margin-top: 18px;
+							cursor: pointer;
+                            width: 110px;
+                            background-color: #F3A54D;
                             border-radius: 6px;
-                            height:24px;
+                            height: 33px;
                             font-size: 12px;
-                            line-height: 24px;
-                            color:#fff;
+                            line-height: 32px;
+                            color: #fff;
                             text-align: center;
                         }
                     }
@@ -667,14 +691,14 @@ export default {
                     line-height: 40px;
                     height: 40px;
                     border-radius: 5px;
-                    background: #fe3636;
+                    background: #F3A54D;
                     color: #fff;
                     width: 315px;
                     margin: auto;
                     margin-top: 30px;
                     font-size: 16px;
                     outline: none;
-                    border:none;
+                    border: none;
                     letter-spacing: 6px;
                 }
             }

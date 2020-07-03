@@ -14,7 +14,7 @@
                         <router-link to="/" class="p" exact>帮助中心</router-link>
                         <router-link to="/" class="p" exact>关注我们</router-link>
                         <router-link to="/" class="p" exact>在线客服</router-link>
-                        <p>免费咨询热线 : <span>176-2150-2150</span></p>
+                        <a class="p" style="border-right: none;" href="javascript:void(0);">免费咨询热线 : 176-2150-2150</a>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                         <p>一站式公司交易平台</p>
                     </div>
                     <div class="two">
-                        <router-link to="/"><i class="iconfont icon-shouye1"></i>返回公司快转网首页</router-link>
+                        <router-link to="/"><i class="iconfont icon-shouye1"></i>返回首页</router-link>
                     </div>
                 </div>
             </div>
@@ -375,11 +375,9 @@ export default {
                         color:gray;
                         .p{
                             padding:0 10px;
-                            line-height:10px;
-                            border-left:1px solid #ccc;
-                            border-right:1px solid #ccc;
-                            margin:auto 10px;
-                            color:red;
+                            line-height:40px;
+                            margin:0 10px;
+                            color:#F3A54D;
                         }
                     }
                     .topright{
@@ -389,9 +387,8 @@ export default {
                         a,p{
                             margin-left:10px;
                             color:gray;
-                            span{
-                                color:red;
-                                font-weight: bold;
+                            &:hover{
+                            	text-decoration: none;
                             }
                         }
                         .p{
@@ -407,7 +404,7 @@ export default {
             }
             .topSonTwo{
                 background-color: #fff;
-                height:80px;
+                height:91px;
                 .topSonTwos{
                     width:1200px;
                     height:80px;
@@ -417,16 +414,14 @@ export default {
                     .one{
                         display: flex;
                         h1{
-                            margin-top:18px;
-                            margin-right:30px;
+                            margin-top:0;
                             img{
                                 margin:auto 0;
-                                width:150px;
-                                height:48px;
+                                max-height:91px;
                             }
                         }
                         p{
-                            margin: 29px 0 0 56px;
+                            margin: 29px 0 0 0px;
                             float: left;
                             color: #cacaca;
                             font-size: 13px;
@@ -440,8 +435,11 @@ export default {
                             line-height: 22px;
                             margin-right: 15px;
                             color: #6f6d6e;
+							&:hover{
+								text-decoration: none;
+							}
                             i{
-                                color:red;
+                                color:#F3A54D;
                                 margin-right: 6px;
                                 font-size: 22px;
                             }
@@ -453,7 +451,7 @@ export default {
         .egisteredMain{
             position: relative;
             height:600px;
-            background: url(../../assets/images/loginbg.jpg) center top no-repeat;
+            background: url(../../assets/images/gg.png) center top no-repeat;
             .loginnow{
                 position: absolute;
                 top: 0;
