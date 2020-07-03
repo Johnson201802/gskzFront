@@ -402,7 +402,10 @@ export default {
             .topSonTwo{
                 background-color: #fff;
                 height:91px;
+<<<<<<< HEAD
 				margin: 30px auto;
+=======
+>>>>>>> a0750fbb70822e075c3a0e4cf14ca0f660d84a4d
                 .topSonTwos{
                     width:1200px;
                     height:80px;
