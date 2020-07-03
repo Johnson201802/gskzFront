@@ -71,21 +71,18 @@
             <div class="result">
                 <div class="resulttop">
                     <div>搜索结果</div>
-                    <!-- <div :class="{'showres' : rstopnum == 0}" @click="cshowres(0)">
+                    <div :class="{'showres' : rstopnum == 0}" @click="cshowres(0)">
                         <span>综合排序 </span>
                         <i class="iconfont icon-arrowBottom"></i>
                     </div>
                     <div :class="{'showres' : rstopnum == 1}" @click="cshowres(1)">
-                        <span>热门浏览 </span>
+                        <span>价格排序 </span>
                         <i class="iconfont icon-arrowBottom"></i>
                     </div>
                     <div :class="{'showres' : rstopnum == 2}" @click="cshowres(2)">
                         <span>发布时间 </span>
                         <i class="iconfont icon-arrowBottom"></i>
                     </div>
-                    <div :class="{'showres' : rstopnum == 3}" @click="cshowres(3)">
-                        <span>免费专区</span>
-                    </div> -->
                 </div>
                 <div class="resultbottom">
                     <router-link class="bfath" tag="div"
@@ -413,16 +410,16 @@ export default {
 
 <style scoped lang="less">
     .transferMain{
-		background-color: #f8f8f8;
+		background-color: #fff;
         font-size: 14px;
         .nav{
             width: 1200px;
             height: 60px;
-            margin: 20px auto;
+            margin: 5px auto;
             padding-top: 10px;
             display: flex;
             justify-content: space-between;
-            background-color: #f8f8f8;
+            background-color: #fff;
 			&::before{
 				display: none;
 				content: '';
@@ -653,11 +650,12 @@ export default {
             }
             .result{
                 width:1200px;
-                margin:30px auto 0;
+                margin:10px auto;
                 .resulttop{
                     display: flex;
                     height:54px;
                     background-color: #fff;
+					border-radius: 5px;
                     .showres{
                         color:skyblue
                     }
