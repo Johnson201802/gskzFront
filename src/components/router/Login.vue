@@ -459,28 +459,15 @@ export default {
 			min-width: 1200px;
             background: url(../../assets/images/gg.png) center top no-repeat;
             .loginnow{
-<<<<<<< HEAD
                 position: relative;
-                    position: relative;
-                        top: 100px;
-                        left: 388px;
-                        width: 400px;
-                        height: 422px;
-                        margin: auto;
-                        right: 365px;
-                        background-color: #fff;
-                        border-radius: 10px;
-=======
-                position: absolute;
-                top: 0;
-                bottom: 0;
+                top: 100px;
+                left: 388px;
                 width: 400px;
                 height: 422px;
                 margin: auto;
                 right: 365px;
                 background-color: #fff;
                 border-radius: 10px;
->>>>>>> a0750fbb70822e075c3a0e4cf14ca0f660d84a4d
                 .nowTop{
                         background: #fff;
                         line-height: 70px;
@@ -623,7 +610,6 @@ export default {
 			      75%{-webkit-transform:rotate(270deg);}
 			      100%{-webkit-transform:rotate(360deg);}
 			    }
-<<<<<<< HEAD
 				@media screen and (max-width: 600px) {
 				    .son {
 				        width: 90%;
@@ -634,8 +620,6 @@ export default {
 				        width: 450px;
 				    }
 				}
-=======
->>>>>>> a0750fbb70822e075c3a0e4cf14ca0f660d84a4d
             .son{
                 position: absolute;
                 top: 0;
@@ -643,10 +627,7 @@ export default {
                 right: 0;
                 bottom: 0;
                 margin: auto;
-<<<<<<< HEAD
-=======
                 width: 450px;
->>>>>>> a0750fbb70822e075c3a0e4cf14ca0f660d84a4d
                 height: 461px;
                 border-radius: 5px;
                 opacity: 0;
