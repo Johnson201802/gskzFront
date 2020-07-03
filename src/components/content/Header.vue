@@ -109,7 +109,7 @@
 
             <!-- alltop start -->
             <div class="alltop">
-                <div class="bg">
+                <div class="bg" v-show="is_index">
                     <p>全部分类</p>
                     <p><i class="iconfont icon-youjiantou"></i></p>
                 </div>
@@ -133,6 +133,10 @@
 import axios from '../../api/axios'
 import Cookies from 'js-cookie'
     export default{
+		props:{
+			is_index:Boolean,
+			default:false
+		},
         data(){
             return{
                 username:"",
@@ -274,7 +278,7 @@ import Cookies from 'js-cookie'
             }
             .headerLogo{
                 width:1200px;
-                margin:20px auto;
+                margin:30px auto;
                 display: flex;
                 justify-content: space-between;
                 .logo{
@@ -482,10 +486,10 @@ import Cookies from 'js-cookie'
             .alltop{
                 font-size: 18px;
                 font-weight: 500;
-                position: absolute;
-                top: 187px;
-                left: 0;
-                right: 0;
+                // position: absolute;
+                // top: 187px;
+                // left: 0;
+                // right: 0;
                 margin:auto;
                 width:1200px;
                 height:40px;
@@ -495,6 +499,7 @@ import Cookies from 'js-cookie'
                 .bg{
                     width:230px;
                     height:40px;
+					margin-right: 40px;
                     display: flex;
                     justify-content: space-around;
                     color:#fff;
@@ -519,7 +524,7 @@ import Cookies from 'js-cookie'
                 .item{
                     position: relative;
                     width:95px;
-                    text-align: center;
+                    // text-align: center;
                     line-height: 40px;
                     &:hover{
                         a{

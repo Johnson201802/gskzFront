@@ -1,6 +1,6 @@
 <template>
     <div class="Transfer">
-        <Header></Header>
+        <Header :is_index="true"></Header>
         <TransferMain></TransferMain>
         <goTop></goTop>
         <Footer></Footer>

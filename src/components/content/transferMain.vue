@@ -21,10 +21,6 @@
                     <i class="iconfont icon-wp-jsb"></i>
                     <p>求购公司</p>
                 </div>
-                <div class="EA2417 xxx">
-                    <i class="iconfont icon-wp-jsb"></i>
-                    <p>免费发布公司</p>
-                </div>
             </div>
         </div>
         <!-- nav end -->
@@ -417,16 +413,23 @@ export default {
 
 <style scoped lang="less">
     .transferMain{
-        margin-top:80px;
+		background-color: #f8f8f8;
         font-size: 14px;
         .nav{
-            width:1200px;
-            height:60px;
-            margin:auto;
+            width: 1200px;
+            height: 60px;
+            margin: 20px auto;
+            padding-top: 10px;
             display: flex;
             justify-content: space-between;
+            background-color: #f8f8f8;
+			&::before{
+				display: none;
+				content: '';
+			}
             .one{
                 display: flex;
+				width: 50%;
                 p,i{
                     line-height: 60px;
                     margin-right: 10px;
@@ -445,15 +448,19 @@ export default {
                 }
             }
             .two{
+				width:50%;
                 display: flex;
-                justify-content: space-between;
-                width:450px;
+                justify-content: flex-end;
                 .xxx{
                     display: flex;
+					width: 50%;
                     justify-content: center;
-                    margin:auto 0;
+                    margin:auto 10px;
                     width:140px;
                     line-height: 34px;
+					p{
+						margin: 0;
+					}
                     i{
                         margin-right: 10px;
                         font-size: 18px;
@@ -462,6 +469,9 @@ export default {
                 .EEEEEE{
                     background-color: #EEEEEE;
                     position:relative;
+					color:#888;
+					cursor: pointer;
+					border-radius: 5px;
                     &:hover{
                         .ewm{
                             display: block;
@@ -491,8 +501,10 @@ export default {
                     }
                 }
                 .FF7E00{
-                    background-color: #FF7E00;
-                    color:#fff;
+                    background-color: #EEEEEE;
+                    color:#888;
+					border-radius: 5px;
+					cursor: pointer;
                 }
                 .EA2417{
                     background-color: #EA2417;
@@ -501,7 +513,7 @@ export default {
             }
         }
         .screen{
-            background-color: #F2F2F2;
+            background-color: #f8f8f8;
             padding-top:10px;
             .margin{
                 width:1200px;
@@ -538,24 +550,27 @@ export default {
                                 div{
                                     padding:0 16px;
                                     margin-right: 4px;
-                                    line-height: 30px;
-                                    border-radius: 16px;
+                                    line-height: 29px;
+                                    border-radius: 5px;
                                     margin-top:4px;
+									cursor: pointer;
+									border:1px solid #fff;
                                     &:hover{
-                                        color:red
+                                        color:#F3A54D
                                     }
                                 }
                                 .show{
-                                    background-color: red;
-                                    color:#fff;
+                                    border: 1px solid #F3A54D;
+                                    color:#F3A54D;
                                     &:hover{
-                                        color:#fff
+                                        color:#F3A54D
                                     }
                                 }
                             }
                             .span{
                                 color:#0085D0;
                                 line-height: 35px;
+								cursor: pointer;
                             }
                         }
                     }

@@ -1346,10 +1346,8 @@
 
 <style scoped lang="less">
 	.mySwiper {
-		margin-top: 80px;
 		width: 100%;
 		position: relative;
-
 		.swiper {
 			width: 100%;
 			min-width: 1200px;

@@ -1,6 +1,6 @@
 <template>
     <div id="Home">
-        <Header></Header>
+        <Header :is_index="true"></Header>
         <MySwiper></MySwiper>
         <goTop></goTop>
         <Footer></Footer>
