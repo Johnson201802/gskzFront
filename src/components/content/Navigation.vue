@@ -99,7 +99,7 @@
         top: 40px;
         left: 0;
         min-height: 100%;
-        border-right:1px solid #dcdfe6;
+        border-right:1px solid #888;
         h1{
             margin:10px 0 0 10px 
         }

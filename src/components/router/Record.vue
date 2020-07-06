@@ -157,7 +157,7 @@ export default {
                 border-bottom: 1px solid #ddd;
                 .span{
                     width:140px;
-                    background-color: #409EFF;
+                    background-color: #F3A54D;
                     line-height: 34px;
                     border-radius: 6px;
                     color:#fff;
@@ -278,8 +278,8 @@ export default {
                     text-align: center;
                     line-height: 40px;
                     color: #fff;
-                    background-color: #409eff;
-                    border-color: #409eff;
+                    background-color: #F3A54D;
+                    border-color: #F3A54D;
                     border-radius: 6px;
                     margin:auto;
                 }

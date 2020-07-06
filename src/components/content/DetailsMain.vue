@@ -18,13 +18,9 @@
                         <p>扫码联系客服</p>
                     </div>
                 </div>
-                <div class="FF7E00">
+                <div class="FF7E00 xxx">
                     <i class="iconfont icon-wp-jsb"></i>
                     <p>求购公司</p>
-                </div>
-                <div class="EA2417">
-                    <i class="iconfont icon-wp-jsb"></i>
-                    <p>免费发布公司</p>
                 </div>
             </div>
         </div>
@@ -69,40 +65,30 @@
                     </div>
                     <div class="leftThree">
                         <p class="price">出售价格：<span>￥ {{companyinformation.service_price}}</span></p>
-                        <p class="nozhuan">郑重承诺：易转网不赚差价, 信息保真</p>
-                        <div>
-                            <p>关注易转网</p>
-                            <i class="iconfont icon-ico"></i>
-                            <div class="guanzhu">
-                                <span></span>
-                                <img src="https://www.yizhuanweb.com/uploads/20200401/161ab13b7e2e03ae575bf160a77f1251.jpg" alt="">
-                            </div>
-                        </div>
+                        <p class="nozhuan">郑重承诺：快转网不赚差价, 信息保真</p>
+						<div class="collection" style="cursor: pointer;">
+							<div style="width: 100px;">
+							    <p>关注快转网</p>
+							    <i class="iconfont icon-ico"></i>
+							    <div class="guanzhu">
+							        <span></span>
+							        <img src="https://www.yizhuanweb.com/uploads/20200401/161ab13b7e2e03ae575bf160a77f1251.jpg" alt="">
+							    </div>
+							</div>
+						</div>
+						<div class="collection" style="cursor: pointer;">
+							<div  style="width: 100px;">
+								<p>收藏</p>
+							    <i class="iconfont icon-wujiaoxing"></i>
+							</div>
+						</div>
                     </div>
                     <div class="leftFour">
                         <p>公司转让编号：{{companyinformation.service_id}}</p>
-                        <p>交易方式：易转网居间</p>
+                        <p>交易方式：快转网线上担保交易</p>
                         <p>浏览量：{{companyinformation.browse}}次</p>
                         <!-- browse -->
                         <p>发布时间：{{companyinformation.create_time}}</p>
-                    </div>
-                    <div class="leftFive">
-                        <!-- <p>查看公司全称</p> -->
-                        <div class="posters">
-                            <img src="../../assets/images/weChatIcon.png" alt="">
-                            <span>生成海报</span>
-                        </div>
-                        <div class="postersshow">
-                            <span class="spano">海报</span>
-                            <span class="spant">扫码生成海报 快速分享</span>
-                            <div class="hbimg">
-                                <img src="https://www.yizhuanweb.com/qrcode/build?text=https%3A%2F%2Fm.yizhuanweb.com%2Fmobile%2Findex%2Fshow_qrcode%3Ftype%3Dcompany%26id%3D114694&logo=1&logosize=50" alt="">
-                            </div>
-                        </div>
-                        <div class="collection">
-                            <i class="iconfont icon-wujiaoxing"></i>
-                            <span>收藏</span>
-                        </div>
                     </div>
                     <div class="leftSix">
                         <div v-for="(item,index) in showlist" :key="index">
@@ -139,7 +125,7 @@
                             <p>电话咨询：{{companyinformation.contact_num}}</p>
 
                         </div>
-                        <p class="p">联系我时,请说在易转网看到的,谢谢!</p>
+                        <p class="p">联系我时,请说在快转网看到的,谢谢!</p>
                     </div>
                     <!-- <div class="rfour">
                         <span></span>
@@ -370,68 +356,37 @@
                     </ul>
                 </div>
             </div>
-            <div class="result">
-                <div class="wei">
-                    <img src="../../assets/images/weizhaodao.png" alt="">
-                    <div class="weione">
-                        <div>
-                            <p class="pone">没有找到心仪的公司?</p>
-                            <p class="ptwo">联系客服帮忙找</p>
-                            <span>或</span>
-                            <p class="pthree">发布求购公司需求</p>
+            <div class="interested">
+                <h2>您可能感兴趣的代办服务</h2>
+                <p>为您精选</p>
+                <div class="inlist">
+                    <router-link 
+                        class="inlistone"
+                        tag="div"
+                        :to='{path:"/Detailstransfer",query:{id:item.service_id}}'
+                        v-for="(item,index) in interested" 
+                        :key="index"
+                    >
+                        <div class="intop">
+                            <img src="../../assets/images/tm.png" alt="">
+                            <p>{{item.service_p_name}}</p>
                         </div>
-                        <p class="pfour">不要急哦，好多热门资源没有展示出来，马上联系服务顾问获取</p>
-                    </div>
-                </div>
-                <div class="interested">
-                    <!-- <p>您可能感兴趣的公司</p> -->
-                    <img class="img" src="../../assets/images/interse.png" alt="">
-                    <div class="inlist">
-                        <div class="inlistone" @click="init(item.service_id)" v-for="(item,index) in interested" :key="index">
-                            <div class="intop">
-                                <img src="../../assets/images/tm.png" alt="">
-                                <p>{{item.service_p_name}}</p>
+                        <div class="xiangxi">
+                            <div class="xxone">
+                                <span>成立时间</span>
+                                <p>{{item.fund_date}}</p>
                             </div>
-                            <div class="xiangxi">
-                                <div class="xxone">
-                                    <span>成立时间</span>
-                                    <p>{{item.fund_date}}</p>
-                                </div>
-                                <div class="xxtwo">
-                                    <span>注册资本</span>
-                                    <p>{{item.registered_capital}}万人民币</p>
-                                </div>
-                                <p class="xxthree">{{item.service_price}}</p>
+                            <div class="xxtwo">
+                                <span>注册资本</span>
+                                <p>{{item.registered_capital}}万人民币</p>
                             </div>
-                            <div class="hangye">
-                                <p>企业行业：</p>
-                                <p>{{item.company_trade}}</p>
-                            </div>
+                            <p class="xxthree">{{item.service_price}}</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="agent">
-                <div class="agentson">
-                    <span></span>
-                    <p>代办公司推荐</p>
-                </div>
-                <div class="son" v-for="(item,index) in agent" :key="index">
-                    <img class="img" :src="item.url" alt="">
-                    <div class="title">
-                        <p class="one">{{item.title}}</p>
-                        <p class="two">{{item.content}}</p>
-                    </div>
-                    <div class="sontwo">
-                        <div class="one">
-                            <img src="../../assets/images/publisher-tel.jpg" alt="">
-                            <p class="color">{{item.number}}</p>
+                        <div class="hangye">
+                            <p>企业行业：</p>
+                            <p>{{item.company_trade}}</p>
                         </div>
-                        <div class="two">
-                            <i class="iconfont icon-iconset0392"></i>
-                            <p>{{item.address}}</p>
-                        </div>
-                    </div>
+                    </router-link>
                 </div>
             </div>
         </div>
@@ -603,20 +558,22 @@ export default {
 <style scoped lang="less">
     .DetailsMain{
         font-size: 14px;
-        margin-top:80px;
         p,span{
             overflow: hidden;
             text-overflow:ellipsis;
             white-space: nowrap;
         }
         .nav{
-            width:1200px;
-            height:60px;
-            margin:auto;
+            width: 1200px;
+            height: 60px;
+            margin: 5px auto;
+            padding-top: 10px;
             display: flex;
             justify-content: space-between;
+            background-color: #fff;
             .one{
                 display: flex;
+                width: 50%;
                 p,i{
                     line-height: 60px;
                     margin-right: 10px;
@@ -635,15 +592,19 @@ export default {
                 }
             }
             .two{
+				width:50%;
                 display: flex;
-                justify-content: space-between;
-                width:450px;
-                div{
+                justify-content: flex-end;
+                .xxx{
                     display: flex;
+					width: 50%;
                     justify-content: center;
-                    margin:auto 0;
+                    margin:auto 10px;
                     width:140px;
                     line-height: 34px;
+					p{
+						margin: 0;
+					}
                     i{
                         margin-right: 10px;
                         font-size: 18px;
@@ -652,6 +613,9 @@ export default {
                 .EEEEEE{
                     background-color: #EEEEEE;
                     position:relative;
+					color:#888;
+					cursor: pointer;
+					border-radius: 5px;
                     &:hover{
                         .ewm{
                             display: block;
@@ -660,7 +624,6 @@ export default {
                     .ewm{
                         display: none;
                         position: absolute;
-                        z-index: 9999;
                         width:170px;
                         height:180px;
                         top: 50px;
@@ -682,8 +645,10 @@ export default {
                     }
                 }
                 .FF7E00{
-                    background-color: #FF7E00;
-                    color:#fff;
+                    background-color: #EEEEEE;
+                    color:#888;
+					border-radius: 5px;
+					cursor: pointer;
                 }
                 .EA2417{
                     background-color: #EA2417;
@@ -692,7 +657,7 @@ export default {
             }
         }
         .screen{
-            background-color: #F2F2F2;
+            background-color: #f8f8f8;
             padding-top:10px;
             .margin{
                 width:1200px;
@@ -700,7 +665,9 @@ export default {
                 display: flex;
                 justify-content: space-between;
                 .left{
+					border-radius: 5px;
                     width:888px;
+					overflow: hidden;
                     .leftOne{
                         position: relative;
                         background-color: #fff;
@@ -732,7 +699,6 @@ export default {
                         height: 80px;
                         div{
                             padding:0 39px;
-                            border-left: 1px solid #F2F2F2;
                             p,span{
                                 line-height: 24px;
                                 text-align: center;
@@ -751,14 +717,14 @@ export default {
                         display: flex;
                         line-height:100px;
                         height: 100px;
-                        background-color: #EAEDEF;
+                        background-color: #fff;
                         padding:0 30px;
                         position: relative;
                         .price{
                             font-weight: bold;
                             color:#626262;
                             span{
-                                color: #ea2417;
+                                color: #FF805A;
                                 font-size: 30px;
                             }
                         }
@@ -767,19 +733,17 @@ export default {
                             margin-left: 20px;
                         }
                         div{
-                            position: absolute;
-                            top: 0;
-                            right: 0;
-                            border-left: 1px solid rgba(217, 222, 237, 0.58);
                             width:250px;
+							margin-left: 54px;
                             height:100px;
                             color:#ccc;
                             text-align: center;
+							width:100px;
                             p{
                                 margin-top:16px;
                                 text-align: center;
                                 font-size: 12px;
-                                line-height: 30px;
+                                line-height: 13px;
                             }
                             i{
                                 display: block;
@@ -793,9 +757,9 @@ export default {
                                 position: absolute;
                                 z-index: 100;
                                 display: none;
-                                top: 100px;
-                                left: 55px;
-                                border: 1px solid #ff364a;
+                                top: 84px;
+                                left: 485px;
+                                border: 1px solid #FF805A;
                                 width: 140px;
                                 height: 140px;
                                 span{
@@ -829,6 +793,27 @@ export default {
                             color: #999;
                             margin-left: 30px;
                         }
+						.collection{
+							cursor: pointer;
+						    line-height:22px;
+						    border:1px solid #999;
+						    border-radius: 5px;
+						    margin:38px 0;
+						    color:#444;
+						    font-size: 12px;
+						    text-align: center;
+							padding:5px 10px;
+							div{
+								cursor: pointer;
+								p{
+									margin:0px;
+								}
+							}
+						    i{
+								cursor: pointer;
+						        margin-right: 4px;
+						    }
+						}
                     }
                     .leftFive{
                         position: relative;
@@ -925,21 +910,6 @@ export default {
                                 background: #fff;
                             }
                         }
-                        .collection{
-                            width:80px;
-                            height:22px;
-                            line-height:22px;
-                            border:1px solid #999;
-                            border-radius: 12px;
-                            margin:38px 0;
-                            margin-left: 50px;
-                            color:#444;
-                            font-size: 12px;
-                            text-align: center;
-                            i{
-                                margin-right: 4px;
-                            }
-                        }
                     }
                     .leftSix{
                         display:flex;
@@ -961,8 +931,12 @@ export default {
                 .right{
                     width:300px;
                     box-sizing: border-box;
-                    padding:30px;
+                    padding-top:35px;
+                    padding-right:30px;
+                    padding-bottom:30px;
+                    padding-left:30px;
                     background-color: #fff;
+					border-radius: 5px;
                     .rone{
                         position: relative;
                         span{
@@ -982,7 +956,7 @@ export default {
                     }
                     .rtwo{
                         position: relative;
-                        margin-top:20px;
+                        margin-top:21px;
                         span{
                             position: absolute;
                             top: 10px;
@@ -992,8 +966,8 @@ export default {
                             height:18px;
                             border-radius: 9px;
                             text-align: center;
-                            border:1px solid #EA2417;
-                            color:#EA2417;
+                            border:1px solid #FF805A;
+                            color:#FF805A;
                             font-size: 12px;
                         }
                         img{
@@ -1009,6 +983,7 @@ export default {
                             text-align: center;
                             font-weight: bold;
                             color:#666;
+							padding:20px;
                         }
                         .dq{
                             text-align: center;
@@ -1018,7 +993,7 @@ export default {
                         }
                     }
                     .rthree{
-                        margin-top:12px;
+                        margin-top:11px;
                         .lianxi{
                             position: relative;
                             display: flex;
@@ -1093,9 +1068,12 @@ export default {
                             line-height:32px;
                             text-align: center;
                             border:1px solid #ddd;
-                            margin-top:10px;
+                            margin-top:20px;
                             border-radius: 10px;
                             font-size: 12px;
+							p{
+								line-height:30px;
+							}
                             img{
                                 margin-top:8px;
                                 margin-right: 6px;
@@ -1107,7 +1085,7 @@ export default {
                             font-size: 12px;
                             text-align: center;
                             color:#666;
-                            margin-top: 10px;
+                            margin-top: 35px;
                         }
                     }
                     .rfour{
@@ -1292,17 +1270,22 @@ export default {
                 .left{
 					background-color: #fff;
                     width:888px;
+					border-radius: 5px;
                     .ltop{
                         display: flex;
                         justify-content: space-between;
                         line-height: 66px;
                         border-bottom: 1px solid #ddd;
+						a{
+							color:#6c6c6c
+						}
                         div{
                             display: flex;
                             flex:1;
                             justify-content: center;
                             &:hover{
                                 a,i{
+									text-decoration: none;
                                     color:#FF6701;
                                 }
                             }
@@ -1348,12 +1331,12 @@ export default {
                             .mson{
                                 display: flex;
                                 i{
-                                    margin:3px 8px 0 0;
-                                    color:red;
+                                    color:#FF805A;
+									padding-right: 5px;
                                 }
                                 span{
                                     display: block;
-                                    color:red;
+                                    color:#FF805A;
                                     font-size: 16px;
                                     margin-bottom: 20px;
                                 }
@@ -1367,10 +1350,11 @@ export default {
                 }
                 .right{
                     position: relative;
-                    width:260px;
+                    width:300px;
 					height:1000px;
                     margin-left:15px;
                     padding:0 20px;
+					border-radius: 5px;
 					background-color: #fff;
                     .rtop{
                         line-height: 54px;
@@ -1504,9 +1488,7 @@ export default {
                             }
                             p{
                                 color:#888;
-                                &:hover{
-                                    color:#FF6600;
-                                }
+                                
                             }
                         }
                     }
@@ -1720,83 +1702,188 @@ export default {
                     }
                 }
             }
-            .agent{
-                width:1200px;
-                margin:auto;
-                background-color: #F2F2F2;
-                .agentson{
-                    position: relative;
-                    margin:20px 0 0;
-                    background-color: #fff;
-                    span{
-                        position: absolute;
-                        top: 0;
-                        bottom: 0;
-                        margin:auto;
-                        left: 0;
-                        width:6px;
-                        height:30px;
-                        background-color:#FF6600 ;
-                    }
-                    p{
-                        line-height: 66px;
-                        text-indent: 40px;
-                        font-size: 22px;
-                        color: #333;
-                    }
-                }
-                .son{
-                    display: flex;
-                    justify-content: space-between;
-                    margin-top:20px;
-                    height:150px;
-                    background-color: #fff;
-                    box-sizing: border-box;
-                    padding:10px;
-                    &:hover{
-                        margin-top:18px;
-                        box-shadow: 0 0 6px 6px #ccc;
-                    }
-                    .img{
-                        width:130px;
-                        height:130px;
-                    }
-                    .title{
-                        margin-left: 40px;
-                        margin-top:10px;
-                        width: 800px;
-                        color:#666;
-                        font-size: 18px;
-                        .two{
-                            margin-top:10px;
-                            font-size: 14px;
-                            color:#999;
-                        }
-                    }
-                    .sontwo{
-                        width:240px;
-                        padding-top:40px;
-                        border-left: 1px solid #E7E7E7;
-                        div{
-                            display: flex;
-                            justify-content: center;
-                            .color{
-                                color:#ea2417;
-                            }
-                            img,i{
-                                margin-right:6px;
-                            }
-                        }
-                        .two{
-                            margin-top:20px;
-                            p{
-                                font-size: 12px;
-                                color:#888;
-                            }
-                        }
-                    }
-                }
-            }
+            // .agent{
+            //     width:1200px;
+            //     margin:auto;
+            //     background-color: #F2F2F2;
+            //     .agentson{
+            //         position: relative;
+            //         margin:20px 0 0;
+            //         background-color: #fff;
+            //         span{
+            //             position: absolute;
+            //             top: 0;
+            //             bottom: 0;
+            //             margin:auto;
+            //             left: 0;
+            //             width:6px;
+            //             height:30px;
+            //             background-color:#FF6600 ;
+            //         }
+            //         p{
+            //             line-height: 66px;
+            //             text-indent: 40px;
+            //             font-size: 22px;
+            //             color: #333;
+            //         }
+            //     }
+            //     .son{
+            //         display: flex;
+            //         justify-content: space-between;
+            //         margin-top:20px;
+            //         height:150px;
+            //         background-color: #fff;
+            //         box-sizing: border-box;
+            //         padding:10px;
+            //         &:hover{
+            //             margin-top:18px;
+            //             box-shadow: 0 0 6px 6px #ccc;
+            //         }
+            //         .img{
+            //             width:130px;
+            //             height:130px;
+            //         }
+            //         .title{
+            //             margin-left: 40px;
+            //             margin-top:10px;
+            //             width: 800px;
+            //             color:#666;
+            //             font-size: 18px;
+            //             .two{
+            //                 margin-top:10px;
+            //                 font-size: 14px;
+            //                 color:#999;
+            //             }
+            //         }
+            //         .sontwo{
+            //             width:240px;
+            //             padding-top:40px;
+            //             border-left: 1px solid #E7E7E7;
+            //             div{
+            //                 display: flex;
+            //                 justify-content: center;
+            //                 .color{
+            //                     color:#ea2417;
+            //                 }
+            //                 img,i{
+            //                     margin-right:6px;
+            //                 }
+            //             }
+            //             .two{
+            //                 margin-top:20px;
+            //                 p{
+            //                     font-size: 12px;
+            //                     color:#888;
+            //                 }
+            //             }
+            //         }
+            //     }
+            // }
+			.interested{
+				width: 100%;
+			    min-width:1200px;
+				margin:0 auto;
+			    margin-top:20px !important;
+				margin-bottom: 0px !important;
+				z-index: 999999;
+			    background-image: url(../../assets/images/banner1.png);
+				background-repeat: x-repeat;
+			    box-sizing: border-box;
+			    padding:0 20px;
+				text-align: center;
+				overflow: hidden;
+				h2,p{
+					color:#fff;
+				}
+			    .img{
+			        display: block;
+			        margin:auto;
+			        margin-bottom: 16px;
+			    }
+			    .inlist{
+					max-width: 1200px;
+			        display: flex;
+					margin:20px auto;
+					padding-bottom: 40px;
+			        justify-content: space-between;
+			        .inlistone{
+			            width:373px;
+			            height:171px;
+						cursor: pointer;
+						border-radius: 5px;
+			            border:1px solid #F2F2F2;
+			            background-color: rgba(255,255,255,0.2);
+			            box-sizing: border-box;
+			            padding:14px;
+						transition: 0.5s;
+			            &:hover{
+							margin-top: -10px;
+							background-color: rgba(255,255,255,0.4);
+			            }
+			            .intop{
+			                display: flex;
+			                &:hover{
+			                    p{
+			                        color: #FF805A;
+			                    }
+			                }
+			                img{
+			                    width:16px;
+			                    height:16px;
+			                    margin-top:4px;
+			                    margin-right:10px;
+			                }
+			                p{
+			                    font-size: 16px;
+			                    color:#fff;
+			                }
+			            }
+			            .xiangxi{
+			                margin-top:20px;
+			                display: flex;
+			                justify-content: space-between;
+			                .xxone,.xxtwo,.xxthree{
+			                    width:90px;
+			                    border-right:1px solid #ccc;
+			                    span{
+			                        font-size: 12px;
+			                        color:#fff;
+			                    }
+			                    p{
+									color:#fff;
+			                        margin-top:10px;
+			                        overflow: hidden;
+			                        text-overflow:ellipsis;
+			                        white-space: nowrap;
+			                    }
+			                }
+			                .xxthree{
+			                    width:100px;
+			                    text-align: right;
+			                    line-height: 50px;
+			                    font-size: 16px;
+			                    color:#FF805A;
+			                }
+			                .xxtwo{
+			                    box-sizing: border-box;
+			                    padding-left:20px;
+			                    flex: 1;
+			                }
+			                .xxtwo,.xxthree{
+			                    border-right: none;
+			                }
+			            }
+			            .hangye{
+			                display: flex;
+			                margin-top:12px;
+			                color:#fff;
+							p{
+								color:#fff;
+							}
+			            }
+			        }
+			    }
+			}
         }
     }
 </style>

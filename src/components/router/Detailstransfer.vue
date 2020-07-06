@@ -1,8 +1,9 @@
 <template>
     <div class="Detailstransfer">
-        <Header></Header>
+        <Header :is_index="true"></Header>
         <DetailsMain></DetailsMain>
         <goTop></goTop>
+		<Footer></Footer>
     </div>
 </template>
 

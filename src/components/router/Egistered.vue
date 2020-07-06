@@ -6,7 +6,7 @@
                 <div class="topSonOne">
                     <div class="topleft">
                         <p>Hi,  您好,  欢迎来到公司快转网公司转让平台!</p>
-                        <router-link to="/Login" class="p" tag="p">登录</router-link>
+                        <router-link to="/Login" class="p" tag="p" style="cursor: pointer;">登录</router-link>
                         <p>免费注册</p>
                     </div>
                     <div class="topright">

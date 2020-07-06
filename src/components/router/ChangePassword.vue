@@ -89,7 +89,7 @@
         font-size: 14px;
         span{
             display: block;
-            border-bottom: 1px solid #dcdfe6;
+            border-bottom: 1px solid #888;
         }
         .p{
             width:150px;

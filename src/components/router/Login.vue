@@ -7,7 +7,7 @@
                     <div class="topleft">
                         <p>Hi~,  您好,  欢迎来到公司快转网, 综合企业服务信息分类平台</p>
                         <p class="p">登录</p>
-                        <router-link to="/Egistered" tag="p" style="color:#F3A54D">免费注册</router-link>
+                        <router-link to="/Egistered" tag="p" style="color:#F3A54D;cursor: pointer;">免费注册</router-link>
                     </div>
                     <div class="topright">
                         <router-link to="/" class="p" exact>平台首页</router-link>

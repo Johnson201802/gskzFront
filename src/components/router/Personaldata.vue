@@ -422,7 +422,7 @@ import Cookies from "js-cookie"
                 height:38px;
                 position: absolute;
                 color: #909399;
-                border: 1px solid #dcdfe6;
+                border: 1px solid #888;
                 border-radius: 4px;
             }
         }

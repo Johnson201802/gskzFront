@@ -1,8 +1,9 @@
 <template>
     <div class="Tmall">
-        <Header></Header>
+        <Header :is_index="true"></Header>
         <TmallMain></TmallMain>
         <goTop></goTop>
+		<Footer></Footer>
     </div>
 </template>
 

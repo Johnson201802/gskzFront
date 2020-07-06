@@ -9,17 +9,17 @@
                 <p>天猫转让</p>
             </div>
             <div class="two">
-                <div class="EEEEEE">
-                    <i class="iconfont icon-yanjing"></i>
-                    <p>查看购店流程</p>
+                <div class="EEEEEE xxx">
+                    <i class="iconfont icon-unie737"></i>
+                    <p>平台帮找</p>
+                    <div class="ewm">
+                        <img src="https://www.yizhuanweb.com/uploads/20200611/6a60ca36b2fd3d9adae989e28544d6f6.png" alt="">
+                        <p>扫码联系客服</p>
+                    </div>
                 </div>
-                <div class="FF7E00">
+                <div class="FF7E00 xxx">
                     <i class="iconfont icon-wp-jsb"></i>
-                    <p>5秒出售网店</p>
-                </div>
-                <div class="EA2417">
-                    <i class="iconfont icon-wp-jsb"></i>
-                    <p>5秒发布需求</p>
+                    <p>求购商铺</p>
                 </div>
             </div>
         </div>
@@ -404,15 +404,17 @@ export default {
 <style scoped lang="less">
     .transferMain{
         font-size: 14px;
-        margin-top:80px;
         .nav{
-            width:1200px;
-            height:60px;
-            margin:auto;
+            width: 1200px;
+            height: 60px;
+            margin: 5px auto;
+            padding-top: 10px;
             display: flex;
             justify-content: space-between;
+            background-color: #fff;
             .one{
                 display: flex;
+            	width: 50%;
                 p,i{
                     line-height: 60px;
                     margin-right: 10px;
@@ -431,15 +433,19 @@ export default {
                 }
             }
             .two{
+            	width:50%;
                 display: flex;
-                justify-content: space-between;
-                width:450px;
-                div{
+                justify-content: flex-end;
+                .xxx{
                     display: flex;
+            		width: 50%;
                     justify-content: center;
-                    margin:auto 0;
+                    margin:auto 10px;
                     width:140px;
                     line-height: 34px;
+            		p{
+            			margin: 0;
+            		}
                     i{
                         margin-right: 10px;
                         font-size: 18px;
@@ -447,10 +453,43 @@ export default {
                 }
                 .EEEEEE{
                     background-color: #EEEEEE;
+                    position:relative;
+            		color:#888;
+            		cursor: pointer;
+            		border-radius: 5px;
+                    &:hover{
+                        .ewm{
+                            display: block;
+                        }
+                    }
+                    .ewm{
+                        display: none;
+                        position: absolute;
+                        width:170px;
+                        height:180px;
+                        top: 50px;
+                        left: -10px;
+                        background-color: #fff;
+                        border:1px solid #E1E1E1;
+                        img{
+                            display: block;
+                            width:130px;
+                            height:130px;
+                            margin:20px auto 0;
+                        }
+                        p{
+                            line-height: 24px;
+                            text-align: center;
+                            color:#888;
+                            font-size: 14px;
+                        }
+                    }
                 }
                 .FF7E00{
-                    background-color: #FF7E00;
-                    color:#fff;
+                    background-color: #EEEEEE;
+                    color:#888;
+            		border-radius: 5px;
+            		cursor: pointer;
                 }
                 .EA2417{
                     background-color: #EA2417;
@@ -504,14 +543,14 @@ export default {
                                     padding:0 16px;
                                     margin-right: 4px;
                                     line-height: 24px;
-                                    border-radius: 16px;
+                                    border-radius: 5px;
                                     margin-top:4px;
                                     &:hover{
-                                        color:red
+                                        color:#F3A54D
                                     }
                                 }
                                 .show{
-                                    background-color: red;
+                                    background-color: #F3A54D;
                                     color:#fff;
                                     &:hover{
                                         color:#fff
@@ -668,13 +707,13 @@ export default {
                                 .fathlmothree{
                                     p{
                                         span{
-                                            color:red;
+                                            color:#F3A54D;
                                         }
                                     }
                                 }
                                 .fathlmfour,.fathlmfive{
                                     p{
-                                        color:red;
+                                        color:#F3A54D;
                                     }
                                 }
                             }
@@ -807,7 +846,7 @@ export default {
                                 line-height: 40px;
                                 height:40px;
                                 border-radius: 4px;
-                                background-color: red;
+                                background-color: #F3A54D;
                             }
                             span{
                                 display: block;
@@ -820,8 +859,8 @@ export default {
                                 height:38px;
                                 text-align: center;
                                 border-radius: 4px;
-                                color:red;
-                                border:1px solid red;
+                                color:#F3A54D;
+                                border:1px solid #F3A54D;
                             }
                             .pone{
                                 font-size: 26px;
@@ -892,7 +931,7 @@ export default {
                                     text-align: right;
                                     line-height: 50px;
                                     font-size: 16px;
-                                    color:red;
+                                    color:#F3A54D;
                                     font-weight: bold;
                                     font-size: 30px;
                                 }

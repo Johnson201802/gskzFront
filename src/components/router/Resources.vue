@@ -607,7 +607,7 @@
             color:#606266;
             span{
                 display: block;
-                border-bottom: 1px solid #dcdfe6;
+                border-bottom: 1px solid #888;
             }
             .p{
                 width:150px;
@@ -627,11 +627,11 @@
                 .el-checkbox-button{
                     margin: 0 10px 10px 0;
                     .el-checkbox-button__inner{
-                        border-left: 1px solid #DCDFE6;
+                        border-left: 1px solid #888;
                     }
                 }
                 .el-checkbox-button.is-focus .el-checkbox-button__inner{
-                    border-left: 1px solid #409EFF;
+                    border-left: 1px solid #F3A54D;
                 }
             }
             .son{
@@ -683,7 +683,7 @@
                     border-radius: 0 4px 4px 0;
                     padding-left:20px;
                     color:#909399;
-                    border:1px solid #DCDFE6;
+                    border:1px solid #888;
                     .el-input__inner{
                         width:100px;
                         border:none;
@@ -696,7 +696,7 @@
                     outline: none;
                     transition: .3s;
                     resize: none;
-                    border:1px solid #DCDFE6;
+                    border:1px solid #888;
                     border-radius: 4px;
                     text-indent: 16px;
                     color:#909399;
@@ -741,8 +741,8 @@
             text-align: center;
             line-height: 40px;
             color: #fff;
-            background-color: #409eff;
-            border-color: #409eff;
+            background-color: #F3A54D;
+            border-color: #F3A54D;
             border-radius: 6px;
             margin:20px auto;
         }
