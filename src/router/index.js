@@ -5,6 +5,7 @@ import Cookies from 'js-cookie'
 const Home = ()=>import("../components/router/Home")
 const User = ()=>import("../components/router/User")
 const Tmall = ()=>import("../components/router/Tmall")
+const DetailsTmall = ()=>import("../components/router/DetailsTmall")
 const Login = ()=>import("../components/router/Login")
 const Record = ()=>import("../components/router/Record")
 const Demand = ()=>import("../components/router/Demand")
@@ -55,6 +56,10 @@ Vue.use(VueRouter)
       path:"/Tmall",
       component: Tmall,
     },
+	{
+	  path:"/DetailsTmall",
+	  component: DetailsTmall,
+	},
     {
       path:"/Sbtransfer",
       component: Sbtransfer,

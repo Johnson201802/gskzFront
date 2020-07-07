@@ -13,6 +13,7 @@ import Footer from "./components/content/Footer"
 import MySwiper from "./components/content/mySwiper"
 import TransferMain from "./components/content/transferMain"
 import TmallMain from "./components/content/TmallMain"
+import DetailsTmall from "./components/content/DetailsTmall"
 import DetailsMain from "./components/content/DetailsMain"
 import Navigation from "./components/content/Navigation"
 import SbMain from "./components/content/SbMain"
@@ -34,6 +35,7 @@ Vue.component("goTop",goTop),
 Vue.component("DemandMain",DemandMain),
 Vue.component("QuestionMain",QuestionMain),
 Vue.component("pageLogin",pageLogin),
+Vue.component("DetailsTmall",DetailsTmall),
 
 
 Vue.use(ElementUI)

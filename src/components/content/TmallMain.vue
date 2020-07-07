@@ -45,7 +45,7 @@
                 </div>
                 <div class="right">
                     <div class="bottom">
-                        <p>市场交易动态 ——————</p>
+                        <p>——— 市场交易动态 ———</p>
                         <div class="bone">
                             <div class="father">
                                 <div v-for="(item,index) in swiperList" :key="index"></div>
@@ -70,10 +70,10 @@
                     </div>
                 </div>
                 <div class="resultbottom">
-                    <div class="bfath" v-for="(item,index) in resultList" :key="index">
+                    <router-link class="bfath" :to='{path:"/DetailsTmall",query:{id:item.bh}}' v-for="(item,index) in resultList" :key="index">
                         <div class="fathl">
                             <div class="fathlt">
-                                <img class="img" src="../../assets/images/logon_1.png" alt="">
+                                <img class="img" src="../../assets/images/tmall_logo.png" alt="">
                                 <div class="fathltone">
                                     <div class="fathltonet">
                                         <p>{{item.title}}</p>
@@ -122,20 +122,16 @@
                             </div>
                             <div class="fathrm">
                                 <p class="p">QQ联系</p>
-                                <div>
-                                    <i class="iconfont icon-star"></i>
-                                    <p>收藏</p>
-                                </div>
+								<p class="p" style="background-color: #FF805A;">收藏</p>
                             </div>
                             <div class="fathrb">
-                                <p>编号：{{item.bh}}</p>
-                                <div>
+                                <div style="text-align: center;">
                                     <i class="iconfont icon-shizhong"></i>
                                     <p>{{item.time}}</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </router-link>
                 </div>
                 <div class="pages">
                     <div class="block">
@@ -148,45 +144,51 @@
                     </div>
                 </div>
                 <div class="wei">
-                    <img src="../../assets/images/weizhaodao.png" alt="">
+                    <img src="../../assets/images/empty.png" alt="">
                     <div class="weione">
                         <div>
-                            <p class="pone">没有找到心仪的公司?</p>
+                            <p class="pone">没有找到心仪的店铺?</p>
                             <p class="ptwo">联系客服帮忙找</p>
                             <span>或</span>
-                            <p class="pthree">发布求购需求</p>
+                            <p class="pthree">发布求购店铺需求</p>
                         </div>
                         <p class="pfour">不要急哦，好多热门资源没有展示出来，马上联系服务顾问获取</p>
                     </div>
                 </div>
-                <div class="interested">
-                    <!-- <p>您可能感兴趣的公司</p> -->
-                    <img class="img" src="../../assets/images/link.png" alt="">
-                    <div class="inlist">
-                        <div class="inlistone" v-for="(item,index) in interested" :key="index">
-                            <div class="intop">
-                                <img src="../../assets/images/logo_1.png" alt="">
-                                <p>{{item.title}}</p>
-                            </div>
-                            <div class="xiangxi">
-                                <div class="xxone">
-                                    <span>主营类型</span>
-                                    <p>{{item.type}}</p>
-                                </div>
-                                <div class="xxtwo">
-                                    <span>商城类型</span>
-                                    <p>{{item.qijian}}</p>
-                                </div>
-                                <p class="xxthree">￥{{item.price}}万</p>
-                            </div>
-                            <div class="hangye">
-                                <p>开通类目：</p>
-                                <p>{{item.hangye}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
+			<div class="interested">
+			    <h2>您可能感兴趣的店铺</h2>
+			    <p>为您精选</p>
+			    <div class="inlist">
+			        <router-link 
+			            class="inlistone"
+			            tag="div"
+			            :to='{path:"/Detailstransfer",query:{id:item.service_id}}'
+			            v-for="(item,index) in interested" 
+			            :key="index"
+			        >
+			            <div class="intop">
+			                <img src="../../assets/images/tm.png" alt="">
+			                <p>{{item.service_p_name}}</p>
+			            </div>
+			            <div class="xiangxi">
+			                <div class="xxone">
+			                    <span>成立时间</span>
+			                    <p>{{item.fund_date}}</p>
+			                </div>
+			                <div class="xxtwo">
+			                    <span>注册资本</span>
+			                    <p>{{item.registered_capital}}万人民币</p>
+			                </div>
+			                <p class="xxthree">{{item.service_price}}</p>
+			            </div>
+			            <div class="hangye">
+			                <p>企业行业：</p>
+			                <p>{{item.company_trade}}</p>
+			            </div>
+			        </router-link>
+			    </div>
+			</div>
         </div>
         <!-- screen end -->
     </div>
@@ -385,7 +387,7 @@ export default {
                     price:"23",
                     hangye:"水产肉类/新鲜蔬果/熟食"
                 }
-            ],//可能感兴趣公司列表
+            ],//可能感兴趣店铺列表
         }
     },
     methods:{
@@ -541,10 +543,12 @@ export default {
                                 flex-wrap: wrap;
                                 div{
                                     padding:0 16px;
+									max-height: 31px;
                                     margin-right: 4px;
-                                    line-height: 24px;
+                                    line-height: 31px;
                                     border-radius: 5px;
                                     margin-top:4px;
+									cursor: pointer;
                                     &:hover{
                                         color:#F3A54D
                                     }
@@ -575,7 +579,7 @@ export default {
                             line-height: 40px;
                         }
                         .bone{
-                            height:278px;
+                            height:317px;
                             overflow: hidden;
                             .father{
                                 animation: roll 10s infinite linear;
@@ -609,11 +613,12 @@ export default {
                 .resulttop{
                     display: flex;
                     height:54px;
+					cursor: pointer;
                     background-color: #fff;
                     border-bottom: 1px solid #eee;
                     border-radius: 6px 6px 0 0;
                     .showres{
-                        color:skyblue
+                        color:#F3A54D
                     }
                     div{
                         width:170px;
@@ -629,9 +634,14 @@ export default {
                     justify-content: space-between;
                     display: flex;
                     flex-wrap: wrap;
+					a{
+						text-decoration: none;
+					}
                     .bfath{
+						cursor: pointer;
+						border-radius: 5px;
                         position: relative;
-                        margin-bottom:16px;
+                        margin-bottom:8px;
                         width:100%;
                         height:240px;
                         background-color: #fff;
@@ -649,6 +659,7 @@ export default {
                                 display: flex;
                                 .img{
                                     margin-right:20px;
+									width: 85px;
                                 }
                                 .fathltone{
                                     .fathltonet{
@@ -771,7 +782,7 @@ export default {
                                     width:200px;
                                     line-height:40px;
                                     border-radius: 6px;
-                                    background-color: #007CF8;
+                                    background-color: #0cc467;
                                     text-align: center;
                                     color:#fff;
                                     margin-top:20px;
@@ -795,6 +806,7 @@ export default {
                             .fathrb{
                                 margin-top: 16px;
                                 color: #b7b7b7;
+								text-align: center;
                                 line-height: 20px;
                                 overflow: hidden;
                                 white-space: nowrap;
@@ -819,6 +831,7 @@ export default {
                     margin:auto;
                     padding-bottom: 50px;
                     background-color: #fff;
+					border-radius: 5px 5px 0 0;
                     .block{
                         padding-top:20px;
                         text-align: center;
@@ -827,12 +840,13 @@ export default {
                 .wei{
                     display: flex;
                     width:1200px;
-                    margin:auto;
                     box-sizing: border-box;
-                    padding:0 180px;
+                    padding:20px 180px;
                     background-color: #fff;
+					border-radius:0 0 5px 5px;
                     img{
-                        margin-right:20px;
+						max-width: 100px;
+                        margin-right:42px;
                     }
                     .weione{
                         padding-top:14px;
@@ -846,7 +860,8 @@ export default {
                                 line-height: 40px;
                                 height:40px;
                                 border-radius: 4px;
-                                background-color: #F3A54D;
+                                background-color: #FF805A;
+								cursor: pointer;
                             }
                             span{
                                 display: block;
@@ -854,13 +869,14 @@ export default {
                                 font-size: 26px;
                             }
                             .pthree{
+								cursor: pointer;
                                 width:170px;
                                 line-height: 38px;
                                 height:38px;
                                 text-align: center;
                                 border-radius: 4px;
-                                color:#F3A54D;
-                                border:1px solid #F3A54D;
+                                color:#FF805A;
+                                border:1px solid #FF805A;
                             }
                             .pone{
                                 font-size: 26px;
@@ -873,96 +889,113 @@ export default {
                         }
                     } 
                 }
-                .interested{
-                    width:1200px;
-                    margin:auto;
-                    margin-bottom: 20px;
-                    background-color: #fff;
-                    box-sizing: border-box;
-                    padding:0 20px;
-                    padding-top:30px;
-                    .img{
-                        display: block;
-                        margin:auto;
-                        margin-bottom: 16px;
-                    }
-                    .inlist{
-                        display: flex;
-                        justify-content: space-between;
-                        .inlistone{
-                            width:373px;
-                            height:200px;
-                            border:1px solid #F2F2F2;
-                            background-color: #F2F2F2;
-                            box-sizing: border-box;
-                            padding:14px;
-                            &:hover{
-                                background-color: #fff;
-                            }
-                            .intop{
-                                display: flex;
-                                img{
-                                    width:16px;
-                                    height:16px;
-                                    margin-top:4px;
-                                    margin-right:10px;
-                                }
-                                p{
-                                    font-size: 16px;
-                                    color:#666;
-                                }
-                            }
-                            .xiangxi{
-                                margin-top:20px;
-                                display: flex;
-                                justify-content: space-between;
-                                .xxone,.xxtwo,.xxthree{
-                                    width:115px;
-                                    border-right:1px solid #ccc;
-                                    span{
-                                        font-size: 12px;
-                                        color:#666;
-                                    }
-                                    p{
-                                        margin-top:10px;
-                                    }
-                                }
-                                .xxthree{
-                                    text-align: right;
-                                    line-height: 50px;
-                                    font-size: 16px;
-                                    color:#F3A54D;
-                                    font-weight: bold;
-                                    font-size: 30px;
-                                }
-                                .xxtwo{
-                                    box-sizing: border-box;
-                                    padding-left:30px;
-                                }
-                                .xxtwo,.xxthree{
-                                    border-right: none;
-                                }
-                            }
-                            .hangye{
-                                line-height: 24px;
-                                margin-top:20px;
-                                display: flex;
-                                color: #6f6f6f;
-                                background: #fff;
-                                font-size: 12px;
-                                max-width: 90%;
-                                padding: 0 10px;
-                                border-radius: 4px;
-                                box-sizing: border-box;
-                                p{
-                                    font-size: 12px;
-                                    display: inline;
-                                }
-                            }
-                        }
-                    }
-                }
+				
             }
+			.interested{
+				width: 100%;
+			    min-width:1200px;
+				margin:0 auto;
+			    margin-top:20px !important;
+				margin-bottom: 0px !important;
+				z-index: 999999;
+			    background-image: url(../../assets/images/banner1.png);
+				background-repeat: x-repeat;
+			    box-sizing: border-box;
+			    padding:0 20px;
+				text-align: center;
+				overflow: hidden;
+				h2,p{
+					color:#fff;
+				}
+			    .img{
+			        display: block;
+			        margin:auto;
+			        margin-bottom: 16px;
+			    }
+			    .inlist{
+					max-width: 1200px;
+			        display: flex;
+					margin:20px auto;
+					padding-bottom: 40px;
+			        justify-content: space-between;
+			        .inlistone{
+			            width:373px;
+			            height:171px;
+						cursor: pointer;
+						border-radius: 5px;
+			            border:1px solid #F2F2F2;
+			            background-color: rgba(255,255,255,0.2);
+			            box-sizing: border-box;
+			            padding:14px;
+						transition: 0.5s;
+			            &:hover{
+							margin-top: -10px;
+							background-color: rgba(255,255,255,0.4);
+			            }
+			            .intop{
+			                display: flex;
+			                &:hover{
+			                    p{
+			                        color: #FF805A;
+			                    }
+			                }
+			                img{
+			                    width:16px;
+			                    height:16px;
+			                    margin-top:4px;
+			                    margin-right:10px;
+			                }
+			                p{
+			                    font-size: 16px;
+			                    color:#fff;
+			                }
+			            }
+			            .xiangxi{
+			                margin-top:20px;
+			                display: flex;
+			                justify-content: space-between;
+			                .xxone,.xxtwo,.xxthree{
+			                    width:90px;
+			                    border-right:1px solid #ccc;
+			                    span{
+			                        font-size: 12px;
+			                        color:#fff;
+			                    }
+			                    p{
+									color:#fff;
+			                        margin-top:10px;
+			                        overflow: hidden;
+			                        text-overflow:ellipsis;
+			                        white-space: nowrap;
+			                    }
+			                }
+			                .xxthree{
+			                    width:100px;
+			                    text-align: right;
+			                    line-height: 50px;
+			                    font-size: 16px;
+			                    color:#FF805A;
+			                }
+			                .xxtwo{
+			                    box-sizing: border-box;
+			                    padding-left:20px;
+			                    flex: 1;
+			                }
+			                .xxtwo,.xxthree{
+			                    border-right: none;
+			                }
+			            }
+			            .hangye{
+			                display: flex;
+			                margin-top:12px;
+			                color:#fff;
+							p{
+								color:#fff;
+							}
+			            }
+			        }
+			    }
+			}
             
         }
     }

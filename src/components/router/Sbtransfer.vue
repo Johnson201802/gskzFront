@@ -1,8 +1,9 @@
 <template>
     <div class="Sbtransfer">
-        <Header></Header>
+        <Header :is_index="true"></Header>
         <SbMain></SbMain>
         <goTop></goTop>
+		<Footer></Footer>
     </div>
 </template>
 
