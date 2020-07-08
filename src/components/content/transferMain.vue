@@ -648,16 +648,20 @@ export default {
 
 <style scoped lang="less">
     .transferMain{
+		width: 100%;
+		min-width: 1200px;
 		background-color: #fff;
         font-size: 14px;
+		margin: 0 auto;
         .nav{
-            width: 1200px;
             height: 60px;
             margin: 5px auto;
             padding-top: 10px;
             display: flex;
             justify-content: space-between;
             background-color: #fff;
+			width: 1200px;
+			
 			&::before{
 				display: none;
 				content: '';
@@ -750,6 +754,7 @@ export default {
         .screen{
             background-color: #f8f8f8;
             padding-top:10px;
+			
             .margin{
                 width:1200px;
                 margin:auto;

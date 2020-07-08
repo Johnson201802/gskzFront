@@ -50,7 +50,7 @@
 					</div>
 				</div>
 				<div class="resultbottom">
-					<router-link :to='{path:"/Detailstransfer"}' class="bfath" v-for="(item,index) in resultList" :key="index">
+					<router-link :to='{path:"/DetailsSb"}' class="bfath" v-for="(item,index) in resultList" :key="index">
 						<div class="img">
 							<img src="../../assets/images/bd.png" alt="">
 						</div>

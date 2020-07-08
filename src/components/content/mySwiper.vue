@@ -1361,6 +1361,37 @@
 			    	overflow: hidden;
 			    }
 			}
+			@media screen and (min-width: 1269px) {
+			    img {
+			    	margin-left:-300px;
+			    	overflow: hidden;
+			    }
+			}
+			@media screen and (min-width: 1440px) {
+			    img {
+			    	margin-left:-240px;
+			    	overflow: hidden;
+			    }
+			}
+			@media screen and (min-width: 1523px) {
+			    img {
+			    	margin-left:-180px;
+			    	overflow: hidden;
+			    }
+			}
+			@media screen and (min-width: 1730px) {
+			    img {
+			    	margin-left:-80px;
+			    	overflow: hidden;
+			    }
+			}
+			@media screen and (min-width: 1920px) {
+			    img {
+			    	margin-left:0px;
+			    	overflow: hidden;
+			    }
+			}
+
 			.swiper-pagination {
 				top: 430px;
 				width: 300px;

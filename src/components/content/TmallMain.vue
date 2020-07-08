@@ -660,6 +660,7 @@ export default {
                                 .img{
                                     margin-right:20px;
 									width: 85px;
+									height: 85px;
                                 }
                                 .fathltone{
                                     .fathltonet{

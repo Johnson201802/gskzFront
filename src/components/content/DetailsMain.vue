@@ -328,7 +328,7 @@
                     <p>公司转让常见问题</p>
                 </div>
                 <div class="prson">
-                    <ul class="clearfix">
+                    <ul style="width: 1200px;" class="clearfix">
                         <li>
                             <h3><i class="bg-que"></i>转让前公司如有产生的责任由谁承担？</h3>
                             <p><i class="bg-ans"></i>转让前产生的包含欠税款、滞纳金、罚款、黑名单等情况而产生的一切费用，将由原法人、股东承担！</p>
@@ -558,6 +558,9 @@ export default {
 <style scoped lang="less">
     .DetailsMain{
         font-size: 14px;
+		width: 100%;
+		margin: 0 auto;
+		min-width: 1200px;
         p,span{
             overflow: hidden;
             text-overflow:ellipsis;
@@ -1521,7 +1524,7 @@ export default {
                 .prson{
                     padding: 15px 25px;
                     .clearfix{
-                        margin: 30px -30px 20px -30px;
+                        width:1200px;
                         display: flex;
                         justify-content: space-between;
                         flex-wrap: wrap;
@@ -1575,6 +1578,8 @@ export default {
                     background-color: #fff;
                     img{
                         margin-right:20px;
+						width:100px;
+						height:100px;
                     }
                     .weione{
                         padding-top:14px;

@@ -17,6 +17,7 @@ import DetailsTmall from "./components/content/DetailsTmall"
 import DetailsMain from "./components/content/DetailsMain"
 import Navigation from "./components/content/Navigation"
 import SbMain from "./components/content/SbMain"
+import SbMian from "./components/content/SbMian"
 import goTop from "./components/content/goTop"
 import DemandMain from "./components/content/DemandMain"
 import QuestionMain from "./components/content/QuestionMain"
@@ -36,6 +37,7 @@ Vue.component("DemandMain",DemandMain),
 Vue.component("QuestionMain",QuestionMain),
 Vue.component("pageLogin",pageLogin),
 Vue.component("DetailsTmall",DetailsTmall),
+Vue.component("SbMian",SbMian),
 
 
 Vue.use(ElementUI)

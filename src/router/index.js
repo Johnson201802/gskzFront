@@ -6,6 +6,7 @@ const Home = ()=>import("../components/router/Home")
 const User = ()=>import("../components/router/User")
 const Tmall = ()=>import("../components/router/Tmall")
 const DetailsTmall = ()=>import("../components/router/DetailsTmall")
+const DetailsSb = ()=>import("../components/router/DetailsSb")
 const Login = ()=>import("../components/router/Login")
 const Record = ()=>import("../components/router/Record")
 const Demand = ()=>import("../components/router/Demand")
@@ -59,6 +60,10 @@ Vue.use(VueRouter)
 	{
 	  path:"/DetailsTmall",
 	  component: DetailsTmall,
+	},
+	{
+	  path:"/DetailsSb",
+	  component: DetailsSb,
 	},
     {
       path:"/Sbtransfer",
