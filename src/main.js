@@ -20,6 +20,7 @@ import SbMain from "./components/content/SbMain"
 import SbMian from "./components/content/SbMian"
 import goTop from "./components/content/goTop"
 import DemandMain from "./components/content/DemandMain"
+import DbservicesMain from "./components/content/DbservicesMain"
 import QuestionMain from "./components/content/QuestionMain"
 import pageLogin from "./components/content/pageLogin"
 import Requirements from "./components/content/Requirements"
@@ -38,6 +39,7 @@ Vue.component("DemandMain",DemandMain),
 Vue.component("QuestionMain",QuestionMain),
 Vue.component("pageLogin",pageLogin),
 Vue.component("DetailsTmall",DetailsTmall),
+Vue.component("DbservicesMain",DbservicesMain),
 Vue.component("SbMian",SbMian),
 Vue.component("Requirements",Requirements),
 

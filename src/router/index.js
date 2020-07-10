@@ -18,6 +18,7 @@ const Realname = ()=>import("../components/router/Realname")
 const Releasewd = ()=>import("../components/router/Releasewd")
 const Egistered = ()=>import("../components/router/Egistered")
 const Resources = ()=>import("../components/router/Resources")
+const Dbservices = ()=>import("../components/router/Dbservices")
 const Sbtransfer = ()=>import("../components/router/Sbtransfer")
 const Sbresources = ()=>import("../components/router/Sbresources")
 const Personaldata = ()=>import("../components/router/Personaldata")
@@ -51,6 +52,10 @@ Vue.use(VueRouter)
       component: Transfer,
     },
     {
+      path:"/Dbservices",
+      component: Dbservices,
+    },
+	{
       path:"/Detailstransfer",
       component: Detailstransfer,
     },
