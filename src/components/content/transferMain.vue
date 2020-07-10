@@ -45,7 +45,7 @@
                                 <span style="border:1px solid #F3A54D;padding:0px 6px;color:#F3A54D" class="span" v-if="whoShow[index]" @click="heightAll(index,false)">-</span>
                             </div>
                         </div>
-						<div class="leftrone">
+						<!-- <div class="leftrone">
 							<p>区域：</p>
 							<div class="son" style="padding: 0;width:50%">
 							    <el-cascader
@@ -59,8 +59,8 @@
 								<el-input size="small" style="width: 60%;margin-right: 10px;" v-model="city" placeholder="城市查找"></el-input>
 								<el-button size="small" style="width: 20%;" type="warning">确定</el-button>
 							</div>
-						</div>
-						<div class="leftrone">
+						</div> -->
+<!-- 						<div class="leftrone">
 							<p>其他筛选：</p>
 							<div class="son" style="display: flex;">
 							    <div style="max-width: 116px;">
@@ -124,8 +124,8 @@
 								      </el-select>
 								</div>
 							</div>
-						</div>
-						<div class="leftrone">
+						</div> -->
+<!-- 						<div class="leftrone">
 							<p>您选择的结果：</p>
 							<div class="son" style="display: block;">
 							    <div style="width: 100%;">
@@ -183,50 +183,32 @@
 									</div>
 							    </div>
 							</div>
-						</div>
+						</div> -->
                     </div>
                 </div>
                 <div ref="right" class="right" :style="{'height':height2+'px'}">
                     <div class="rtop" style="overflow: hidden;">
 						<div style="height: 82px;">
 							<h5> 成交指数(家)</h5>
-							<h2> 3456765</h2>
+							<h2> 100000</h2>
 						</div>
 						<div style="overflow: hidden;color: #fff;z-index: 2345678765;">
 							<scroll :data="listData" :class-option="optionSingleHeight" class="seamless-warp" style="background-image: url(../../assets/images/bg.png);background-repeat: repeat-y;">
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
-									<a href=""><p style="color:#fff">45678765435678</p></a>
+									<a href=""><p style="color:#fff">11分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
+									<a href=""><p style="color:#fff">19分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
+									<a href=""><p style="color:#fff">33分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
+									<a href=""><p style="color:#fff">23分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
+									<a href=""><p style="color:#fff">49分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
+									<a href=""><p style="color:#fff">39分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
+									<a href=""><p style="color:#fff">45分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
+									<a href=""><p style="color:#fff">37分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
+									<a href=""><p style="color:#fff">34分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
+									<a href=""><p style="color:#fff">36分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
+									<a href=""><p style="color:#fff">38分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
+									<a href=""><p style="color:#fff">30分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
+									<a href=""><p style="color:#fff">31分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
+									<a href=""><p style="color:#fff">39分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
+									<a href=""><p style="color:#fff">33分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
 							</scroll>
 						</div>
                     </div>
@@ -513,6 +495,7 @@ export default {
         this.init()
 		this.getHeight()
     },
+	
     mounted(){
         this.height()
     },
@@ -823,7 +806,7 @@ export default {
                     border-radius: 6px;
 					background-image: url(../../assets/images/bg.png);
 					background-repeat: repeat-y;
-					height: 420px;
+					height: 300px;
 					.seamless-warp {
 						overflow: hidden;
 						height:100%;

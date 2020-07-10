@@ -108,7 +108,7 @@
             <!-- headerLogo end -->
 
             <!-- alltop start -->
-            <div class="alltop">
+            <div class="alltop" :style="{'width':is_width?'1200px':'1176px'}">
                 <div class="bg" v-show="is_index">
                     <p>全部分类</p>
                     <p><i class="iconfont icon-youjiantou"></i></p>
@@ -134,8 +134,14 @@ import axios from '../../api/axios'
 import Cookies from 'js-cookie'
     export default{
 		props:{
-			is_index:Boolean,
-			default:false
+			is_index:{
+				type:Boolean,
+				default:false
+			},
+			is_width:{
+				type:Boolean,
+				default:true
+			}
 		},
         data(){
             return{

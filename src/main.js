@@ -22,6 +22,7 @@ import goTop from "./components/content/goTop"
 import DemandMain from "./components/content/DemandMain"
 import QuestionMain from "./components/content/QuestionMain"
 import pageLogin from "./components/content/pageLogin"
+import Requirements from "./components/content/Requirements"
 
 
 Vue.component("Header",Header),
@@ -38,6 +39,7 @@ Vue.component("QuestionMain",QuestionMain),
 Vue.component("pageLogin",pageLogin),
 Vue.component("DetailsTmall",DetailsTmall),
 Vue.component("SbMian",SbMian),
+Vue.component("Requirements",Requirements),
 
 
 Vue.use(ElementUI)

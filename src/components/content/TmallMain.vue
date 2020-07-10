@@ -406,6 +406,9 @@ export default {
 <style scoped lang="less">
     .transferMain{
         font-size: 14px;
+		width: 100%;
+		margin: 0 auto;
+		min-width: 1200px;
         .nav{
             width: 1200px;
             height: 60px;

@@ -9,12 +9,15 @@
   "dependencies": {
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
+    "css-loader": "^3.6.0",
     "element-china-area-data": "^4.1.2",
     "element-ui": "^2.13.2",
     "js-cookie": "^2.2.1",
+    "postcss-loader": "^3.0.0",
     "social-share.js": "^1.0.16",
     "swiper": "^5.4.1",
     "vue": "^2.6.11",
+    "vue-loader": "^15.9.3",
     "vue-router": "^3.1.6",
     "vue-seamless-scroll": "^1.1.21",
     "vuex": "^3.1.3"

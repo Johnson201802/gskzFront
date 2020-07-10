@@ -328,32 +328,30 @@
                     <p>公司转让常见问题</p>
                 </div>
                 <div class="prson">
-                    <ul style="width: 1200px;" class="clearfix">
-                        <li>
+                        <div style="width:370px">
                             <h3><i class="bg-que"></i>转让前公司如有产生的责任由谁承担？</h3>
                             <p><i class="bg-ans"></i>转让前产生的包含欠税款、滞纳金、罚款、黑名单等情况而产生的一切费用，将由原法人、股东承担！</p>
-                        </li>
-                        <li>
+                        </div>
+                        <div style="width:370px">
                             <h3><i class="bg-que"></i>转让后公司如有产生的责任由谁承担？</h3>
                             <p><i class="bg-ans"></i>转让后产生的包含欠税款、滞纳金、罚款、黑名单等情况而产生的一切费用，将由新法人、股东承担！</p>
-                        </li>
-                        <li>
+                        </div>
+                        <div style="width:370px">
                             <h3><i class="bg-que"></i>公司转让哪些信息可以变更？</h3>
                             <p><i class="bg-ans"></i>按照规定公司可以根据实际经营情况决定变更，如：公司、地址、法人、股东、监事、资本、经营范围、行业、类型等信息变更!</p>
-                        </li>
-                        <li>
+                        </div>
+                        <div style="width:370px">
                             <h3><i class="bg-que"></i>易转网公司转让平台是什么性质的平台？</h3>
                             <p><i class="bg-ans"></i>易转网是一家专业的公司转让买卖交易信息服务平台。本平台提供公司买卖的信息发布、展示，交易匹配、代办股转等服务；本平台提供的所有公司买卖信息都真实可靠。专业的交易顾问为您提供一对一服务，为您规避交易涉及的各类风险；</p>
-                        </li>
-                        <li>
+                        </div>
+                        <div style="width:370px">
                             <h3><i class="bg-que"></i>如何办理公司股权变更手续？</h3>
                             <p><i class="bg-ans"></i>签订交易协议之前，交易顾问为您协商由哪方负责办理公司的股权变更手续。由于公司股权变更涉及工商、税务、银行等各个环节，现任记账会计对该公司的账目情况掌握的较全面，利于股权手续的办理，原则上建议由该公司财务人员来协助完成股权变更手续。</p>
-                        </li>
-                        <li>
+                        </div>
+                        <div style="width:370px">
                             <h3><i class="bg-que"></i>如何规避所转公司的债权债务等情况？</h3>
                             <p><i class="bg-ans"></i>1、去当地人民银行信用中心查询该企业的信用报告；<br>2、对该公司在股权转让之前的资产登报公示，并对公示信息进行留存；<br>3、待转公司法人或股东签署《公司资产状况承诺书》。</p>
-                        </li>
-                    </ul>
+                        </div>
                 </div>
             </div>
             <div class="interested">
@@ -1523,12 +1521,11 @@ export default {
                 }
                 .prson{
                     padding: 15px 25px;
-                    .clearfix{
-                        width:1200px;
-                        display: flex;
-                        justify-content: space-between;
-                        flex-wrap: wrap;
-                        li{
+                    width:1200px;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                        div{
                             width:33.33%;
                             box-sizing: border-box;
                             padding: 0 25px;
@@ -1563,7 +1560,6 @@ export default {
                                 }
                             }
                         }
-                    }
                 }
             }
             .result{

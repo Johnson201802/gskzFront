@@ -20,10 +20,10 @@
 			<div class="botton">
 				<router-link class="left" :to=item.path tag="div" v-for="(item,index) in all" :key="index" :class="{'one' : index == 0,'two' : index == 1,'three' : index == 2,'four' : index == 3}">
 					<div class="header">
-						<p><a href="http://www.baidu.com">{{item.title}}</a></p>
+						<p><!-- <a href="http://www.baidu.com"></a> -->{{item.title}}</p>
 					</div>
 					<ul>
-						<li v-for="(item,index) in item.list" :key="index"><a href="http://www.baidu.com">{{item}}</a></li>
+						<li v-for="(item,index) in item.list" :key="index"><!-- <a href="http://www.baidu.com"></a> -->{{item}}</li>
 					</ul>
 				</router-link>
 			</div>
@@ -94,6 +94,7 @@
 							</ul>
 						</div>
 					</div>
+					<router-link to="/Transfer">
 					<div class="data">
 						<div class="list1 liston" id="i5Label11">
 							<div class="one">
@@ -265,6 +266,7 @@
 							</div>
 						</div>
 					</div>
+					</router-link>
 				</div>
 			</div>
 		</div>
