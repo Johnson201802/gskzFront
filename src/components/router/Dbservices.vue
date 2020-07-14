@@ -1,7 +1,8 @@
 <template>
     <div class="Transfer">
         <Header :is_index="true"></Header>
-        <div id="mapContainer" style="width:100%;height:600px"></div>
+		<DbservicesMain></DbservicesMain>
+		<div id="mapContainer" style="width:100%;min-width: 1200px;height:300px;background-color: #fff;"></div>
         <goTop></goTop>
         <Footer></Footer>
     </div>
