@@ -29,6 +29,7 @@ const Detailstransfer = ()=>import("../components/router/Detailstransfer")
 const Personaltrademark = ()=>import("../components/router/Personaltrademark")
 const PersonalOnlinestore = ()=>import("../components/router/PersonalOnlinestore")
 const Personalqualification = ()=>import("../components/router/Personalqualification")
+const Help = ()=>import("../components/router/Help")
 
 
 Vue.use(VueRouter)
@@ -47,6 +48,10 @@ Vue.use(VueRouter)
       path:"/User",
       component: User,
     },
+	{
+	  path:"/Help",
+	  component: Help,
+	},
     {
       path:"/Transfer",
       component: Transfer,

@@ -24,9 +24,11 @@ import DbservicesMain from "./components/content/DbservicesMain"
 import QuestionMain from "./components/content/QuestionMain"
 import pageLogin from "./components/content/pageLogin"
 import Requirements from "./components/content/Requirements"
+import Helpmain from "./components/content/Helpmain"
 
 
 Vue.component("Header",Header),
+Vue.component("Helpmain",Helpmain),
 Vue.component("Footer",Footer),
 Vue.component("MySwiper",MySwiper),
 Vue.component("TransferMain",TransferMain),

@@ -77,7 +77,7 @@
                 <div class="phone">
                     <div class="ewm" style="text-align: center;">
                         <img src="https://www.yizhuanweb.com/uploads/20200401/161ab13b7e2e03ae575bf160a77f1251.jpg" alt="">
-                        <p>手机访问更便捷</p>
+                        <p>关注公众号</p>
                     </div>
                     <p class="hotLine" style="text-align: center;">客户服务热线</p>
                     <p class="number" style="text-align: center;">176-2150-2150</p>
@@ -90,7 +90,7 @@
         <div class="link">
             <p class="yqlink">友情链接</p>
             <div class="list" ref="navlist">
-                <p v-for="(item,index) in linkList" :key="index">{{item}}</p>
+                <a v-for="(item,index) in linkList" :key="index" :href="item.url" target="_blank">{{item.ads_name}}</a>
             </div>
         </div>
         <!-- 友情链接 end -->
@@ -111,6 +111,7 @@
 </template>
 
 <script>
+import axios from '../../api/axios'
 export default {
     data(){
         return{
@@ -127,12 +128,10 @@ export default {
 		
     },
     methods:{
-        //初始化页面数据
-        init:function(){
-            for(let i = 1; i < 20; i++){
-                this.linkList.push('上海注册公好的')
-            }
-        },
+       init:async function(){
+		   let result = await axios("index/index/getLinks")
+		   this.linkList = result.data
+	   }
 
     }
 }
@@ -264,10 +263,11 @@ export default {
             .list{
                 margin-top:20px;
                 overflow: hidden;
-                p{
+                a{
                     display: inline-block;
-                    margin-right:10px;
+                    margin-right:20px;
                     margin-bottom:6px;
+					text-decoration: none;
                     color:#a9a6a6;
 					cursor: pointer;
                     &:hover{

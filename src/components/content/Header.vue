@@ -33,7 +33,7 @@
                             </ul>
                         </div>
                         <router-link to="/" exact>手机端</router-link>
-                        <router-link to="/" exact>帮助中心</router-link>
+                        <router-link to="/Help" exact>帮助中心</router-link>
                         <router-link to="/User" exact>联系客服</router-link>
                         <!-- <router-link to="/User" exact>返回首页</router-link> -->
                     </div>

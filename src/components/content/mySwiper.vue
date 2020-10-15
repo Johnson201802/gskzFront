@@ -29,7 +29,7 @@
 			</div>
 			<div class="right">
 				<div class="topRight">
-					<img class="img" src="../../assets/images/avatar.png"></img>
+					<img class="img" src="../../assets/images/toux.png"></img>
 				</div>
 				<div class="zhuce">
 					<router-link to="/Login" v-if="!$store.state.islogin" tap="p">请登录</router-link>
