@@ -28,7 +28,7 @@
         <!-- screen start -->
         <div class="screen">
             <div class="margin">
-                <div class="left">
+                <div class="left33">
                     <div class="leftr">
                         <div class="leftrone" :class="{'last' : index == 3}" v-for="(item,index) in screenList" :key="index">
                             <p><i class="iconfont" :class="(screenimgtitle[index])" ></i>{{screentitle[index]}}:</p>
@@ -73,7 +73,9 @@
                     <router-link class="bfath" :to='{path:"/DetailsTmall",query:{id:item.bh}}' v-for="(item,index) in resultList" :key="index">
                         <div class="fathl">
                             <div class="fathlt">
-                                <img class="img" src="../../assets/images/tmall_logo.png" alt="">
+								<div class="imgone">
+									<img style="width: 85px;height:85px" src="../../assets/images/tmall_logo.png" alt="">
+								</div>
                                 <div class="fathltone">
                                     <div class="fathltonet">
                                         <p>{{item.title}}</p>
@@ -507,10 +509,10 @@ export default {
             padding-top:10px;
             .margin{
                 width:1200px;
-                margin:auto;
+                // margin:auto;
                 display: flex;
                 justify-content: space-between;
-                .left{
+                .left33{
                     width:952px;
                     display: flex;
                     justify-content: space-between;
@@ -660,12 +662,19 @@ export default {
                         .fathl{
                             .fathlt{
                                 display: flex;
-                                .img{
-                                    margin-right:20px;
-									width: 85px;
-									height: 85px;
-                                }
+								justify-content: center;
+								align-items: center;
+								.imgone{
+									width: 15%;
+									height: inherit;
+									.img{
+									    margin-right:20px;
+										width: 85px;
+										height: 85px;
+									}
+								}
                                 .fathltone{
+									width:85%;
                                     .fathltonet{
                                         display: flex;
                                         p{

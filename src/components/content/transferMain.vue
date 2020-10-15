@@ -186,33 +186,6 @@
 						</div> -->
                     </div>
                 </div>
-                <div ref="right" class="right" :style="{'height':height2+'px'}">
-                    <div class="rtop" style="overflow: hidden;">
-						<div style="height: 82px;">
-							<h5> 成交指数(家)</h5>
-							<h2> 100000</h2>
-						</div>
-						<div style="overflow: hidden;color: #fff;z-index: 2345678765;">
-							<scroll :data="listData" :class-option="optionSingleHeight" class="seamless-warp" style="background-image: url(../../assets/images/bg.png);background-repeat: repeat-y;">
-									<a href=""><p style="color:#fff">11分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
-									<a href=""><p style="color:#fff">19分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
-									<a href=""><p style="color:#fff">33分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
-									<a href=""><p style="color:#fff">23分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
-									<a href=""><p style="color:#fff">49分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
-									<a href=""><p style="color:#fff">39分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
-									<a href=""><p style="color:#fff">45分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
-									<a href=""><p style="color:#fff">37分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
-									<a href=""><p style="color:#fff">34分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
-									<a href=""><p style="color:#fff">36分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
-									<a href=""><p style="color:#fff">38分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
-									<a href=""><p style="color:#fff">30分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
-									<a href=""><p style="color:#fff">31分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
-									<a href=""><p style="color:#fff">39分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
-									<a href=""><p style="color:#fff">33分钟前 Q***5 以¥33.75万 购买 郑州**商贸有限公司</p></a>
-							</scroll>
-						</div>
-                    </div>
-                </div>
             </div>
             <div class="result">
                 <div class="resulttop">
@@ -746,7 +719,7 @@ export default {
 				max-height: 642px;
                 justify-content: space-between;
                 .left{
-                    width:948px;
+                    width:1200px;
                     display: flex;
                     justify-content: space-between;
                     box-sizing: border-box;
@@ -756,7 +729,7 @@ export default {
                     .leftr{
                         flex: 1;
                         .leftrone{
-                            width:900px;
+                            width:1100px;
                             display: flex;
                             margin-top:10px;
                             p{
@@ -897,13 +870,14 @@ export default {
                 }
                 .resultbottom{
                     margin-top:10px;
-                    justify-content: space-between;
                     display: flex;
                     flex-wrap: wrap;
+					justify-content: space-between;
+					align-items: space-between;
                     .bfath{
 						border-radius: 5px;
                         position: relative;
-                        margin-bottom:16px;
+                        margin:0 16px 16px 0;
                         width:384px;
                         height:384px;
                         background-color: #fff;
