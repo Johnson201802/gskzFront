@@ -9,7 +9,7 @@
                         <p>Hi~，{{username}} </p>
                         <router-link v-if="!$store.state.islogin" to="/Login" exact>【用户登录】</router-link>
                         <router-link v-if="!$store.state.islogin" to="/Egistered" exact>【用户注册】</router-link>
-                        <router-link v-if="!$store.state.islogin" to="/" exact>【经纪人认证】</router-link>
+                        <!-- <router-link v-if="!$store.state.islogin" to="/" exact>【经纪人认证】</router-link> -->
                         <p v-if="$store.state.islogin" @click="out()">【退出登录】</p>
                     </div>
                     <div class="headerTopRight">

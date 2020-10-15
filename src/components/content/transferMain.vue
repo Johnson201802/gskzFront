@@ -744,6 +744,7 @@ export default {
                                 overflow: hidden;
                                 display: flex;
                                 flex-wrap: wrap;
+								transition: all 0.2 ease;
                                 div{
 									max-height: 31px;
                                     margin-right: 4px;
@@ -757,9 +758,10 @@ export default {
                                 }
                                 .show{
                                     border: 1px solid #F3A54D;
-                                    color:#F3A54D;
+                                    color:white;
+									background-color: #F3A54D;
                                     &:hover{
-                                        color:#F3A54D
+                                        color:white;
                                     }
                                 }
                             }
@@ -872,12 +874,12 @@ export default {
                     margin-top:10px;
                     display: flex;
                     flex-wrap: wrap;
-					justify-content: space-between;
-					align-items: space-between;
+					justify-content: flex-start;
+					align-items: flex-start;
                     .bfath{
 						border-radius: 5px;
                         position: relative;
-                        margin:0 16px 16px 0;
+                        margin:0 8px 16px 8px;
                         width:384px;
                         height:384px;
                         background-color: #fff;
@@ -921,9 +923,9 @@ export default {
                         .bftwo{
                             display: flex;
                             justify-content: space-between;
-                            padding: 0 50px;
+                            padding: 0 55px;
                             padding-bottom: 20px;
-                            border-bottom: 1px solid #ccc;
+                            border-bottom: 1px solid #eeeeee;
                             .bftt{
                                 color:#ff7800;
                                 width:70px;

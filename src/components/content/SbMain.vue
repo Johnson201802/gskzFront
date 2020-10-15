@@ -5,7 +5,7 @@
 			<div class="one">
 				<i class="iconfont icon-liebiao"></i>
 				<p> 当前位置 ：</p>
-				<p>易转网首页 ></p>
+				<p>快转网首页 ></p>
 				<p>商标转让</p>
 			</div>
 			<div class="two">
@@ -69,17 +69,17 @@
 				    <img src="../../assets/images/empty.png" alt="">
 				    <div class="weione">
 				        <div>
-				            <p class="pone">没有找到心仪的公司?</p>
+				            <p class="pone">没有找到心仪的商标?</p>
 				            <p class="ptwo">联系客服帮忙找</p>
 				            <span>或</span>
-				            <p class="pthree">发布求购公司需求</p>
+				            <p class="pthree">发布求购商标需求</p>
 				        </div>
 				        <p class="pfour">不要急哦，好多热门资源没有展示出来，马上联系服务顾问获取</p>
 				    </div>
 				</div>
 			</div>
 			<div class="interested">
-			    <h2>您可能感兴趣的代办服务</h2>
+			    <h2>您可能感兴趣的商标</h2>
 			    <p>为您精选</p>
 			    <div class="inlist">
 			        <router-link 
@@ -189,11 +189,7 @@
 						url: "http://tmpic.tmkoo.com/ad4bc2b35ab2ed72967541ee3bb13223",
 						title: "3类-柒小柒",
 						price: "2000.00"
-					}, {
-						url: "http://tmpic.tmkoo.com/ad4bc2b35ab2ed72967541ee3bb13223",
-						title: "3类-柒小柒",
-						price: "2000.00"
-					},
+					}
 				], //结果列表
 				interested: [{
 						url: "http://tmpic.tmkoo.com/ad4bc2b35ab2ed72967541ee3bb13223",
@@ -471,6 +467,8 @@
 					justify-content: space-between;
 					display: flex;
 					flex-wrap: wrap;
+					justify-content: flex-start;
+					align-items: flex-start;
 					margin-top: 10px;
 
 					.bfath {
@@ -478,7 +476,7 @@
 						height: 300px;
 						border-radius: 5px;
 						background-color: #fff;
-						margin-bottom: 10px;
+						margin:0 5px 10px 5px;
 						overflow: hidden;
 						border: 1px solid #fff;
 						transition: 0.3s;

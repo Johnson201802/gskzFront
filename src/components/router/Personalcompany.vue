@@ -91,7 +91,7 @@
          <!-- 协议 承诺 start -->
         <div class="agreement">
             <div>
-                <el-checkbox v-model="checked">我已阅读并接受《易转网服务协议》</el-checkbox>
+                <el-checkbox v-model="checked">我已阅读并接受《快转网服务协议》</el-checkbox>
             </div>
         </div>
         <!-- 协议 承诺 end -->
