@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<div class="position">
-			
+			<span class="iconfont icon-V"></span>
 		</div>
 	</div>
 </template>

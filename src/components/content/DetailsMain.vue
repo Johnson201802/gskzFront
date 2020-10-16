@@ -84,11 +84,13 @@
 						</div>
                     </div>
                     <div class="leftFour">
-                        <p>公司转让编号：{{companyinformation.service_id}}</p>
-                        <p>交易方式：快转网线上担保交易</p>
-                        <p>浏览量：{{companyinformation.browse}}次</p>
-                        <!-- browse -->
-                        <p>发布时间：{{companyinformation.create_time}}</p>
+							<span>公司转让编号：{{companyinformation.service_id}}</span>
+							<span>交易方式：快转网线上担保交易</span>
+							<span>浏览量：{{companyinformation.browse}}次</span>
+							<!-- browse -->
+							<span>发布时间：{{companyinformation.create_time}}</span>
+							<span class="btn" style="background-color: rgb(0, 116, 217);border-radius:30px;color: white;padding:0 20px;">我要收藏</span>
+							<span class="btn" style="background-color: rgb(255, 128, 90);border-radius:30px;color: white;padding:0 20px;">立即购买</span>
                     </div>
                     <div class="leftSix">
                         <div v-for="(item,index) in showlist" :key="index">
@@ -784,16 +786,23 @@ export default {
                     }
                     .leftFour{
                         background-color: #fff;
-                        line-height: 88px;
-                        border:1px solid #ccc;
-                        border-right: 1px solid transparent;
-                        border-left: 1px solid transparent;
+						line-height: 88px;
+                        border-top:1px solid #ccc;
+                        border-bottom:1px solid #ccc;
                         display: flex;
-                        p{
-                            font-size: 12px;
-                            color: #999;
-                            margin-left: 30px;
-                        }
+                        justify-content: flex-start;
+                        padding:20px 20px;
+                        display: flex;
+                        align-items: center;
+						span{
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								margin-right: 10px;
+								padding: 0px 20px;
+								height: 40px;
+							}
+                        
 						.collection{
 							cursor: pointer;
 						    line-height:22px;

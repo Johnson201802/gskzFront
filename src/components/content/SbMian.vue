@@ -69,7 +69,7 @@
                     <div class="leftFour">
                         <p style="font-size: 14px;">转让价格：{{companyinformation.service_id}}<span style="font-size: 20px;color:red;font-weight: bold;">￥4567</span></p>
                         <p style="font-size: 14px;">交易方式：<span style="font-size: 20px;color:red;font-weight: bold;">平台担保</span></p>
-                        <p style="font-size: 14px;"><a href="#" style="width: 100px;background-color: #0074D9;color:#fff;padding:10px 20px;border-radius: 5px;margin: 0 15px;">我要收藏</a><a href="#" style="width: 100px;background-color: #FF805A;color:#fff;padding:10px 20px;border-radius: 5px;margin: 0 15px;">支付定金</a></p>
+                        <p style="font-size: 14px;"><a href="#" style="width: 150px;background-color: #0074D9;color:#fff;padding:10px 20px;border-radius: 20px;margin: 0 15px;">我要收藏</a><a href="#" style="width: 150px;background-color: #FF805A;color:#fff;padding:10px 20px;border-radius: 30px;margin: 0 15px;">立即购买</a></p>
                     </div>
                     <div class="leftSix">
                         <div v-for="(item,index) in showlist" :key="index">

@@ -123,11 +123,13 @@
 						</div>
                     </div> -->
                     <div class="leftFour">
-                        <p style="font-size: 14px;">转让价格：{{companyinformation.service_id}}<span style="font-size: 20px;color:#FF805A">￥4567</span></p>
-                        <p style="font-size: 14px;">交易方式：<span style="font-size: 20px;color:#FF805A">快转网线上担保交易</span></p>
-                        <p style="font-size: 14px;">浏览量：{{companyinformation.browse}}<span style="font-size: 20px;color:#FF805A">567次</span></p>
+                        <span style="font-size: 14px;">转让价格：{{companyinformation.service_id}}<span style="font-size: 14px;color:#FF805A">￥4567</span></span>
+                        <span style="font-size: 14px;">交易方式：<span style="font-size: 14px;color:#FF805A">快转网线上担保交易</span></span>
+                        <span style="font-size: 14px;">浏览量：{{companyinformation.browse}}<span style="font-size: 14px;color:#FF805A">567次</span></span>
                         <!-- browse -->
-                        <p style="font-size: 14px;">发布时间：{{companyinformation.create_time}}<span style="font-size: 20px;color:#FF805A">4567</span></p>
+                        <span style="font-size: 14px;">发布时间：{{companyinformation.create_time}}<span style="font-size: 14px;color:#FF805A">4567</span></span>
+						<span class="btn" style="background-color: rgb(0, 116, 217);border-radius:30px;color: white;padding:0 20px;height:40px">我要收藏</span>
+						<span class="btn" style="background-color: rgb(255, 128, 90);border-radius:30px;color: white;padding:0 20px;height:40px">立即购买</span>
                     </div>
                     <div class="leftSix">
                         <div v-for="(item,index) in showlist" :key="index">
@@ -753,19 +755,22 @@ export default {
                     }
                     .leftFour{
                         background-color: #fff;
-                        line-height: 88px;
 						width:96%;
 						margin:10px auto;
-						border-radius: 5px;
-                        border:1px solid #ccc;
-                        // border-right: 1px solid transparent;
-                        // border-left: 1px solid transparent;
+                        border-top:1px solid #ccc;
+                        border-bottom:1px solid #ccc;
                         display: flex;
 						justify-content: space-around;
-                        p{
-                            font-size: 12px;
-                            color: #999;
-                        }
+						padding:20px 20px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						span{
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							margin-right: 10px;
+						}
 						.collection{
 							cursor: pointer;
 						    line-height:22px;
