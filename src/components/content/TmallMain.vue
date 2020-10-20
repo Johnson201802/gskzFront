@@ -5,22 +5,22 @@
             <div class="one">
                 <i class="iconfont icon-liebiao"></i>
                 <p> 当前位置 ：</p>
-                <router-link to="/" tag="p" class="zhuan">易转网首页 ></router-link>
+                <router-link to="/" tag="p" class="zhuan">快转网首页 ></router-link>
                 <p>天猫转让</p>
             </div>
             <div class="two">
                 <div class="EEEEEE xxx">
                     <i class="iconfont icon-unie737"></i>
                     <p>平台帮找</p>
-                    <div class="ewm">
+                    <div class="ewm" style="z-index: 99999;">
                         <img src="https://www.yizhuanweb.com/uploads/20200611/6a60ca36b2fd3d9adae989e28544d6f6.png" alt="">
                         <p>扫码联系客服</p>
                     </div>
                 </div>
-                <div class="FF7E00 xxx">
+                <!-- <div class="FF7E00 xxx">
                     <i class="iconfont icon-wp-jsb"></i>
                     <p>求购商铺</p>
-                </div>
+                </div> -->
             </div>
         </div>
         <!-- nav end -->
@@ -30,20 +30,20 @@
             <div class="margin">
                 <div class="left33">
                     <div class="leftr">
-                        <div class="leftrone" :class="{'last' : index == 3}" v-for="(item,index) in screenList" :key="index">
-                            <p><i class="iconfont" :class="(screenimgtitle[index])" ></i>{{screentitle[index]}}:</p>
+                        <div class="leftrone" ref="left" v-for="(item,index) in screenList" :key="index">
+                            <p>{{screentitle[index]}}:</p>
                             <div class="son">
-                                <div 
+                                <div style="padding: 0 16px;"
                                     :class="{'show': index1 == screenshow[index]}" 
                                     v-for="(item,index1) in screenList[index]" 
                                     :key="index1"
-                                    @click="changescreen(index,index1)"
-                                >{{item}}</div>
+                                    @click="changescreen(index,index1,item)"
+                                >{{item.attr_item_name}}</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="right">
+<!--                <div class="right">
                     <div class="bottom">
                         <p>——— 市场交易动态 ———</p>
                         <div class="bone">
@@ -52,7 +52,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="result">
                 <div class="resulttop">
@@ -123,8 +123,8 @@
                                 <p>{{item.price}} 万</p>
                             </div>
                             <div class="fathrm">
-                                <p class="p">QQ联系</p>
-								<p class="p" style="background-color: #FF805A;">收藏</p>
+                                <p class="p">查看详情</p>
+								<p class="p" style="background-color: #FF805A;">我要收藏</p>
                             </div>
                             <div class="fathrb">
                                 <div style="text-align: center;">
@@ -197,19 +197,15 @@
 </template>
 
 <script>
+import axios from '../../api/axios'
 export default {
     data(){
         return{
-            screenList:[
-                ["全部","服饰","母婴","化妆品","食品","3C数码","图书音像","运动户外","汽车及配件","服务大类","珠宝配饰"
-                ,"家用电器","居家日用","家具家装家纺","鞋类箱包","保健品及医药","乐器","话费通讯","网游及QQ"],
-                ["全部","天猫商城","天猫新店"],
-                ["全部","R标","TM标","授权商标"],
-                ["全部","5万以下","5-10万","10-30万","30-50万","50万以上"],
-            ],
-            screentitle:["类目","类型","商标","价格"],
-            screenimgtitle:["icon-leimu","icon-17","icon-shangbiao","icon-jiagebaozheng"],
-            screenshow:[0,0,0,0,0,0,0,0,0],
+            screenList:[],
+            screentitle:[],
+            screenimgtitle:[],
+            screenshow:[],
+			isheight:[],
             swiperList:[
                 {
                     time:"5-27",
@@ -392,15 +388,38 @@ export default {
             ],//可能感兴趣店铺列表
         }
     },
+	created() {
+		this.getScreen()
+	},
     methods:{
         //切换筛选条件
-        changescreen:function(index,index1){
+        changescreen:function(index,index1,item){
             this.screenshow.splice(index,1,index1)
+			console.log(index)
+			console.log(index1)
+			console.log(item)
         },
         //切换展示区域
         cshowres:function(num){
             this.rstopnum = num
-        }
+        },
+		//获取筛选列表数据
+		getScreen:async function(){
+		    let result = await axios('index/index/getTmallCateItem')
+			console.log(result.data)
+		    for(let key in result.data){
+				console.log(key)
+		        this.screentitle.push(key)
+		        result.data[key].unshift({
+		            attr_item_name:"不限",
+		            attr_item_id:'',
+		            key:result.data[key][0].key
+		        })
+		        this.screenList.push(result.data[key])
+		        this.screenshow.push(0)
+		        // this.conditions[result.data[key][1].key] = ""
+		    }
+		}
     }
 }
 </script>
@@ -513,7 +532,7 @@ export default {
                 display: flex;
                 justify-content: space-between;
                 .left33{
-                    width:952px;
+                    width:1200px;
                     display: flex;
                     justify-content: space-between;
                     box-sizing: border-box;
@@ -524,7 +543,7 @@ export default {
                         flex: 1;
                         padding:0 30px;
                         .leftrone{
-                            width:900px;
+                            width:1100px;
                             display: flex;
                             margin-top:10px;
                             border-bottom: 1px solid #ccc;

@@ -25,16 +25,20 @@
                         <div class="two">
                             <div class="center">
                                 <span>会员中心</span>
-                                <i class="iconfont icon-arrowBottom"></i>
+                                <!-- <i class="iconfont icon-arrowBottom"></i> -->
                             </div>
-                            <ul>
+                            <!-- <ul>
                                 <li><p @click="jump('/PersonalCenter')">个人中心</p></li>
                                 <li><p v-if="$store.state.islogin" @click="out()">退出登录</p></li>
-                            </ul>
+                            </ul> -->
                         </div>
-                        <router-link to="/" exact>手机端</router-link>
-                        <router-link to="/Help" exact>帮助中心</router-link>
-                        <router-link to="/User" exact>联系客服</router-link>
+                        <!-- <router-link to="/" exact>手机端</router-link> -->
+                        <!-- <router-link to="/Help" exact>帮助中心</router-link> -->
+                        <div class="two link" style="margin-left: 20px;"><span>联系客服</span>
+							<ul class="contact">
+								<img style="width: 95px;height: 95px;" src="https://www.yizhuanweb.com/uploads/20200401/161ab13b7e2e03ae575bf160a77f1251.jpg" alt="">
+							</ul>
+						</div>
                         <!-- <router-link to="/User" exact>返回首页</router-link> -->
                     </div>
                 </div>
@@ -44,9 +48,9 @@
             <!-- headerLogo start -->
             <div class="headerLogo">
                 <!-- logo start -->
-                <div class="logo">
-                        <img src="../../assets/images/Logo.png" alt="">
-                </div>
+                <router-link to="/"  class="logo">
+                        <img src="../../assets/images/Logo.png" alt="logo">
+                </router-link>
                 <!-- logo end -->
 
                 <!-- search start -->
@@ -59,14 +63,14 @@
                     </div>
                     <div class="input">
                         <input type="text" placeholder="请输入搜索内容">
-                        <div class="Recentsearch">
+                       <div class="Recentsearch">
                             <div class="one">
                                 <p>最近搜过</p>
                                 <ul>
                                     <li v-for="(item,index) in haveList" :key="index">{{item}}</li>
                                 </ul>
                             </div>
-                            <div class="two">
+<!--                            <div class="two">
                                 <div class="more">
                                     <p>最近热搜关键词</p>
                                     <p class="huan">换一批</p>
@@ -74,7 +78,7 @@
                                 <ul>
                                     <li v-for="(item,index) in hotSearchList" :key="index">{{item}}</li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="submlit">
@@ -85,8 +89,8 @@
 
                 <!-- my start -->
                 <div class="my">
-                    <div style="width: inherit;">我要发布&nbsp;&nbsp;<i class="iconfont icon-arrowBottom"></i></div>
-                    <div class="Releaserecord">
+                    <div style="width: inherit;display: flex;justify-content: center;align-items: center;">我要发布&nbsp;&nbsp;&nbsp;&nbsp;<i class="iconfont icon-arrowBottom"></i></div>
+                   <div class="Releaserecord">
                             <div class="one">
                                 <p>发布记录</p>
                                 <ul>
@@ -146,12 +150,12 @@ import Cookies from 'js-cookie'
         data(){
             return{
                 username:"",
-                freeList:["我要买公司","我要卖公司","我要办业务","我要卖商标"],//导航免费发布列表
-                logoList:["公司","求购","代办","商标","网店"],//搜索列表
-                haveList:["资产","曾经","今日","明天"],//最近搜索列表
+                freeList:["我要买公司","我要卖公司","我要卖商标"],//导航免费发布列表
+                logoList:["公司","商标","网店"],//搜索列表
+                haveList:["资产","曾经","今日","明天","明天","明天","明天","明天","明天","明天","明天","明天","明天","明天","明天","明天","明天","明天","明天","明天","明天","明天","明天","明天"],//最近搜索列表
                 hotSearchList:["装修设计","食品安全","口罩生产","业务咨询","今日头条"],//热搜列表
-                recordList:["发布的公司","发布的求购","发布的代办","发布的商标","发布的店铺"],//发布记录列表
-                freeRecordList:["发布公司","求购公司","求购商标","求购资质","发布商标","发布网店"],//免费发布列表
+                recordList:["发布的公司","发布的商标","发布的店铺"],//发布记录列表
+                freeRecordList:["发布公司","发布商标","发布网店"],//免费发布列表
                 gotop: false,
                 allList:[],//全部分类
 
@@ -226,6 +230,7 @@ import Cookies from 'js-cookie'
 						}
                     }
                     .headerTopRight{
+						position: relative;
                         display:flex;
                         div,span,a{
                             line-height: 36px;
@@ -234,7 +239,7 @@ import Cookies from 'js-cookie'
                         .one,.two{
                             position: relative;
                             width:100px;
-                            // border-right:1px solid #626262;
+							cursor: pointer;
                             &:hover ul{
                                 display: block;
                             }
@@ -271,6 +276,15 @@ import Cookies from 'js-cookie'
                                 }
                             }
                         }
+						.contact{
+							display: none;
+							width: 100px;
+							height:100px;
+							position: absolute;
+							top:0px;
+							left:0px;
+							z-index: 99999999;
+						}
                         a{
                             width:100px;
                             text-align: center;
@@ -360,7 +374,6 @@ import Cookies from 'js-cookie'
                             top:33px;
                             left: 0px;
                             width:400px;
-                            height:200px;
                             box-shadow: 0 0 3px 3px #ccc;
                             box-sizing: border-box;
                             padding:20px;
@@ -373,6 +386,9 @@ import Cookies from 'js-cookie'
                                 ul{
                                     display: flex;
                                     color:#000;
+									flex-wrap: wrap;
+									justify-content: flex-start;
+									align-items: flex-start;
                                     li{
                                         margin-right: 16px;
                                         margin-top:10px;
@@ -459,8 +475,8 @@ import Cookies from 'js-cookie'
                             p{
                                 padding-left: 10px;
                                 line-height: 30px;
-                                border-left: 2px solid #D75696;
-                                color:#D75696;
+                                border-left: 2px solid #434AE0;
+                                color:#434AE0;
                                 font-weight: 600;
                             }
                             ul{
@@ -482,8 +498,8 @@ import Cookies from 'js-cookie'
                         }
                         .two{
                             p{
-                                border-left: 2px solid #41A8DE;
-                                color:#41A8DE;
+                                border-left: 2px solid #FEB4A2;
+                                color:#FEB4A2;
                             }
                         }
                     }

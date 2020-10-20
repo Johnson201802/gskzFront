@@ -13,15 +13,15 @@
                 <div class="EEEEEE xxx">
                     <i class="iconfont icon-unie737"></i>
                     <p>平台帮找</p>
-                    <div class="ewm">
+                    <div class="ewm" style="z-index: 99999;">
                         <img src="https://www.yizhuanweb.com/uploads/20200611/6a60ca36b2fd3d9adae989e28544d6f6.png" alt="">
                         <p>扫码联系客服</p>
                     </div>
                 </div>
-                <div class="FF7E00 xxx">
+                <!-- <div class="FF7E00 xxx">
                     <i class="iconfont icon-wp-jsb"></i>
                     <p>求购公司</p>
-                </div>
+                </div> -->
             </div>
         </div>
         <!-- nav end -->
@@ -97,11 +97,11 @@
 						    <span>售假违规</span>
 						</div>
                     </div>
-					<div class="leftThree">
+<!-- 					<div class="leftThree">
 					    <p class="price">描述相符：<span>4.9</span><span style="color: #fff;font-size: 12px;padding:0 5px">高于同行业</span></p>
 					    <p class="price">描述相符：<span>4.9</span><span style="color: #fff;font-size: 12px;padding:0 5px">高于同行业</span></p>
 					    <p class="price">描述相符：<span>4.9</span><span style="color: #fff;font-size: 12px;padding:0 5px">高于同行业</span></p>
-					</div>
+					</div> -->
 <!--                    <div class="leftThree">
                         <p class="price">出售价格：<span>￥ {{companyinformation.service_price}}</span></p>
                         <p class="nozhuan">郑重承诺：快转网不赚差价, 信息保真</p>
@@ -128,7 +128,7 @@
                         <span style="font-size: 14px;">浏览量：{{companyinformation.browse}}<span style="font-size: 14px;color:#FF805A">567次</span></span>
                         <!-- browse -->
                         <span style="font-size: 14px;">发布时间：{{companyinformation.create_time}}<span style="font-size: 14px;color:#FF805A">4567</span></span>
-						<span class="btn" style="background-color: rgb(0, 116, 217);border-radius:30px;color: white;padding:0 20px;height:40px">我要收藏</span>
+						<!-- <span class="btn" style="background-color: rgb(0, 116, 217);border-radius:30px;color: white;padding:0 20px;height:40px">我要收藏</span> -->
 						<span class="btn" style="background-color: rgb(255, 128, 90);border-radius:30px;color: white;padding:0 20px;height:40px">立即购买</span>
                     </div>
                     <div class="leftSix">
@@ -151,7 +151,7 @@
                     </div>
                     <div class="rthree">
                         <div class="lianxi">
-                            <a target="_blank" id="noRemember" class="qq" :href=userinformation.qq>QQ咨询</a>
+                            <!-- <a target="_blank" id="noRemember" class="qq" :href=userinformation.qq>QQ咨询</a> -->
                             <p class="wechat">微信咨询</p>
                             <div class="ewm">
                                 <p>扫一扫或复制微信号，添加好友咨询~</p>
@@ -204,7 +204,7 @@
                     </div> -->
                 </div>
             </div>
-            <div class="basic">
+<!--            <div class="basic">
                 <div class="left">
                     <div class="ltop"><span data-v-f9e36928=""></span>
                         店铺详情
@@ -257,7 +257,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="query">
                 <div class="querysono">
                     <span></span>
@@ -760,10 +760,9 @@ export default {
                         border-top:1px solid #ccc;
                         border-bottom:1px solid #ccc;
                         display: flex;
-						justify-content: space-around;
-						padding:20px 20px;
+						justify-content: flex-start;
+						padding:20px 25px;
 						display: flex;
-						justify-content: center;
 						align-items: center;
 						span{
 							display: flex;
@@ -1030,6 +1029,7 @@ export default {
                             }
                             .wechat{
                                 background-color:#0cc467;
+								width: 251px;
                                 &:hover{
                                     background-color: #0DB25E;
                                 }

@@ -6,7 +6,6 @@
             <i class="iconfont icon-unie737"></i>
             <div class="ewm">
                 <img src="https://www.yizhuanweb.com/uploads/20200611/6a60ca36b2fd3d9adae989e28544d6f6.png" alt="">
-                <p>扫码联系客服</p>
             </div>
         </div>
         <!-- 扫码客服 end -->

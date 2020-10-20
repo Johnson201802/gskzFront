@@ -17,10 +17,10 @@
                         <p>扫码联系客服</p>
                     </div>
                 </div>
-                <div class="FF7E00 xxx">
+                <!-- <div class="FF7E00 xxx">
                     <i class="iconfont icon-wp-jsb"></i>
                     <p>求购公司</p>
-                </div>
+                </div> -->
             </div>
         </div>
 		<div class="banner">

@@ -10,10 +10,10 @@
                         <p>免费注册</p>
                     </div>
                     <div class="topright">
-                        <router-link to="/" class="p" exact>平台首页</router-link>
+                        <!-- <router-link to="/" class="p" exact>平台首页</router-link>
                         <router-link to="/" class="p" exact>帮助中心</router-link>
                         <router-link to="/" class="p" exact>关注我们</router-link>
-                        <router-link to="/" class="p" exact>在线客服</router-link>
+                        <router-link to="/" class="p" exact>在线客服</router-link> -->
                         <a class="p" style="border-right: none;" href="javascript:void(0);">免费咨询热线 : 176-2150-2150</a>
                     </div>
                 </div>

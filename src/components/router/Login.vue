@@ -10,10 +10,10 @@
                         <router-link to="/Egistered" tag="p" style="color:#F3A54D;cursor: pointer;">免费注册</router-link>
                     </div>
                     <div class="topright">
-                        <router-link to="/" class="p" exact>平台首页</router-link>
+                        <!-- <router-link to="/" class="p" exact>平台首页</router-link>
                         <router-link to="/" class="p" exact>帮助中心</router-link>
                         <router-link to="/" class="p" exact>关注我们</router-link>
-                        <router-link to="/" class="p" exact>在线客服</router-link>
+                        <router-link to="/" class="p" exact>在线客服</router-link> -->
                         <a class="p" style="border-right: none;" href="javascript:void(0);">免费咨询热线 : 176-2150-2150</a>
                     </div>
                 </div>
@@ -63,10 +63,10 @@
                     </div>
                     <button @click="login">登录</button>
                 </div>
-                <div class="quick">
+                <!-- <div class="quick">
                     <p>使用快捷登录</p>
                     <img src="../../assets/images/timg.png" alt="">
-                </div>
+                </div> -->
             </div>
             
         </div>

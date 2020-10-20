@@ -5,7 +5,7 @@
             <div class="one">
                 <i class="iconfont icon-liebiao"></i>
                 <p> 当前位置 ：</p>
-                <router-link to="/" tag="p" class="zhuan">易转网首页 ></router-link>
+                <router-link to="/" tag="p" class="zhuan">快转网首页 ></router-link>
                 <router-link to="/Transfer" tag="p" class="zhuan">公司转让列表 ></router-link>
                 <p>{{companyinformation.service_name}}</p>
             </div>
@@ -13,15 +13,15 @@
                 <div class="EEEEEE xxx">
                     <i class="iconfont icon-unie737"></i>
                     <p>平台帮找</p>
-                    <div class="ewm">
+                    <div class="ewm" style="z-index: 99999;">
                         <img src="https://www.yizhuanweb.com/uploads/20200611/6a60ca36b2fd3d9adae989e28544d6f6.png" alt="">
                         <p>扫码联系客服</p>
                     </div>
                 </div>
-                <div class="FF7E00 xxx">
+<!--                <div class="FF7E00 xxx">
                     <i class="iconfont icon-wp-jsb"></i>
                     <p>求购公司</p>
-                </div>
+                </div> -->
             </div>
         </div>
         <!-- nav end -->
@@ -89,7 +89,7 @@
 							<span>浏览量：{{companyinformation.browse}}次</span>
 							<!-- browse -->
 							<span>发布时间：{{companyinformation.create_time}}</span>
-							<span class="btn" style="background-color: rgb(0, 116, 217);border-radius:30px;color: white;padding:0 20px;">我要收藏</span>
+							<!-- <span class="btn" style="background-color: rgb(0, 116, 217);border-radius:30px;color: white;padding:0 20px;">我要收藏</span> -->
 							<span class="btn" style="background-color: rgb(255, 128, 90);border-radius:30px;color: white;padding:0 20px;">立即购买</span>
                     </div>
                     <div class="leftSix">
@@ -112,7 +112,7 @@
                     </div>
                     <div class="rthree">
                         <div class="lianxi">
-                            <a target="_blank" id="noRemember" class="qq" :href=userinformation.qq>QQ咨询</a>
+                            <!-- <a target="_blank" id="noRemember" class="qq" :href=userinformation.qq>QQ咨询</a> -->
                             <p class="wechat">微信咨询</p>
                             <div class="ewm">
                                 <p>扫一扫或复制微信号，添加好友咨询~</p>
@@ -1061,6 +1061,7 @@ export default {
                                 }
                             }
                             .wechat{
+								width:251px;
                                 background-color:#0cc467;
                                 &:hover{
                                     background-color: #0DB25E;

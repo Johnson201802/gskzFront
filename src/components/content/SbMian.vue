@@ -18,10 +18,10 @@
                         <p>扫码联系客服</p>
                     </div>
                 </div>
-                <div class="FF7E00 xxx">
+               <!-- <div class="FF7E00 xxx">
                     <i class="iconfont icon-wp-jsb"></i>
                     <p>求购商标</p>
-                </div>
+                </div> -->
             </div>
         </div>
         <!-- nav end -->
@@ -69,7 +69,8 @@
                     <div class="leftFour">
                         <p style="font-size: 14px;">转让价格：{{companyinformation.service_id}}<span style="font-size: 20px;color:red;font-weight: bold;">￥4567</span></p>
                         <p style="font-size: 14px;">交易方式：<span style="font-size: 20px;color:red;font-weight: bold;">平台担保</span></p>
-                        <p style="font-size: 14px;"><a href="#" style="width: 150px;background-color: #0074D9;color:#fff;padding:10px 20px;border-radius: 20px;margin: 0 15px;">我要收藏</a><a href="#" style="width: 150px;background-color: #FF805A;color:#fff;padding:10px 20px;border-radius: 30px;margin: 0 15px;">立即购买</a></p>
+                        <p style="font-size: 14px;"><!-- <a href="#" style="width: 150px;background-color: #0074D9;color:#fff;padding:10px 20px;border-radius: 20px;margin: 0 15px;">我要收藏</a> -->
+						<a href="#" style="width: 150px;background-color: #FF805A;color:#fff;padding:10px 20px;border-radius: 30px;margin: 0 15px;">立即购买</a></p>
                     </div>
                     <div class="leftSix">
                         <div v-for="(item,index) in showlist" :key="index">
@@ -91,7 +92,7 @@
                     </div>
                     <div class="rthree">
                         <div class="lianxi">
-                            <a target="_blank" id="noRemember" class="qq" :href=userinformation.qq>QQ咨询</a>
+                            <!-- <a target="_blank" id="noRemember" class="qq" :href=userinformation.qq>QQ咨询</a> -->
                             <p class="wechat">微信咨询</p>
                             <div class="ewm">
                                 <p>扫一扫或复制微信号，添加好友咨询~</p>
@@ -144,7 +145,7 @@
                     </div> -->
                 </div>
             </div>
-            <div class="basic">
+<!--            <div class="basic">
                 <div class="left">
                     <div class="ltop"><span data-v-f9e36928=""></span>
                         店铺详情
@@ -197,14 +198,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="query">
                 <div class="querysono">
                     <span></span>
-                    <p>网店购买流程</p>
+                    <p>商标购买流程</p>
                 </div>
                 <div class="querysont">
-                    <img src="../../assets/images/gmlc.png" alt="">
+                    <img src="../../assets/images/gmlc.a03652bb.png" alt="">
                 </div>
             </div>
             <div class="problem">
@@ -242,7 +243,7 @@
                 </div>
             </div>
             <div class="interested">
-                <h2>您可能感兴趣的代办服务</h2>
+                <h2>您可能感兴趣的商标</h2>
                 <p>为您精选</p>
                 <div class="inlist">
                     <router-link 
@@ -967,6 +968,7 @@ export default {
                             }
                             .wechat{
                                 background-color:#0cc467;
+								width:251px;
                                 &:hover{
                                     background-color: #0DB25E;
                                 }
