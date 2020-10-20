@@ -35,10 +35,10 @@
                             <div class="son">
                                 <div style="padding: 0 16px;"
                                     :class="{'show': index1 == screenshow[index]}" 
-                                    v-for="(item,index1) in screenList[index]" 
+                                    v-for="(item2,index1) in screenList[index]" 
                                     :key="index1"
-                                    @click="changescreen(index,index1,item)"
-                                >{{item.attr_item_name}}</div>
+                                    @click="changescreen(index,index1,item2)"
+                                >{{item2.attr_item_name}}</div>
                             </div>
                         </div>
                     </div>
@@ -206,6 +206,7 @@ export default {
             screenimgtitle:[],
             screenshow:[],
 			isheight:[],
+			params:{"item_id":"","tmall_type_id":"","tmall_brand_id":"","tmall_price_id":""},
             swiperList:[
                 {
                     time:"5-27",
@@ -390,14 +391,26 @@ export default {
     },
 	created() {
 		this.getScreen()
+		this.fetchList(this.params)
 	},
     methods:{
         //切换筛选条件
         changescreen:function(index,index1,item){
             this.screenshow.splice(index,1,index1)
-			console.log(index)
-			console.log(index1)
-			console.log(item)
+			if(index==0){
+				this.params.item_id = item.attr_item_id
+			}
+			if(index==1){
+				this.params.tmall_type_id = item.attr_item_id
+			}
+			if(index==2){
+				this.params.tmall_brand_id = item.attr_item_id
+			}
+			if(index==3){
+				this.params.tmall_price_id = item.attr_item_id
+			}
+
+			this.fetchList(this.params)
         },
         //切换展示区域
         cshowres:function(num){
@@ -412,13 +425,18 @@ export default {
 		        this.screentitle.push(key)
 		        result.data[key].unshift({
 		            attr_item_name:"不限",
-		            attr_item_id:'',
+		            attr_item_id:'0',
 		            key:result.data[key][0].key
 		        })
 		        this.screenList.push(result.data[key])
 		        this.screenshow.push(0)
 		        // this.conditions[result.data[key][1].key] = ""
 		    }
+		},
+		//获取列表数据
+		fetchList:async function(data){
+			let result = await axios('index/index/getTmallList',data)
+			console.log(result)
 		}
     }
 }
